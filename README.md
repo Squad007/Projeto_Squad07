@@ -10,7 +10,7 @@
 💻 Um pouco sobre o projeto
 
 # SOS medicametos
- * A plataforma tem como objetivo iniciamente potencializar a voz das pessoas, utilizando os dados para fazer pressão e cobrança sobre o poder público e evidenciando a dor das pessoas.
+ * A plataforma tem como objetivo iniciamente potencializar a voz das pessoas, utilizando os dados sobre o poder público e evidenciando a dor das pessoas.
  
  ## :hourglass_flowing_sand: Planejamento de Entregas
 
