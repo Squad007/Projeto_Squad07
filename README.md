@@ -24,7 +24,7 @@
 
 - [x] Apresentação Final - 22/02/2021 a 26/02/2021
 
-- [x] Feira de Soluções - xx/xx/xxxx
+
 
 ## :calendar: As Sprints
 
