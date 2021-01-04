@@ -14,7 +14,7 @@
  
  ## :hourglass_flowing_sand: Planejamento de Entregas
 
-- [x] [SPRINT 1](https://github.com/Squad007/Projeto_Squad07/tree/main/SPRINT_01) - 07/09/2020 a 27/09/2020
+- [x] [SPRINT 1](https://github.com/Squad007/Projeto_Squad07/tree/main/SPRINT_01) - 08/09/2020 a 07/11/2020
 
 - [x] [SPRINT 2](https://github.com/Squad007/Projeto_Squad07/tree/main/SPRINT_02) - 28/09/2020 a 20/01/2021
 
