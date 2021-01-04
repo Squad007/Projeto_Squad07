@@ -1,5 +1,6 @@
 <h1 align="center">
   Projeto em desenvolvimento no ano de 2020 pelos alunos e alunas do Squad 07 (SP-01) da Recode Pro 2020.
+  <img src="/Imagens_Geral/SQUAD.jpeg" width="200" height="150">
 <h1 align="center">
 
 
