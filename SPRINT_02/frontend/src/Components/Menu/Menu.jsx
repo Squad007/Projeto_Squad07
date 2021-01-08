@@ -34,7 +34,7 @@ export default function Menu() {
                     className="nav-link"
                     onClick={() => navigate('/notification')}
                   >
-                    Notifi
+                    Notificações
                   </a>
                 </li>
 
@@ -43,7 +43,7 @@ export default function Menu() {
                     className="nav-link"
                     onClick={() => navigate('/register')}
                   >
-                    Register
+                    Registre 
                   </a>
                 </li>
 
@@ -52,7 +52,15 @@ export default function Menu() {
                     className="nav-link"
                     onClick={() => navigate('/report')}
                   >
-                    Report
+                    Relatórios 
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a
+                    className="nav-link"
+                    onClick={() => navigate('/contact')}
+                  >
+                    Fale Conosco
                   </a>
                 </li>
               </ul>
