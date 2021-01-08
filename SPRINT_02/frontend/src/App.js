@@ -1,10 +1,17 @@
 
+import {BrowserRouter as Router} from 'react-router-dom';
+import Routes from './Routes';
+import Menu from './Components/Menu/Menu';
 
 function App() {
   return (
-    <div className="App">
-      <p>Olá mundo!</p>
-    </div>
+    <Router>
+      <div className="App">
+        <Routes />
+
+        <Menu />
+      </div>
+    </Router>
   );
 }
 
