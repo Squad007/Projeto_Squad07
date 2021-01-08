@@ -10,7 +10,7 @@ export default function Notification() {
           style={{ width: '25vw', height: '75vh', background: 'aquamarine' }}
         >
           <p className="m-3">
-            <p className="lead font-weight-bold ">Denuncia 1</p>
+            <p className="lead font-weight-bold ">Notificação 1</p>
             <p>
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque
               fuga non recusandae animi nesciunt! Unde eaque voluptates eos
@@ -19,7 +19,7 @@ export default function Notification() {
           </p>
 
           <p className="m-3">
-            <p className="lead font-weight-bold ">Denuncia 1</p>
+            <p className="lead font-weight-bold ">Notificação 1</p>
             <p>
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque
               fuga non recusandae animi nesciunt! Unde eaque voluptates eos
@@ -28,7 +28,7 @@ export default function Notification() {
           </p>
 
           <p className="m-3">
-            <p className="lead font-weight-bold ">Denuncia 1</p>
+            <p className="lead font-weight-bold ">Notificação 1</p>
             <p>
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque
               fuga non recusandae animi nesciunt! Unde eaque voluptates eos
@@ -37,7 +37,7 @@ export default function Notification() {
           </p>
 
           <p className="m-3">
-            <p className="lead font-weight-bold ">Denuncia 1</p>
+            <p className="lead font-weight-bold ">Notificação 1</p>
             <p>
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque
               fuga non recusandae animi nesciunt! Unde eaque voluptates eos
