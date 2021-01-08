@@ -1,10 +1,29 @@
 import React from 'react'
+import CardReport from '../Components/CardReport/index';
 
 export default function Report() {
     return (
-        <div>
-            <h1>Report</h1>
-            
-        </div>
+        <div className="section-3">
+              <h2>Selecione o mês</h2>
+                <div className="box">
+                  
+                    <section className="categories-container">
+                        <CardReport title="Janeiro" />
+                        <CardReport title="Fevereiro" />
+                        <CardReport title="Marco" />
+                        <CardReport title="Abril"  />
+                        <CardReport title="Maio" />
+                        <CardReport title="Junho" />
+                        <CardReport title="Julho"  />
+                        <CardReport title="Agosto" />
+                        <CardReport title="Setembro" />
+                        <CardReport title="Outubro" />
+                        <CardReport title="Novembro" />
+                        <CardReport title="Dezembro" />
+                        
+                    </section>
+                    
+                </div>
+            </div>
     )
 }
