@@ -1,19 +1,12 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import './Menu.css';
 export default function Menu() {
   const navigate = useNavigate();
   return (
     <div>
       <header>
-        <nav
-          className="navbar navbar-expand-lg navbar-dark shadow"
-          style={{
-            background: '#00b9b3',
-            textTransform: 'uppercase',
-            fontSize: '15px',
-            fontWeight: 'bold',
-          }}
-        >
+        <nav className="navbar navbar-expand-lg navbar-dark shadow nav-style">
           <div class="container w-100">
             <a onClick={() => navigate('/')}>
               <img
@@ -25,7 +18,6 @@ export default function Menu() {
 
             <button
               className="navbar-toggler"
-              style={{ background: '#6f42c1' }}
               type="button"
               data-toggle="collapse"
               data-target="#collapseNavbar"
@@ -36,12 +28,10 @@ export default function Menu() {
             <div className="collapse navbar-collapse w-75 " id="collapseNavbar">
               <ul
                 className="nav w-100 d-flex justify-content-between flex-column flex-sm-row"
-                style={{ listStyle: 'none' }}
               >
                 <li className="nav-item">
                   <a
                     className="nav-link"
-                    style={{ color: '#ffffff' }}
                     onClick={() => navigate('/notification')}
                   >
                     Notifi
@@ -51,7 +41,6 @@ export default function Menu() {
                 <li className="nav-item">
                   <a
                     className="nav-link"
-                    style={{ color: '#ffffff' }}
                     onClick={() => navigate('/register')}
                   >
                     Register
@@ -61,7 +50,6 @@ export default function Menu() {
                 <li className="nav-item">
                   <a
                     className="nav-link"
-                    style={{ color: '#ffffff' }}
                     onClick={() => navigate('/report')}
                   >
                     Report
