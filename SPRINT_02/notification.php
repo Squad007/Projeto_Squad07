@@ -1,17 +1,5 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$database = "sosmedicamentos";
-
-//Criando conexão
-$conn = mysqli_connect($servername, $username, $password, $database);
-
-// Verificando conexão
-if (!$conn) {
-  die("A conexão ao Banco falhou: " . mysqli_connect_error());
-}
-
+  include("connection.php");
 $pag = (isset($_GET['pagina'])) ? $_GET['pagina'] : 1; // Pega Via Get a Pag
 
 $busca = "SELECT * FROM denuncia INNER JOIN ubs ON denuncia.ubs_id = ubs.id INNER JOIN medicamento ON denuncia.medicamento_id = medicamento.id GROUP BY denuncia.id DESC; ";
@@ -36,19 +24,19 @@ $proximo = $pag + 1;
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lista de Denúncias</title>
+  <script src="./js/scripts.js"></script>
+  <title>Lista de Notificações</title>
   
   <?php include('./ADM/bootstrap.html') ?>
 
 </head>
 
 <body>
-  <?php
-  include('menu.html')
-  ?>
+  <?php include('./includes/menu.html') ?>
+  
   <main style="height: 39vw;">
     <div class="container my-3 mb-5 p-3 bg-light rounded shadow-lg table-responsive-sm">
-      <h1 class="my-4">Denúncias recentes</h1>
+      <h1 class="my-4">Notificações recentes</h1>
 
       <table class="table table-striped">
         <tr>
@@ -75,13 +63,6 @@ $proximo = $pag + 1;
           }
 
         ?>
-
-        <script>
-          if (window.history.replaceState) {
-            window.history.replaceState(null, null, window.location.href);
-          }
-        </script>
-
       </table>
 
       <nav class="d-flex justify-content-center" aria-label="Page navigation">
@@ -108,7 +89,7 @@ $proximo = $pag + 1;
         </ul>
       </nav>
     </div>
-    <?php include('rodape.html') ?>
+    <?php include('./includes/rodape.html') ?>
   </main>
 
   

@@ -1,16 +1,5 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$database = "sosmedicamentos";
-
-//Criando conexão
-$conn = mysqli_connect($servername, $username, $password, $database);
-
-// Verificando conexão
-if (!$conn) {
-  die("A conexão ao Banco falhou: " . mysqli_connect_error());
-}
+  include("connection.php");
 
 // Condição para guardas os dados do formulario no Banco de Dados. E retornar alerta de success ou problema danger.
 if (isset($_POST['submit'])) {
@@ -23,11 +12,11 @@ if (isset($_POST['submit'])) {
   $query_insert = "INSERT INTO denuncia(id,ubs_id, medicamento_id, comentario, data_denuncia) VALUES (null,'$ubs_id', '$medicamento_id', '$comentario', '$data_denuncia')";
   if ($conn->query($query_insert) === TRUE) {
     echo '<div class="alert alert-success" role="alert">
-                Denuncia Realizada!
+                Notificação Realizada!
               </div> ';
   } else {
     echo '<div class="alert alert-danger" role="alert">
-                Problema ao realizar denuncia!
+                Problema ao realizar notificação!
                 </div> ';
   }
   //$result = $conn->query($query_insert);
@@ -44,7 +33,7 @@ if (isset($_POST['submit'])) {
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cadastrar Denúncia</title>
+  <title>Cadastrar Notificação</title>
 
   <?php include('./ADM/bootstrap.html') ?>
 
@@ -59,15 +48,15 @@ if (isset($_POST['submit'])) {
 <body>
   <header>
     <!----------------------------- MENU --->
-    <?php include('menu.html') ?>
+    <?php include('./includes/menu.html') ?>
   </header>
 
   <main>
     <!-------------------------------------- Formulario para cadastrar denuncia  ------------------------->
     <div class="container my-3 p-3 bg-light rounded shadow-lg">
-      <form class="container" method="POST" action="cadastrar_denuncias.php">
+      <form class="container" method="POST" action="register_notification.php">
         <div class="form-group">
-          <h1 class="my-4">Cadastrar Denúncia</h1>
+          <h1 class="my-4">Cadastrar Notificação</h1>
           <label for="ubs_id">Escolha a UBS</label>
           <select name="ubs_id" class="form-control mb-3">
             <option value="0">Escolha a UBS</option>
@@ -123,7 +112,7 @@ if (isset($_POST['submit'])) {
 
                   </div>
                   <div class="modal-body">
-                    <p>Confirmar o envio da denúncia?</p>
+                    <p>Confirmar o envio da notificação?</p>
                   </div>
                   <div class="modal-footer">
                     <button type="submit" name="submit" class="btn btn-success">Ok</button>
@@ -138,7 +127,7 @@ if (isset($_POST['submit'])) {
       </form>
     </div>
     <!------------------------------- Rodape -->
-    <?php include('rodape.html') ?>
+    <?php include('./includes/rodape.html') ?>
   </main>
 </body>
 

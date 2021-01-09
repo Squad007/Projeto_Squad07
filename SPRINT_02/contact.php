@@ -1,16 +1,6 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$database = "sosmedicamentos";
 
-//Criando conexão
-$conn = mysqli_connect($servername, $username, $password, $database);
-
-// Verificando conexão
-if (!$conn) {
-  die("A conexão ao Banco falhou: " . mysqli_connect_error());
-}
+  include("connection.php");
 
 if (isset($_POST['nome']) && isset($_POST['msg'])) {
   $nome = $_POST['nome'];
@@ -28,8 +18,9 @@ if (isset($_POST['nome']) && isset($_POST['msg'])) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="./js/scripts.js"></script>
   <title>Fale conosco</title>
-  <link rel="stylesheet" href="fale_conosco_sobre.css">
+  
 
   <?php include('./ADM/bootstrap.html') ?>
 
@@ -37,30 +28,24 @@ if (isset($_POST['nome']) && isset($_POST['msg'])) {
 
 <body>
   <!--------------------- MENU ---------------------------->
-  <?php include('menu.html') ?>
+  <?php include('./includes/menu.html') ?>
 
   <main style="height: 37vw;">
 
-    <div class="container">
+    <div class="container my-3 p-3 bg-light rounded shadow-lg">
+    <h1 class="my-4">Enviar Mensagem</h1>
       <!------------------------------ Formulario de msg --------------------------->
       <form class="form-group" method="post" action="">
-        <h4 class="mt-5 torange">Nome </h4>
+        <h4 class="mt-5 purple">Nome </h4>
         <input class="form-control mb-2" type="text" name="nome" placeholder="Digite seu Nome">
-        <h4 class="mt-5 torange">Mensagem </h4>
+        <h4 class="mt-5 purple">Mensagem </h4>
         <textarea class="form-control mb-2" name="msg" placeholder="Digite uma mensagem"></textarea>
         <br /><br />
         <input class="btn btn-primary form-control" id="button" type="submit" name="submit" value="Enviar">
-      </form>
-
-      <!--- Função para evitar o reenvio da msg ao atualizar a pagina -->
-      <script>
-        if (window.history.replaceState) {
-          window.history.replaceState(null, null, window.location.href);
-        }
-      </script>
+      </form>    
     </div>
     <!------------------------------- Rodape -->
-  <?php include('rodape.html') ?>
+  <?php include('./includes/rodape.html') ?>
   </main>
   
 </body>

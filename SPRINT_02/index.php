@@ -80,7 +80,7 @@
 
   <header>
     <!---------------------- MENU --->
-    <?php include('menu.html') ?>
+    <?php include('./includes/menu.html') ?>
 
   </header>
 
@@ -90,7 +90,7 @@
       <div class="container">
         <div class="row justify-content-center align-items-center">
           <div class="col">
-            <h1 class="slogan lead"> <span class="m-auto"> DENUNCIE </span><br> A FALTA DE MEDICAMENTOS!</h1>
+            <h1 class="slogan lead"> <span class="m-auto"> NOTIFIQUE </span><br> A FALTA DE MEDICAMENTOS!</h1>
           </div>
           <div class="col imgnone"><img class="rounded float-right" width="" src="./img/med.png" alt=""></div>
         </div>
@@ -105,10 +105,10 @@
             <div class="card mb-4 shadow-sm">
               <img class="bd-placeholder-img card-img-top img-responsive mx-auto mt-3" src="./img/sirene.png" alt="Logo">
               <div class="card-body">
-                <p class="card-text text-justify p-1">Acesse a ultimas denúncias. O acesso à informação junto com o direito à saúde, são uns dos direitos fundamentais.</p>
+                <p class="card-text text-justify p-1">Acesse a ultimas notificações. O acesso à informação junto com o direito à saúde, são uns dos direitos fundamentais.</p>
                 <div class="d-flex justify-content-center align-items-center">
                   <div class="btn-group shadow">
-                    <a type="button" href="lista_denuncias.php" class="btn btn-md text-white">Ver denúncias</a>
+                    <a type="button" href="notification.php" class="btn btn-md text-white">Ver Notificações</a>
                   </div>
                 </div>
               </div>
@@ -119,10 +119,10 @@
             <div class="card mb-4 shadow-sm">
               <img class="bd-placeholder-img card-img-top img-responsive mx-auto mt-3" src="./img/megafone.png" alt="Logo">
               <div class="card-body">
-                <p class="card-text text-justify p-1">Faça uma reclamação da falta de algum dos medicamento que deveria ser fornecido pelo Sistema Único de Saúde.</p>
+                <p class="card-text text-justify p-1">Faça uma notificação da falta de algum dos medicamento que deveria ser fornecido pelo Sistema Único de Saúde.</p>
                 <div class="d-flex justify-content-center align-items-center">
                   <div class="btn-group shadow">
-                    <a type="button" href="cadastrar_denuncias.php" class="btn btn-md text-white">Denunciar</a>
+                    <a type="button" href="register_notification.php" class="btn btn-md text-white">Notifique</a>
                   </div>
                 </div>
               </div>
@@ -136,7 +136,7 @@
                 <p class="card-text text-justify p-1">Projeto desenvolvido no ano de 2020 pelos alunos e alunas do Squad 07 (SP1) da Recode Pro 2020.</p>
                 <div class="d-flex justify-content-center align-items-center">
                   <div class="btn-group shadow">
-                    <a type="button" href="fale_conosco_sobre.php" class="btn btn-md text-white">Fale conosco</a>
+                    <a type="button" href="contact.php" class="btn btn-md text-white">Fale conosco</a>
                   </div>
                 </div>
               </div>
@@ -149,7 +149,7 @@
   </main>
 
  
-  <?php include('rodape.html') ?>
+  <?php include('./includes/rodape.html') ?>
 
 </body>
 
