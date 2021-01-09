@@ -1,0 +1,12 @@
+import React from "react";
+
+export default function rodape() {
+  return (
+    <footer class="footer mt-auto py-3 text-center">
+      <div class="container">
+        <b class="text-muted">&copy; Squad 007 Recode Pro 2020</b>
+      </div>
+    </footer>
+  );
+}
+c;

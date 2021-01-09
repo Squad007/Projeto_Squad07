@@ -1,6 +1,3 @@
-# 🚧 SOS medicamentos em construção
+## :ballot_box_with_check: Entrega 1 - SPRINT 1
 
-
-💡 Projeto em construção.
-
-
+<br>
