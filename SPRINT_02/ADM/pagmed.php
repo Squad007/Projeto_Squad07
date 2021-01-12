@@ -3,7 +3,7 @@
 
 <head>
   <?php 
-    require_once('connectdb.html');
+    require_once('connectdb.php');
 
     /*Aqui Faz a Paginação pega do banco de dados*/
 

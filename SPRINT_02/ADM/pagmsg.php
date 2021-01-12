@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <?php require_once('connectdb.html') ?>
+  <?php require_once('connectdb.php') ?>
   <?php require_once('bootstrap.html') ?>
   <title>ADM SOS - Mensagens</title>
 </head>
