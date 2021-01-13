@@ -88,9 +88,9 @@ background: linear-gradient(180deg, rgba(18,18,20,1) 0%, rgba(44,35,69,1) 100%);
               <td class="align-middle text-right">
                 <div class="btn-group">
 
-                  <!-- <button class="btn btn-outline-success font-weight-bold" onclick="showInfo()">VER</button>
+                 
                   <button class="btn btn-outline-success font-weight-bold" onclick="showInfo()">EDITAR</button>
-                  <button class="btn btn-outline-success font-weight-bold" onclick="showInfo()">APAGAR</button> -->
+                  <button class="btn btn-outline-success font-weight-bold" onclick="showInfo()">APAGAR</button>
                 </div>
               </td>
             </tr>

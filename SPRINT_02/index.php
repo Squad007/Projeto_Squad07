@@ -94,7 +94,7 @@
                  Faltou medicamento na Unidade básica de saude (UBS)?
                 </h1>
                 <h1>
-                <a href="/register_notification.php" style="font-family: Bebas Neue; font-size: 40px; color:#6f42c1;">
+                <a href="./register_notification.php" style="font-family: Bebas Neue; font-size: 40px; color:#6f42c1;">
                   Notifique a falta
                 <i class="far fa-hand-pointer"></i>
                 </a> 

@@ -104,9 +104,9 @@ background: linear-gradient(180deg, rgba(18,18,20,1) 0%, rgba(44,35,69,1) 100%);
               <td class="align-middle text-right">
                 <div class="btn-group">
 
-                  <!-- <button class="btn btn-outline-warning  font-weight-bold" onclick="showInfo('<?php echo $rows["id"]; ?>','<?php echo $rows["nomeUbs"]; ?>')"> VER </button>
+                 
                   <button class="btn btn-outline-warning  font-weight-bold" onclick="showInfo('<?php echo $rows["id"]; ?>','<?php echo $rows["nomeUbs"]; ?>')"> EDITAR </button>
-                  <button class="btn btn-outline-warning  font-weight-bold" onclick="showInfo('<?php echo $rows["id"]; ?>','<?php echo $rows["nomeUbs"]; ?>')"> APAGAR </button> -->
+                  <button class="btn btn-outline-warning  font-weight-bold" onclick="showInfo('<?php echo $rows["id"]; ?>','<?php echo $rows["nomeUbs"]; ?>')"> APAGAR </button>
                 </div>
               </td>
             </tr>
