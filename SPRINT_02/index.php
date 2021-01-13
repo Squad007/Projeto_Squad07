@@ -93,6 +93,7 @@
                 <h1 class="slogan">
                   <span class="m-auto" style="font-family: Bebas Neue; font-size: 40px; color:#00b9b3;"> Faltou medicamento na Unidade básica de saude (UBS)?
                 </h1>
+                <button class="btn btn-primary home-btn" type="button">notifique aqui a falta</button>
               </div>
               <div class="col"><img class="rounded float-right" width="250rem" src="./img/pill.svg" alt=""></div>
             </div>
