@@ -89,13 +89,22 @@
         <div class="jumbotron jumbotron-fluid text-sm-center" style="background: rgba(253, 253, 253, 0);">
           <div class="container">
             <div class="row justify-content-center align-items-center">
-              <div class="col">
+              <div class="col" style="font-family: Bebas Neue; font-size: 40px; color:#00b9b3;">
                 <h1 class="slogan">
-                  <span class="m-auto" style="font-family: Bebas Neue; font-size: 40px; color:#00b9b3;"> Faltou medicamento na Unidade básica de saude (UBS)?
+                 Faltou medicamento na Unidade básica de saude (UBS)?
                 </h1>
-                <button class="btn btn-primary home-btn" type="button">notifique aqui a falta</button>
+                <h1>
+                <a href="/register_notification.php" style="font-family: Bebas Neue; font-size: 40px; color:#6f42c1;">
+                  Notifique a falta
+                <i class="far fa-hand-pointer"></i>
+                </a> 
+                </h1>
+
               </div>
-              <div class="col"><img class="rounded float-right" width="250rem" src="./img/pill.svg" alt=""></div>
+              <div class="col">
+                <img class="float-center" width="250rem" src="./img/pill.svg" alt="medicamento">
+
+              </div>
             </div>
           </div>
         </div>
@@ -169,7 +178,7 @@
   <style>
         /* nome das classes => home_ClassNameBootstrap */
 
-        .home_card{
+    .home_card{
         background: #00b9b3;
         border-radius: 15px;
         border-style: none;
@@ -198,7 +207,7 @@
           <div class="col-md-4">
             <div class="card mb-4 home_card">
               <div class="card-body"
-                  <h4 class="card-title" style="color: #ffffff;font-family: Bebas Neue;font-size: 30px;line-height: 30px;">Acesse as ultimas NOTIFICAções. </h4>
+                  <h4 class="card-title" style="color: #ffffff;font-family: Bebas Neue;font-size: 30px;">Acesse as ultimas NOTIFICAções. </h4>
                  
                   <p class="card-text" 
                   style="color: #ffffff; font-family: Bebas Neue;font-size: 25px; margin-top: 10px;">
@@ -214,7 +223,7 @@
           <div class="col-md-4">
             <div class="card mb-4 home_card">
               <div class="card-body"
-                  <h4 class="card-title" style="color: #ffffff;font-family: Bebas Neue;font-size: 30px;line-height: 30px;">Registre sua Notificação</h4>
+                  <h4 class="card-title" style="color: #ffffff;font-family: Bebas Neue;font-size: 30px;">Registre sua Notificação</h4>
                  
                   <p class="card-text" 
                   style="color:#ffffff; font-family: Bebas Neue;font-size: 25px; margin-top: 10px;">
@@ -230,7 +239,7 @@
           <div class="col-md-4">
             <div class="card mb-4 home_card">
               <div class="card-body"
-                  <h4 class="card-title" style="color: #ffffff;font-family: Bebas Neue;font-size: 30px;line-height: 30px;">Últimos 30 dias</h4>
+                  <h4 class="card-title" style="color: #ffffff;font-family: Bebas Neue;font-size: 30px;">Últimos 30 dias</h4>
                  
                   <p class="card-text" 
                   style="color: #ffffff; font-family: Bebas Neue;font-size: 25px; margin-top: 10px;">
