@@ -4,7 +4,7 @@
 <head>
   <?php require_once('connectdb.php') ?>
   <?php require_once('bootstrap.html') ?>
-  <title>ADM SOS - Denúncias</title>
+  <title>ADM SOS - Notificações</title>
 </head>
 
 <body style="background: rgb(18,18,20);
@@ -14,9 +14,9 @@ background: linear-gradient(180deg, rgba(18,18,20,1) 0%, rgba(44,35,69,1) 100%);
 
   <div class="jumbotron card card-image text-white" style="background-color: rgba(0,0,0,0);">
     <p class="text-center">Bem vindo ao sistema SOS, <b><?php echo $_SESSION['nome'] ?></b>! - (<?php echo $_SESSION['email'] ?>)</p>
-    <h1 class="display-4 text-danger  font-weight-bold">Denúncias</h1>
+    <h1 class="display-4 text-danger  font-weight-bold">Notificações</h1>
     <hr class="my-4 bg-white">
-    <p class="lead font-weight-bold">Denúncias presentes no sistema:</p>
+    <p class="lead font-weight-bold">Notificações presentes no sistema:</p>
 
     <table class="table table-striped table-hover table-dark bg-dark text-center">
       <thead>
@@ -80,11 +80,11 @@ background: linear-gradient(180deg, rgba(18,18,20,1) 0%, rgba(44,35,69,1) 100%);
               <td class="align-middle text-right">
                 <div class="btn-group">
                   
-                  <button class="btn btn-outline-danger font-weight-bold" onclick="showInfo()">EDITAR</button>
+                  
                   <form method="post">
                     <input type="hidden" name="id" value=<?= $rows["id"] ?>>
 
-                    <button type="submit" class="btn btn-outline-warning  font-weight-bold">
+                    <button type="submit" class="btn btn-outline-danger  font-weight-bold">
                       <input type="hidden" name="excluir">
                       APAGAR </button>
                   </form>
@@ -146,7 +146,7 @@ if (isset($_POST['excluir'])) {
 
   echo "<script>
   alert('Notificação Excluida! Agradeca os bolsominions que votaram nele!')
-  window.location.href = 'pagden.php'
+  window.location.href = 'pagnot.php'
   </script>
   ";
 } ?>
