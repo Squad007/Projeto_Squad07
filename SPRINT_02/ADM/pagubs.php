@@ -108,7 +108,7 @@ background: linear-gradient(180deg, rgba(18,18,20,1) 0%, rgba(44,35,69,1) 100%);
               <td class="align-middle text-right">
                 <div class="btn-group">
 
-                  <button type="button" class="btn btn-outline-warning  font-weight-bold" data-toggle="modal" data-target="#atualizarUBSModal<?= $rows["id"] ?>">
+                  <button type="button" class="btn btn-outline-info  font-weight-bold" data-toggle="modal" data-target="#atualizarUBSModal<?= $rows["id"] ?>">
                     EDITAR
                   </button>
 
@@ -234,7 +234,7 @@ background: linear-gradient(180deg, rgba(18,18,20,1) 0%, rgba(44,35,69,1) 100%);
                   <form method="post">
                     <input type="hidden" name="id" value=<?= $rows["id"] ?>>
 
-                    <button type="submit" class="btn btn-outline-warning  font-weight-bold">
+                    <button type="submit" class="btn btn-outline-danger  font-weight-bold">
                       <input type="hidden" name="excluir">
                       APAGAR </button>
                   </form>

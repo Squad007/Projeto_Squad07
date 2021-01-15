@@ -89,7 +89,7 @@ background: linear-gradient(180deg, rgba(18,18,20,1) 0%, rgba(44,35,69,1) 100%);
                 <div class="btn-group">
 
                  <!-- Modal Atualizar medicamentos -->
-                  <button class="btn btn-outline-success font-weight-bold" data-toggle="modal" data-target="#atualizarMEDModal<?= $rows["id"] ?>">EDITAR</button>
+                  <button class="btn btn-outline-info font-weight-bold" data-toggle="modal" data-target="#atualizarMEDModal<?= $rows["id"] ?>">EDITAR</button>
                   <div class="modal fade text-dark" id="atualizarMEDModal<?= $rows["id"] ?>" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                 
                     <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
@@ -150,7 +150,7 @@ background: linear-gradient(180deg, rgba(18,18,20,1) 0%, rgba(44,35,69,1) 100%);
                   <form method="post">
                     <input type="hidden" name="id" value=<?= $rows["id"] ?>>
 
-                    <button type="submit" class="btn btn-outline-warning  font-weight-bold">
+                    <button type="submit" class="btn btn-outline-danger  font-weight-bold">
                       <input type="hidden" name="excluir">
                       APAGAR </button>
                   </form>
