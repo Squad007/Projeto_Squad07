@@ -81,6 +81,13 @@ background: linear-gradient(180deg, rgba(18,18,20,1) 0%, rgba(44,35,69,1) 100%);
                 <div class="btn-group">
                   
                   <button class="btn btn-outline-danger font-weight-bold" onclick="showInfo()">EDITAR</button>
+                  <form method="post">
+                    <input type="hidden" name="id" value=<?= $rows["id"] ?>>
+
+                    <button type="submit" class="btn btn-outline-warning  font-weight-bold">
+                      <input type="hidden" name="excluir">
+                      APAGAR </button>
+                  </form>
                 </div>
               </td>
             </tr>
@@ -130,3 +137,16 @@ background: linear-gradient(180deg, rgba(18,18,20,1) 0%, rgba(44,35,69,1) 100%);
 </body>
 
 </html>
+
+<?php
+if (isset($_POST['excluir'])) {
+  $id1 = $_POST['id'];
+  $sql2     = "delete from denuncia where id='$id1'";
+  $qry2     = mysqli_query($conn, $sql2);
+
+  echo "<script>
+  alert('Notificação Excluida! Agradeca os bolsominions que votaram nele!')
+  window.location.href = 'pagden.php'
+  </script>
+  ";
+} ?>
