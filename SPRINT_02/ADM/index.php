@@ -13,7 +13,7 @@ background: linear-gradient(90deg, rgba(18,18,20,1) 0%, rgba(18,18,20,1) 50%, rg
 
 
     <section class="col d-flex justify-content-center align-items-center" style="width: 50vh; height: 100vh;">
-      <div style="background-image: url(./img/sos_med.svg); width: 60%; height: 80vh; background-position: center; background-size:contain; background-repeat:no-repeat"></div>
+      <div style="background-image: url(./img/logo.svg); width: 60%; height: 80vh; background-position: center; background-size:contain; background-repeat:no-repeat"></div>
     </section>
 
     <section class="col d-flex justify-content-center align-items-stretch" style="width: 50vh; height: 100vh;">
