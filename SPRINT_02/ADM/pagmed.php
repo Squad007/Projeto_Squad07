@@ -88,9 +88,73 @@ background: linear-gradient(180deg, rgba(18,18,20,1) 0%, rgba(44,35,69,1) 100%);
               <td class="align-middle text-right">
                 <div class="btn-group">
 
-                 
-                  <button class="btn btn-outline-success font-weight-bold" onclick="showInfo()">EDITAR</button>
-                  <button class="btn btn-outline-success font-weight-bold" onclick="showInfo()">APAGAR</button>
+                 <!-- Modal Atualizar medicamentos -->
+                  <button class="btn btn-outline-success font-weight-bold" data-toggle="modal" data-target="#atualizarMEDModal<?= $rows["id"] ?>">EDITAR</button>
+                  <div class="modal fade text-dark" id="atualizarMEDModal<?= $rows["id"] ?>" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                
+                    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+                      <div class="modal-content">
+
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="staticBackdropLabel">ATUALIZAR MEDICAMENTO</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+
+                        <div class="modal-body">
+
+                          <form id="atualizarMED<?= $rows["id"] ?>" class="container-fluid" action="atualizar_med.php" method="post">
+                            <div class="row">
+                              <div class=" col-sm-5 form-group">
+                                <label class="col-form-label">CADASTRADO POR:</label>
+                                <select class="custom-select mr-sm-2 border border-primary" name="cadastrado_por_id">
+                                  <option selected value="<?php echo $_SESSION['username'] ?>"><?php echo $_SESSION['username'] ?></option>
+                                </select>
+                              </div>
+                            </div>
+
+                            <div class="form-group">
+                              <label class="col-form-label">ID:</label>
+                              <input type="text" name="id" class="form-control border border-primary" value="<?= $rows["id"]; ?>" />
+                         
+                            </div>
+                            
+
+                            <div class="form-group">
+                              <label class="col-form-label">DESCRIÇÃO COMPLETA:</label>
+                              <textarea class="form-control border border-primary" name="nome" ><?= $rows["nome"]; ?></textarea>
+                            </div>
+
+                            <div class="form-group">
+                              <label class="col-form-label">Observações extras sobre o medicamento a ser cadastrado:</label>
+                              <textarea class="form-control border border-primary" name="observacao"><?= $rows["observacao"]; ?></textarea>
+                            </div>
+
+                          </form>
+
+                        </div>
+
+                        <div class="modal-footer d-flex justify-content-between align-items-center">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">SAIR</button>
+
+                          <div class="d-flex">
+                            <input type="reset" class="btn btn-outline-warning mx-2" form="cadastrarMED" value="LIMPAR">
+                            <input type="submit" class="btn btn-primary mx-2" form="atualizarMED<?= $rows["id"] ?>" value="ATUALIZAR">
+                           
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <form method="post">
+                    <input type="hidden" name="id" value=<?= $rows["id"] ?>>
+
+                    <button type="submit" class="btn btn-outline-warning  font-weight-bold">
+                      <input type="hidden" name="excluir">
+                      APAGAR </button>
+                  </form>
+                  
                 </div>
               </td>
             </tr>
@@ -214,3 +278,16 @@ background: linear-gradient(180deg, rgba(18,18,20,1) 0%, rgba(44,35,69,1) 100%);
 </body>
 
 </html>
+
+<?php
+if (isset($_POST['excluir'])) {
+  $id1 = $_POST['id'];
+  $sql2     = "delete from medicamento where id='$id1'";
+  $qry2     = mysqli_query($conn, $sql2);
+
+  echo "<script>
+  alert('UBS Excluida! Agradeca os bolsominions que votaram nele!')
+  window.location.href = 'pagmed.php'
+  </script>
+  ";
+} ?>
