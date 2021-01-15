@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -10,12 +11,22 @@
 
 <body>
   <?php include('./includes/menu.html') ?>
-  <div >
-    <h2 class="text-white">Selecione o mês</h2>
-    <div class="container bg-white w-50">
-        RELATORIOS
+  <main style="height: 37vw;">
+
+    <div class="container my-3 p-3 bg-light rounded shadow-lg">
+    <h1 class="my-4">Relatórios</h1>
+
+
+    <form method="post" action="export.php" align="center">  
+    <input type="submit" name="export" value="Exportar em CSV" class="btn btn-success"/>  
+    </form>  
+
+   
     </div>
-  </div>
+
+    <!------- Rodape -->
+  <?php include('./includes/rodape.html') ?>
+  </main>
 </body>
 
 </html>

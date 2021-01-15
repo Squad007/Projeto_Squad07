@@ -8,78 +8,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bree+Serif&display=swap" rel="stylesheet">
   <?php include('./ADM/bootstrap.html') ?>
 
-
-  <!-- <style>
-    *{
-      /* font-family: 'Bree Serif', serif; */
-    }
-    h1,h2,h3,h4,h5,h6,span{
-      font-family: 'Bebas Neue', cursive; /*Titulo*/
-    }
-    /* main {
-      background: linear-gradient(223deg, rgb(109,5,141) 0%, rgb(91,49,147) 95%);
-    } */
-    .jumbotron {
-      color: #FFF; 
-      /* background: linear-gradient(223deg, rgb(109,5,141) 0%, rgb(91,49,147) 95%); */
-      background-color: #6d078e;
-    }
-    span {
-      background-color: #ff7f00;
-      padding: 2px;
-    }
-
-    .btn{
-      background-color: #6d078e;
-      background: linear-gradient(223deg, rgb(109,5,141) 0%, rgb(91,49,147) 95%);
-    }
-    .card-img-top{
-      width: 100px;
-      
-    }
-    .text-center .img-responsive {
-    margin: 0 auto;
-    }
-    .slogan{
-      font-size: 5rem;
-    }
-    .card-text {
-      color: #6d078e;
-    }
-
-    @media(max-width: 1024px){
-      .imgnone  {
-      display: none;
-    }
-
-    .slogan{
-      font-size: 60px;
-    }
-  
-   
-}
-@media(max-width: 600px){
-      .imgnone  {
-      display: none;
-    }
-
-    .slogan{
-      width: 100%;
-      font-size: 40px;
-      text-align: center;
-    }
-  
-   
-}
-
-  </style> -->
-
 </head>
 
 <body>
 
   <header>
-    <!---------------------- MENU --->
+    <!---- MENU --->
     <?php include('./includes/menu.html') ?>
 
   </header>
@@ -90,7 +24,7 @@
           <div class="container">
             <div class="row justify-content-center align-items-center">
               <div class="col" style="font-family: Bebas Neue; font-size: 40px; color:#00b9b3;">
-                <h1 class="slogan">
+                <h1>
                  Faltou medicamento na Unidade básica de saude (UBS)?
                 </h1>
                 <h1>

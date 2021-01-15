@@ -37,10 +37,18 @@ $proximo = $pag + 1;
   <main style="height: 39vw;">
     <div class="container my-3 mb-5 p-3 bg-light rounded shadow-lg table-responsive-sm">
       <h1 class="my-4">Notificações recentes</h1>
+      <h2>      
+        <form method="post" action="export.php" align="right" >
+          <button 
+          type="submit" name="export" class="btn btn-success"><i class="fas fa-chart-pie"></i>
+          Exportar todas as notificações (.CSV)
+          </button>
+        </form>
+      </h2>
 
       <table class="table table-striped">
         <tr>
-          <th scope="col">Data</th>
+          <th scope="col">DATA DA FALTA</th>
           <th scope="col">UBS</th>
           <th scope="col">MEDICAMENTO</th>
         </tr>
