@@ -97,7 +97,7 @@ if (isset($_POST['submit'])) {
           <input type="date" name="data_denuncia" class="form-control data mb-3">
           <label for="comentario">Observações e comentarios: </label>
           <textarea class="form-control mb-3" name="comentario" placeholder="Digite um comentario"></textarea><br>
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalconfirma">Enviar</button>
+          <button type="button" class="btn home-btn" data-toggle="modal" data-target="#modalconfirma">Enviar</button>
 
           <!-------------------------------------- Modal de confirmação para cadastrar denuncia ------------------->
           <div class="container">

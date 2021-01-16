@@ -2,11 +2,12 @@
 
   include("connection.php");
 
-if (isset($_POST['nome']) && isset($_POST['msg'])) {
+if (isset($_POST['nome']) && isset($_POST['msg']) && isset($_POST['email'])) {
   $nome = $_POST['nome'];
   $msg = $_POST['msg'];
+  $email = $_POST['email'];
 
-  $sql = "insert  into fale_conosco (nome, msg) values ('$nome','$msg')";
+  $sql = "insert  into fale_conosco (nome, msg, email) values ('$nome','$msg','$email')";
   $result = $conn->query($sql);
 }
 
@@ -38,10 +39,12 @@ if (isset($_POST['nome']) && isset($_POST['msg'])) {
       <form class="form-group" method="post" action="">
         <h4 class="mt-5 purple">Nome </h4>
         <input class="form-control mb-2" type="text" name="nome" placeholder="Digite seu Nome">
+        <h4 class="mt-5 purple">E-mail (opcional) </h4>
+        <input class="form-control mb-2" type="email" name="email" placeholder="Digite seu e-mail">
         <h4 class="mt-5 purple">Mensagem </h4>
         <textarea class="form-control mb-2" name="msg" placeholder="Digite uma mensagem"></textarea>
         <br /><br />
-        <input class="btn btn-primary form-control" id="button" type="submit" name="submit" value="Enviar">
+        <input class="btn btn-primary home-btn form-control" id="button" type="submit" name="submit" value="Enviar">
       </form>    
     </div>
     <!------------------------------- Rodape -->
