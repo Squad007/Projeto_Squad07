@@ -23,6 +23,7 @@ if (isset($_POST['submit'])) {
 } else {
   //echo "não entrou";
 }
+
 ?>
 
 
@@ -53,7 +54,7 @@ if (isset($_POST['submit'])) {
 
   <main>
     <!-------------------------------------- Formulario para cadastrar denuncia  ------------------------->
-    <div class="container my-3 p-3 bg-light rounded shadow-lg">
+    <div class="container my-3 p-3 bg-light rounded shadow-lg" id="demo-form">
       <form class="container" method="POST" action="register_notification.php">
         <div class="form-group">
           <h1 class="my-4">Cadastrar Notificação</h1>
@@ -97,7 +98,9 @@ if (isset($_POST['submit'])) {
           <input type="date" name="data_denuncia" class="form-control data mb-3">
           <label for="comentario">Observações e comentarios: </label>
           <textarea class="form-control mb-3" name="comentario" placeholder="Digite um comentario"></textarea><br>
-          <button type="button" class="btn home-btn" data-toggle="modal" data-target="#modalconfirma">Enviar</button>
+          <button type="button" class="btn home-btn"
+          data-toggle="modal"  
+          data-target="#modalconfirma">Enviar</button>
 
           <!-------------------------------------- Modal de confirmação para cadastrar denuncia ------------------->
           <div class="container">
@@ -111,7 +114,7 @@ if (isset($_POST['submit'])) {
                     </button>
 
                   </div>
-                  <div class="modal-body">
+                  <div class="modal-body" >
                     <p>Confirmar o envio da notificação?</p>
                   </div>
                   <div class="modal-footer">

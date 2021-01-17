@@ -23,8 +23,37 @@
 
         <div class="jumbotron jumbotron-fluid text-sm-center" style="background: rgba(253, 253, 253, 0);">
           <div class="container">
+            <div class="row">
+              <div class="col" style="font-family:; color:#00b9b3; text-align: left;">
+                <h1 style="line-height: 1.2; font-size: 50px;">
+                 Faltou medicamento na Unidade básica de saude (UBS)?
+                </h1>
+                <p>
+                  <a class="btn btn-primary" href="./register_notification.php"
+                  type="button" style="background: #6f42c1; font-family: Bebas Neue;font-size: 25px; border: none;">
+                  Notifique a falta <i class="fas fa-exclamation-circle"></i>
+                  </a>
+                </p>
+
+              </div>
+              <div class="col">
+                <img class="float-right" height="100%" src="./img/pill.svg" alt="medicamento">
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="jumbotron jumbotron-fluid text-sm-center" style="background: rgba(253, 253, 253, 0);">
+          <div class="container">
             <div class="row justify-content-center align-items-center">
-              <div class="col" style="font-family: Bebas Neue; font-size: 40px; color:#00b9b3;">
+
+            <div class="col">
+                <img class="float-center" width="250rem" src="./img/mapa_purple.svg" alt="medicamento">
+
+            </div>
+              
+            <div class="col" style="font-family: Bebas Neue; font-size: 40px; color:#00b9b3;">
                 <h1>
                  Faltou medicamento na Unidade básica de saude (UBS)?
                 </h1>
@@ -36,13 +65,9 @@
                 </h1>
 
               </div>
-              <div class="col">
-                <img class="float-center" width="250rem" src="./img/pill.svg" alt="medicamento">
-
-              </div>
             </div>
           </div>
-        </div>
+        </div> -->
 
   <!-- <style>
 
