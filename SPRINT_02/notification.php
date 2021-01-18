@@ -59,7 +59,7 @@ $proximo = $pag + 1;
             while ($rows = $registrosPaginados->fetch_assoc()) {
 
           ?>
-              <td><?php echo date('d/m/Y', strtotime($rows['data_denuncia'])); ?></td>
+              <td><?php echo date('d/m/Y', strtotime($rows['data_ocorrencia'])); ?></td>
               <td><?php echo $rows['nomeUbs']; ?></td>
               <td><?php echo $rows['nome']; ?></td>
         </tr>

@@ -7,9 +7,9 @@ if (isset($_POST['submit'])) {
   $ubs_id = $_POST['ubs_id'];
   $medicamento_id = $_POST['medicamento_id'];
   $comentario = $_POST['comentario'];
-  $data_denuncia = $_POST['data_denuncia'];
+  $data_ocorrencia = $_POST['data_ocorrencia'];
 
-  $query_insert = "INSERT INTO denuncia(id,ubs_id, medicamento_id, comentario, data_denuncia) VALUES (null,'$ubs_id', '$medicamento_id', '$comentario', '$data_denuncia')";
+  $query_insert = "INSERT INTO denuncia(id,ubs_id, medicamento_id, comentario, data_ocorrencia) VALUES (null,'$ubs_id', '$medicamento_id', '$comentario', '$data_ocorrencia')";
   if ($conn->query($query_insert) === TRUE) {
     echo '<div class="alert alert-success" role="alert">
                 Notificação Realizada!
@@ -94,8 +94,8 @@ if (isset($_POST['submit'])) {
               }
             } ?>
           </select>
-          <label for="data_denuncia">Data de quando faltou o remedio: </label>
-          <input type="date" name="data_denuncia" class="form-control data mb-3">
+          <label for="data_ocorrencia">Data de quando faltou o remedio: </label>
+          <input type="date" name="data_ocorrencia" class="form-control data mb-3">
           <label for="comentario">Observações e comentarios: </label>
           <textarea class="form-control mb-3" name="comentario" placeholder="Digite um comentario"></textarea><br>
           <button type="button" class="btn home-btn"
