@@ -45,7 +45,7 @@ background: linear-gradient(180deg, rgba(18,18,20,1) 0%, rgba(44,35,69,1) 100%);
     <hr class="my-4 bg-white">
     <p class="lead font-weight-bold">Atualmente cadastrados:</p>
     <div class="table-responsive">
-    <table class="table table-striped table-hover table-dark bg-dark text-center table-responsive">
+    <table class="table table-striped table-hover table-dark bg-dark text-center">
       <thead>
         <tr>
           <th scope="col" class=" text-left">ID</th>
