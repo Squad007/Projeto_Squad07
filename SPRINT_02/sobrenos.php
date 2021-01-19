@@ -38,11 +38,11 @@
                     <div class="box"><img class="rounded-circle" src="./img/cris.jpg" style="width: 100px;">
                         <h3>Cristiano Santana</h3>
                         <div style="font-size: 18px;">
-                            <a href="#" class="text-dark"><i class="fab fa-github"></i></a>
-                            <a href="#" class="text-dark"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://github.com/CristianoSantan" class="text-dark"><i class="fab fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/cristiano-souza-santana-b3011a119/" class="text-dark"><i class="fab fa-linkedin"></i></a>
                         </div>
                         <p class="description">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fringilla nisl sed quam interdum fermentum.
+                        Desenvolvedor Full Stack apoixonado por tecnologia Estudante Full Stack Dev | Eng. Mecânico | Téc. Mecatrônico.
                         </p>
                     </div>
                 </div>
@@ -50,11 +50,11 @@
                     <div class="box"><img class="rounded-circle" src="./img/eliana.jpg" style="width: 100px;">
                         <h3>Eliana Souza</h3>
                         <div style="font-size: 18px;">
-                            <a href="#" class="text-dark"><i class="fab fa-github"></i></a>
-                            <a href="#" class="text-dark"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://github.com/Elianars" class="text-dark"><i class="fab fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/eliana-souzarr/" class="text-dark"><i class="fab fa-linkedin"></i></a>
                         </div>
                         <p class="description">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fringilla nisl sed quam interdum fermentum.
+                        Formada em Tecnologia em Gestão da Qualidade. Empreendedora, Gosto de ler sobre vários assuntos.
                         </p>
                     </div>
                 </div>
@@ -62,11 +62,12 @@
                     <div class="box"><img class="rounded-circle" src="./img/mit.jpg" style="width: 100px;">
                         <h3>Mitsuhiko Takushi</h3>
                         <div style="font-size: 18px;">
-                            <a href="#" class="text-dark"><i class="fab fa-github"></i></a>
-                            <a href="#" class="text-dark"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://github.com/matsuboshi" class="text-dark"><i class="fab fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/mitsuhiko/" class="text-dark"><i class="fab fa-linkedin"></i></a>
                         </div>
                         <p class="description">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fringilla nisl sed quam interdum fermentum.
+                        Atualmente desenvolvendo habilidades para uma carreira em Engenharia de Software. Full Stack Web na Recode Pro.
+
                         </p>
                     </div>
                 </div>
@@ -74,11 +75,11 @@
                     <div class="box"><img class="rounded-circle" src="./img/nay.jpg" style="width: 100px;">
                         <h3>Nayara Suelen</h3>
                         <div style="font-size: 18px;">
-                            <a href="#" class="text-dark"><i class="fab fa-github"></i></a>
-                            <a href="#" class="text-dark"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://github.com/NayDev" class="text-dark"><i class="fab fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/nayara-suelen-382420137/" class="text-dark"><i class="fab fa-linkedin"></i></a>
                         </div>
                         <p class="description">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fringilla nisl sed quam interdum fermentum.
+                        Uma estudante de 26 anos e apaixonada por tecnologia. Adoro aprender e contribuir de todas as formas possíveis. 
                         </p>
                     </div>
                 </div>
@@ -86,28 +87,27 @@
                     <div class="box"><img class="rounded-circle" src="./img/raquel.jpg" style="width: 100px;">
                         <h3>Raquel Mendonça</h3>
                         <div style="font-size: 18px;">
-                            <a href="#" class="text-dark"><i class="fab fa-github"></i></a>
-                            <a href="#" class="text-dark"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://github.com/raquelmendoncah" class="text-dark"><i class="fab fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/raquel-mendon%C3%A7a-944254108/" class="text-dark"><i class="fab fa-linkedin"></i></a>
                         </div>
                         <p class="description">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fringilla nisl sed quam interdum fermentum.
-                        </p>
+                        Conhecimento e habilidades para execução da estratégia comercial; Compromisso com as metas estabelecidas</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 item">
                     <div class="box"><img class="rounded-circle" src="./img/roger.jpg" style="width: 100px;">
                         <h3>Willi Roger</h3>
                         <div style="font-size: 18px;">
-                            <a href="#" class="text-dark"><i class="fab fa-github"></i></a>
-                            <a href="#" class="text-dark"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://github.com/williroger" class="text-dark"><i class="fab fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/williroger/" class="text-dark"><i class="fab fa-linkedin"></i></a>
                         </div>
                         <p class="description">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fringilla nisl sed quam interdum fermentum.
+                        Full stack developer, Philosophy Student in University of São Paulo Science, Technology, Society, Law and Philosophy
                         </p>
                     </div>
                 </div>
             </div>
-            </section>
+            
            
         </main>
     
