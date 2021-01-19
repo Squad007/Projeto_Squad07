@@ -12,7 +12,7 @@
     $busca = "SELECT med.*,  count(den.medicamento_id) qtde FROM  medicamento med LEFT JOIN denuncia den ON med.id = den.medicamento_id GROUP BY med.id ORDER BY qtde DESC";
     $todos = mysqli_query($conn, "$busca");
     
-    $registros = 20;
+    $registros = 30;
     
     $tr = mysqli_num_rows($todos);
     $tp = ceil($tr / $registros);
@@ -44,7 +44,7 @@ background: linear-gradient(180deg, rgba(18,18,20,1) 0%, rgba(44,35,69,1) 100%);
 
     <hr class="my-4 bg-white">
     <p class="lead font-weight-bold">Atualmente cadastrados:</p>
-
+    <div class="table-responsive">
     <table class="table table-striped table-hover table-dark bg-dark text-center table-responsive">
       <thead>
         <tr>
@@ -168,7 +168,7 @@ background: linear-gradient(180deg, rgba(18,18,20,1) 0%, rgba(44,35,69,1) 100%);
 
       </tbody>
     </table>
-
+    </div>
 
     <nav class="d-flex justify-content-center" aria-label="Page navigation">
         <ul class="pagination">
@@ -274,7 +274,7 @@ background: linear-gradient(180deg, rgba(18,18,20,1) 0%, rgba(44,35,69,1) 100%);
     }
   </script>
 
-
+<?php include("footer.html")?>
 </body>
 
 </html>

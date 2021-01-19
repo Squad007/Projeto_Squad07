@@ -17,8 +17,8 @@ background: linear-gradient(180deg, rgba(18,18,20,1) 0%, rgba(44,35,69,1) 100%);
     <h1 class="display-4 text-danger  font-weight-bold">Notificações</h1>
     <hr class="my-4 bg-white">
     <p class="lead font-weight-bold">Notificações presentes no sistema:</p>
-
-    <table class="table table-striped table-hover table-dark bg-dark text-center  table-responsive">
+    <div class="table-responsive">
+    <table class="table table-striped table-hover table-dark bg-dark text-center">
       <thead>
         <tr>
           <th scope="col" class=" text-left">ID</th>
@@ -101,7 +101,7 @@ background: linear-gradient(180deg, rgba(18,18,20,1) 0%, rgba(44,35,69,1) 100%);
 
       </tbody>
     </table>
-
+      </div>
 
     <div class="btn-group pagination justify-content-center">
       <a class="btn btn-outline-light disabled" href="#">ANTERIOR</a>
@@ -133,7 +133,7 @@ background: linear-gradient(180deg, rgba(18,18,20,1) 0%, rgba(44,35,69,1) 100%);
     }
   </script>
 
-
+<?php include("footer.html")?>
 </body>
 
 </html>

@@ -100,7 +100,7 @@ background: linear-gradient(180deg, rgba(18,18,20,1) 0%, rgba(44,35,69,1) 100%);
 
 
   <div id="displayInfo" class="fixed-top container"></div>
-
+  <?php include("footer.html")?>
 
 </body>
 

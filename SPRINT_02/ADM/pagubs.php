@@ -23,14 +23,14 @@ background: linear-gradient(180deg, rgba(18,18,20,1) 0%, rgba(44,35,69,1) 100%);
 
     <hr class="my-4 bg-white">
     <p class="lead font-weight-bold">Atualmente cadastradas:</p>
-
-    <table class="table table-striped table-hover table-dark bg-dark text-center table-responsive">
-      <thead>
+    <div class="table-responsive">
+    <table class="table table-striped table-hover table-dark bg-dark text-center ">
+      <thead >
         <tr>
-          <th scope="col" class="text-left" onclick="ordenarID()">ID</th>
-          <th scope="col" class="text-left">NOME</th>
-          <th scope="col" class="text-left">DISTRITO / ZONA</th>
-          <th scope="col" class="text-center" onclick="ordenarQtde()">N°_DENÚNCIAS</th>
+          <th scope="col" onclick="ordenarID()">ID</th>
+          <th scope="col" >NOME</th>
+          <th scope="col" >DISTRITO / ZONA</th>
+          <th scope="col"onclick="ordenarQtde()">N°_DENÚNCIAS</th>
         </tr>
       </thead>
       <tbody>
@@ -252,6 +252,7 @@ background: linear-gradient(180deg, rgba(18,18,20,1) 0%, rgba(44,35,69,1) 100%);
 
       </tbody>
     </table>
+    </div>
 
     <!-- Barra de paginacao -->
     <!-- <div class="btn-group pagination justify-content-center">
@@ -406,7 +407,7 @@ background: linear-gradient(180deg, rgba(18,18,20,1) 0%, rgba(44,35,69,1) 100%);
       `
     }
   </script>
-
+<?php include("footer.html")?>
 </body>
 
 </html>
