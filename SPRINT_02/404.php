@@ -16,9 +16,9 @@
         <!--------------------- MENU ---------------------------->
         <?php include('./includes/menu.html') ?>
 
-        <main style="min-height: 67vh">
-            <div class="container mb-auto p-5 rounded table-responsive-sm align-items-center justify-content-center animate__animated animate__flash" style="height: 50vh;">
-                    <img src="./img/404.svg" alt="erro 404" width="75%">
+        <main class="container" style="min-height: 67vh;">
+            <div class="mt-5 rounded  animate__animated animate__flash" >
+                    <img class="rounded mx-auto d-block" src="./img/404.svg" alt="erro 404">
             </div>  
         </main>
     
