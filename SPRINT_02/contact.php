@@ -31,7 +31,7 @@ if (isset($_POST['nome']) && isset($_POST['msg']) && isset($_POST['email'])) {
   <!--------------------- MENU ---------------------------->
   <?php include('./includes/menu.html') ?>
 
-  <main style="height: 37vw;">
+  <main style="min-height: 67vh">
 
     <div class="container my-3 p-3 bg-light rounded shadow-lg">
     <h1 class="my-4">Enviar Mensagem</h1>
@@ -47,9 +47,9 @@ if (isset($_POST['nome']) && isset($_POST['msg']) && isset($_POST['email'])) {
         <input class="btn btn-primary home-btn form-control" id="button" type="submit" name="submit" value="Enviar">
       </form>    
     </div>
-    <!------------------------------- Rodape -->
-  <?php include('./includes/rodape.html') ?>
   </main>
+      <!------------------------------- Rodape -->
+      <?php include('./includes/rodape.html') ?>
   
 </body>
 

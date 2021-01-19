@@ -34,7 +34,7 @@ $proximo = $pag + 1;
 <body>
   <?php include('./includes/menu.html') ?>
   
-  <main style="height: 39vw;">
+  <main style="min-height: 68vh">
     <div class="container my-3 mb-5 p-3 bg-light rounded shadow-lg table-responsive-sm">
       <h1 class="my-4">Notificações recentes</h1>
       <h2>      
@@ -97,9 +97,9 @@ $proximo = $pag + 1;
         </ul>
       </nav>
     </div>
-    <?php include('./includes/rodape.html') ?>
+ 
   </main>
-
+  <?php include('./includes/rodape.html') ?>
   
 
 </body>

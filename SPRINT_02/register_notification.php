@@ -52,7 +52,7 @@ if (isset($_POST['submit'])) {
     <?php include('./includes/menu.html') ?>
   </header>
 
-  <main>
+  <main style="min-height: 68vh">
     <!-------------------------------------- Formulario para cadastrar denuncia  ------------------------->
     <div class="container my-3 p-3 bg-light rounded shadow-lg" id="demo-form">
       <form class="container" method="POST" action="register_notification.php">
@@ -129,9 +129,10 @@ if (isset($_POST['submit'])) {
 
       </form>
     </div>
-    <!------------------------------- Rodape -->
-    <?php include('./includes/rodape.html') ?>
+
   </main>
 </body>
+    <!------------------------------- Rodape -->
+    <?php include('./includes/rodape.html') ?>
 
 </html>

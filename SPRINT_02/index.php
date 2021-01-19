@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Home - SOS Medicamentos</title>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bree+Serif&display=swap" rel="stylesheet">
-  <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
   <?php include('./ADM/bootstrap.html') ?>
 
 
@@ -37,8 +37,8 @@
                 </p>
 
               </div>
-              <div class="col">
-                <img class="float-right animate__pulse animate__delay-2s" src="./img/pill.svg" alt="medicamento" style="max-width:310px; min-width: 150px;">
+              <div class="col animate__animated animate__pulse animate__delay-1s">
+                <img class="float-right" src="./img/pill.svg" alt="medicamento" style="max-width:310px; min-width: 150px;">
 
               </div>
             </div>
