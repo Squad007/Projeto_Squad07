@@ -51,7 +51,7 @@ export default function Notification() {
           className=""
         >
           <MapContainer
-            center={[51.505, -0.09]}
+            center={[-23.4936564,-46.4492472]}
             zoom={13}
             scrollWheelZoom={false}
             style={{ width: '75vw', height: '75vh' }}
