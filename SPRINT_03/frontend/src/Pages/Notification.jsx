@@ -60,7 +60,7 @@ export default function Notification() {
               attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
-            <Marker position={[51.505, -0.09]}>
+            <Marker position={[-23.4936564,-46.4492472]}>
               <Popup>
                 A pretty CSS3 popup. <br /> Easily customizable.
               </Popup>
