@@ -3,6 +3,8 @@
 
 <head>
   <meta charset="UTF-8" />
+ 
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Home - SOS Medicamentos</title>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bree+Serif&display=swap" rel="stylesheet">
@@ -51,7 +53,7 @@
           
           <div class="col-md-4 my-3">
             <div class="card mb-4 home_card h-100">
-                <div class="card-body"
+                <div class="card-body">
                   <h4 class="card-title" style="color: #ffffff;font-family: Bebas Neue;font-size: 30px; line-height: 1.2;">ultimas NOTIFICAções </h4>
                  
                   <p class="card-text" 
