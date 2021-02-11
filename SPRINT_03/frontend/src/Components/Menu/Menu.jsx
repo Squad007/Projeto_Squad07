@@ -1,20 +1,20 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './Menu.css';
+
 export default function Menu() {
-  const navigate = useNavigate();
   return (
     <div>
       <header>
         <nav className="navbar navbar-expand-lg navbar-dark shadow nav-style">
           <div class="container w-100">
-            <a onClick={() => navigate('/')}>
+            <Link to='/'>
               <img
-                className="my-1 "
+                className="my-1"
                 src={require('../../Assets/img/logo.svg').default}
                 width="80px"
               />
-            </a>
+            </Link>
 
             <button
               className="navbar-toggler"
@@ -30,38 +30,38 @@ export default function Menu() {
                 className="nav w-100 d-flex justify-content-between flex-column flex-sm-row"
               >
                 <li className="nav-item">
-                  <a
+                  <Link
                     className="nav-link"
-                    onClick={() => navigate('/notification')}
+                    to='/notification'
                   >
                     Notificações
-                  </a>
+                  </Link>
                 </li>
 
                 <li className="nav-item">
-                  <a
+                  <Link
                     className="nav-link"
-                    onClick={() => navigate('/register')}
+                    to='/register'
                   >
                     Registre 
-                  </a>
+                  </Link>
                 </li>
 
                 <li className="nav-item">
-                  <a
+                  <Link
                     className="nav-link"
-                    onClick={() => navigate('/report')}
+                    to='/report'
                   >
                     Relatórios 
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a
+                  <Link
                     className="nav-link"
-                    onClick={() => navigate('/contact')}
+                    to='/contact'
                   >
                     Fale Conosco
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>

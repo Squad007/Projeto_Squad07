@@ -5,9 +5,9 @@ import 'leaflet/dist/leaflet.css';
 export default function Notification() {
   return (
     <div>
-      <h1>Notication</h1>
+      <h1>Notificação</h1>
       <div className="d-flex">
-        <div
+        <div className=" table-responsive"
           style={{ width: '25vw', height: '75vh', background: 'aquamarine' }}
         >
           <p className="m-3">
