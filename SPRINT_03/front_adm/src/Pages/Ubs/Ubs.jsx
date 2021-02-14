@@ -20,7 +20,7 @@ export default function Ubs() {
                   <th scope="col" onclick="ordenarID()">ID</th>
                   <th scope="col" >NOME</th>
                   <th scope="col" >DISTRITO / ZONA</th>
-                  <th scope="col"onclick="ordenarQtde()">N°_DENÚNCIAS</th>
+                  <th scope="col"onclick="ordenarQtde()">N°_NOTIFICAÇÕES</th>
                 </tr>
               </thead>
               <tbody>
@@ -226,20 +226,20 @@ export default function Ubs() {
             </div>
 
             <div className="form-group">
-              <input type="text" name="nome" className="form-control border border-primary" placeholder="Nome da UBS" />
+              <input type="text" name="nome" className="form-control border border-primary" placeholder="Nome da UBS" required />
             </div>
 
             <div className="form-group">
-              <textarea className="form-control border border-primary" name="descricao" placeholder="Observações sobre a UBS"></textarea>
+              <textarea className="form-control border border-primary" name="descricao" placeholder="Observações sobre a UBS" required></textarea>
             </div>
 
             <div className="form-group">
-              <input type="text" name="endereco" className="form-control border border-primary" placeholder="Endereço" />
+              <input type="text" name="endereco" className="form-control border border-primary" placeholder="Endereço" required />
             </div>
 
             <div className="row">
               <div className="form-group col-lg-8">
-                <input type="text" name="bairro" className="form-control border border-primary" placeholder="Bairro" />
+                <input type="text" name="bairro" className="form-control border border-primary" placeholder="Bairro" required/>
               </div>
             </div>
 
@@ -247,7 +247,7 @@ export default function Ubs() {
 
             <div className="row">
               <div className="col-lg-8 mr-auto form-group">
-                <select className="custom-select mr-sm-2 border border-primary" name="distrito">
+                <select className="custom-select mr-sm-2 border border-primary" name="distrito" required>
                   <option selected>Escolha o distrito</option>
                   <option value="SÃO MIGUEL PAULISTA">SÃO MIGUEL PAULISTA</option>
                   <option value="VILA JACUÍ">VILA JACUÍ</option>
@@ -255,7 +255,7 @@ export default function Ubs() {
                 </select>
               </div>
 
-              <div className=" col-lg-4 form-group btn-group btn-group-toggle d-flex justify-content-lg-end" data-toggle="buttons">
+              <div className=" col-lg-4 form-group btn-group btn-group-toggle d-flex justify-content-lg-end" data-toggle="buttons" required>
                 <label className="btn btn-outline-primary">
                   <input type="radio" name="zona" value="ZN" /> ZN
                 </label>
@@ -273,14 +273,14 @@ export default function Ubs() {
 
             <div className="row">
               <div className="col-lg-8 mr-auto form-group">
-                <select className="custom-select mr-sm-2 border border-primary" name="cidade">
+                <select className="custom-select mr-sm-2 border border-primary" name="cidade" required>
                   <option selected>Escolha a cidade</option>
                   <option value="SÃO PAULO">SÃO PAULO</option>
                 </select>
               </div>
 
               <div className="col-4 col-lg-2 form-group">
-                <select className="custom-select mr-sm-2 border border-primary" name="uf">
+                <select className="custom-select mr-sm-2 border border-primary" name="uf" >
                   <option selected>UF</option>
                   <option value="SP">SP</option>
                   <option value="RJ">RJ</option>
@@ -290,11 +290,11 @@ export default function Ubs() {
 
             <div className="row">
               <div className="col-7 col-md-6 mr-auto form-group">
-                <input type="text" name="cep" className="form-control border border-primary" placeholder="CEP" />
+                <input type="text" name="cep" className="form-control border border-primary" placeholder="CEP" required />
               </div>
 
               <div className="col-7 col-md-6 form-group">
-                <input type="text" name="telefone" className="form-control border border-primary" placeholder="Telefone" />
+                <input type="text" name="telefone" className="form-control border border-primary" placeholder="Telefone" required />
               </div>
             </div>
 

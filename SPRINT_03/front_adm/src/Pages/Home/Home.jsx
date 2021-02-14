@@ -1,18 +1,19 @@
 import React from "react";
-
+import './Home.css'
 
 export default function Home() {
   return (
-    <div>
-      <main className="d-flex">
+    <div >
+      <main className="d-flex bg-dark">
         <section
           className="col d-flex justify-content-center align-items-center"
         //   style={{width: '50vh', height: '100vh'}}
         >
-          <div
-            className="logo"
-            // style="background-image: url(./img/logo.svg); width: 60%; height: 80vh; background-position: center; background-size:contain; background-repeat:no-repeat"
-          ></div>
+           <img
+                className="my-1"
+                src={require('../../Assets/img/logo.svg').default}
+                width="80px"
+              />
         </section>
 
         <section

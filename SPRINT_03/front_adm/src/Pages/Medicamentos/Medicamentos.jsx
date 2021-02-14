@@ -22,7 +22,7 @@ export default function Medicamentos() {
                     <tr>
                     <th scope="col" class=" text-left">ID</th>
                     <th scope="col" class=" text-left">NOME</th>
-                    <th scope="col" class=" text-center">N°_DENÚNCIAS</th>
+                    <th scope="col" class=" text-center">N°_NOTIFICAÇÕES</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -160,17 +160,17 @@ export default function Medicamentos() {
 
                         <div class="form-group">
                         <label class="col-form-label">ID:</label>
-                        <input type="text" name="id" class="form-control border border-primary" placeholder="Digite o ID oficial do medicamento" />
+                        <input type="text" name="id" class="form-control border border-primary" placeholder="Digite o ID oficial do medicamento"required/>
                         </div>
 
                         <div class="form-group">
                         <label class="col-form-label">DESCRIÇÃO COMPLETA:</label>
-                        <textarea class="form-control border border-primary" name="nome" placeholder="Digite o nome completo do medicamento"></textarea>
+                        <textarea class="form-control border border-primary" name="nome" placeholder="Digite o nome completo do medicamento" required></textarea>
                         </div>
 
                         <div class="form-group">
                         <label class="col-form-label">Observações extras sobre o medicamento a ser cadastrado:</label>
-                        <textarea class="form-control border border-primary" name="observacao"></textarea>
+                        <textarea class="form-control border border-primary" name="observacao" placeholder="Opcional"></textarea>
                         </div>
 
                     </form>

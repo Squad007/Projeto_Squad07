@@ -31,7 +31,7 @@ export default function Menu() {
               >
                 <li className="nav-item">
                   <Link
-                    className="nav-link"
+                    className="nav-link text-warning "
                     to='/ubs'
                   >
                     UBS
@@ -40,7 +40,7 @@ export default function Menu() {
 
                 <li className="nav-item">
                   <Link
-                    className="nav-link"
+                    className="nav-link text-success"
                     to='/medicamentos'
                   >
                     Medicamentos 
@@ -49,7 +49,7 @@ export default function Menu() {
 
                 <li className="nav-item">
                   <Link
-                    className="nav-link"
+                    className="nav-link text-danger"
                     to='/notificacao'
                   >
                     Notificações 
@@ -57,7 +57,7 @@ export default function Menu() {
                 </li>
                 <li className="nav-item">
                   <Link
-                    className="nav-link"
+                    className="nav-link text-primary"
                     to='/faleConosco'
                   >
                     Fale Conosco
@@ -65,10 +65,10 @@ export default function Menu() {
                 </li>
                 <li className="nav-item">
                   <Link
-                    className="nav-link"
+                    className="nav-link text-white"
                     to='/adms'
                   >
-                    ADM
+                    Cadastrar novo ADM
                   </Link>
                 </li>
               </ul>
