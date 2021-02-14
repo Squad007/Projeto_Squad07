@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function home_adm() {
+export default function Home() {
   return (
     <div>
       <main className="d-flex">

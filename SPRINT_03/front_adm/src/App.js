@@ -1,9 +1,19 @@
+import { BrowserRouter as Router } from 'react-router-dom';
 import React from 'react';
-import Adm from './Pages/home_adm';
+import Routes from './Routes';
+//import Menu from './Components/Menu/Menu';
+//import Footer from './Components/Footer/rodape';
+
 
 function App() {
   return (
-    <Adm />
+    <Router>
+    <div className="App">
+      
+      <Routes />
+     
+    </div>
+  </Router>
   );
 }
 
