@@ -1,0 +1,5 @@
+div.principalDiv{
+    background: rgb(18,18,20);
+    background: linear-gradient(90deg, rgba(18,18,20,1) 0%, rgba(18,18,20,1) 50%, rgba(83,66,131,1) 100%); color:white
+}
+

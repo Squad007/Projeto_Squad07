@@ -1,10 +1,9 @@
 import React from "react";
-import Style from "./styles";
+import './styles.css';
 
 export default function Adms() {
   return (
-    <div style="background: rgb(18,18,20);
-    background: linear-gradient(90deg, rgba(18,18,20,1) 0%, rgba(18,18,20,1) 50%, rgba(83,66,131,1) 100%); color:white;">
+    <div className="principalDiv">
       <main class="d-flex">
         <section
           class="col d-flex justify-content-center align-items-center"
@@ -12,7 +11,7 @@ export default function Adms() {
         >
           <div
             class="logo"
-            style="background-image: url(./img/logo.svg); width: 60%; height: 80vh; background-position: center; background-size:contain; background-repeat:no-repeat"
+            style="background-image: url(../../Assets/img/logo.svg); width: 60%; height: 80vh; background-position: center; background-size:contain; background-repeat:no-repeat"
           ></div>
         </section>
 
@@ -50,3 +49,4 @@ export default function Adms() {
     </div>
   );
 }
+
