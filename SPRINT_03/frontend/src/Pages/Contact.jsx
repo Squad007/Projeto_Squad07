@@ -14,6 +14,7 @@ export default function Report() {
               type="text"
               name="nome"
               placeholder="Digite seu Nome"
+              required
             />
 
             <label for="nome">E-mail(opcional)</label>
@@ -29,6 +30,7 @@ export default function Report() {
               className="form-control mb-2"
               name="msg"
               placeholder="Digite uma mensagem"
+              required
             ></textarea>
 
             <button

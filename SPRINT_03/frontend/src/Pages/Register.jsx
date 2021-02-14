@@ -8,24 +8,26 @@ export default function Register() {
           <div class="form-group">
             <h1 class="my-4">Cadastrar Denúncia</h1>
             <label for="ubs_id">Escolha a UBS</label>
-            <select name="ubs_id" class="form-control mb-3">
-              <option value="0">Escolha a UBS</option>
+            <select name="ubs_id" class="form-control mb-3" required>
+              <option value="0" required>Escolha a UBS</option>
             </select>
             <label for="medicamento_id">Medicamentos em falta</label>
-            <select name="medicamento_id" class="form-control mb-3">
-              <option value="0">Escolha o medicamento</option>
+            <select name="medicamento_id" class="form-control mb-3" required>
+              <option value="0" required>Escolha o medicamento</option>
             </select>
             <label for="data_denuncia">Data de quando faltou o remedio: </label>
             <input
               type="date"
               name="data_denuncia"
               class="form-control data mb-3"
+              required
             />
             <label for="comentario">Observações e comentarios: </label>
             <textarea
               class="form-control mb-3"
               name="comentario"
-              placeholder="Digite um comentario"
+              placeholder="Digite um comentario opcional"
+              
             ></textarea>
             <button
               type="button"
