@@ -1,11 +1,11 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import Home from "./Pages/Home";
-import Ubs from "./Pages/Ubs";
-import Medicamentos from "./Pages/Medicamentos";
-import Notificacaos from "./Pages/Notificacaos";
-import FaleConosco from "./Pages/FaleConosco";
-import Adms from "./Pages/Adms";
+import Home from "./Pages/Home/Home";
+import Ubs from "./Pages/Ubs/Ubs";
+import Medicamentos from "./Pages/Medicamentos/Medicamentos";
+import Notificacaos from "./Pages/Notificacaos/Notificacaos";
+import FaleConosco from "./Pages/FaleConosco/FaleConosco";
+import Adms from "./Pages/Adms/Adms";
 
 export default function Routs() {
   return (
