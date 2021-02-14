@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import Style from './styles';
 
 export default function Ubs() {
     return (
