@@ -3,10 +3,9 @@ import { Link } from 'react-router-dom';
 
 export default function rodape() {
   return (
-    <footer class="footer mt-auto py-3 text-center">
-      <div class="container">
-        <b class="text-muted text-dark">&copy; Squad 007 Recode Pro 2020</b>
-       
+    <footer className="footer mt-auto bg-dark py-3 text-center">
+      <div className="container">
+        <b className="text-white">&copy; Squad 007 Recode Pro 2020</b>
       </div>
     </footer>
   );
