@@ -5,12 +5,12 @@ export default function () {
     <div>
       {/* style="min-height: 68vh" */}
 
-      <div class="jumbotron jumbotron-fluid text-sm-center bg-transparent">
+      <div className="jumbotron jumbotron-fluid text-sm-center bg-transparent">
         {" "}
         {/* style="background: rgba(253, 253, 253, 0);"*/}
-        <div class="container">
-          <div class="row">
-            <div class="col">
+        <div className="container">
+          <div className="row">
+            <div className="col">
               {" "}
               {/* style="font-family:; color:#00b9b3; text-align: left;" */}
               <h1>
@@ -20,18 +20,18 @@ export default function () {
               </h1>
               <p>
                 <a
-                  class="btn btn-primary"
+                  className="btn btn-primary"
                   href="./register_notification.php"
                   type="button"
                 >
                   {" "}
                   {/* style="background: #6f42c1; font-family: Bebas Neue;font-size: 25px; border: none;" */}
-                  Notifique a falta <i class="fas fa-exclamation-circle"></i>
+                  Notifique a falta <i className="fas fa-exclamation-circle"></i>
                 </a>
               </p>
             </div>
-            <div class="col animate__animated animate__pulse animate__delay-1s">
-              <img class="float-right" src="./img/pill.svg" alt="medicamento" />{" "}
+            <div className="col animate__animated animate__pulse animate__delay-1s">
+              <img className="float-right" src="./img/pill.svg" alt="medicamento" />{" "}
               {/*style="max-width:310px; min-width: 150px;"  */}
             </div>
           </div>
@@ -39,23 +39,23 @@ export default function () {
       </div>
 
       <section>
-        <div class="container">
-          <div class="row">
-            <div class="col-md-4 my-3">
-              <div class="card mb-4 home_card h-100">
-                <div class="card-body">
-                  <h4 class="card-title">ultimas NOTIFICAções </h4>{" "}
+        <div className="container">
+          <div className="row">
+            <div className="col-md-4 my-3">
+              <div className="card mb-4 home_card h-100">
+                <div className="card-body">
+                  <h4 className="card-title">ultimas NOTIFICAções </h4>{" "}
                   {/*style="color: #ffffff;font-family: Bebas Neue;font-size: 30px; line-height: 1.2;" */}
-                  <p class="card-text">
+                  <p className="card-text">
                     {" "}
                     {/* style="color: #ffffff;font-size: 20px; margin-top: 10px; */}
                     Veja as últimas notificações. O acesso à informação é um dos
                     dos direitos fundamentais garantido na nossa Constituição.
                   </p>
                 </div>
-                <div class="card-footer">
+                <div className="card-footer">
                   <a
-                    class="btn btn-primary home-btn"
+                    className="btn btn-primary home-btn"
                     href="./notification.php"
                     type="button"
                   >
@@ -65,21 +65,21 @@ export default function () {
               </div>
             </div>
 
-            <div class="col-md-4 my-3">
-              <div class="card mb-4 home_card h-100">
-                <div class="card-body">
-                  <h4 class="card-title">Registre sua Notificação</h4>{" "}
+            <div className="col-md-4 my-3">
+              <div className="card mb-4 home_card h-100">
+                <div className="card-body">
+                  <h4 className="card-title">Registre sua Notificação</h4>{" "}
                   {/*style="color: #ffffff;font-family: Bebas Neue;font-size: 30px; line-height: 1.2;" */}
-                  <p class="card-text">
+                  <p className="card-text">
                     {" "}
                     {/*style="color:#ffffff;font-size: 20px; margin-top: 10px;" */}
                     Notifique da falta de algum dos medicamento que deveria ser
                     fornecido pelo Sistema Único de Saúde.
                   </p>
                 </div>
-                <div class="card-footer">
+                <div className="card-footer">
                   <a
-                    class="btn btn-primary home-btn"
+                    className="btn btn-primary home-btn"
                     href="./register_notification.php"
                     type="button"
                   >
@@ -89,12 +89,12 @@ export default function () {
               </div>
             </div>
 
-            <div class="col-md-4 my-3">
-              <div class="card mb-4 home_card h-100">
-                <div class="card-body">
-                  <h4 class="card-title">Sobre Nós</h4>{" "}
+            <div className="col-md-4 my-3">
+              <div className="card mb-4 home_card h-100">
+                <div className="card-body">
+                  <h4 className="card-title">Sobre Nós</h4>{" "}
                   {/*style="color: #ffffff;font-family: Bebas Neue;font-size: 30px; line-height: 1.2;" */}
-                  <p class="card-text">
+                  <p className="card-text">
                     {" "}
                     {/*style="color: #ffffff;font-size: 20px; margin-top: 10px;" */}
                     Somos o Squad 07 (SP1) da Recode Pro 2020. Estamos
@@ -102,9 +102,9 @@ export default function () {
                     comunidade.
                   </p>
                 </div>
-                <div class="card-footer">
+                <div className="card-footer">
                   <a
-                    class="btn btn-primary home-btn"
+                    className="btn btn-primary home-btn"
                     href="./contact.php"
                     type="button"
                   >
