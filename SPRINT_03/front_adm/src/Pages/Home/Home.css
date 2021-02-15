@@ -1,3 +1,26 @@
-.texte{
-    background-color: brown;
+.Login {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+}
+
+.imgLogin {
+    width: 500px;
+}
+
+.areaADM {
+    width: clamp(290px, 300vw, 300px);
+}
+
+@media (max-width: 1100px) {
+    .imgLogin {
+        width: 280px;
+    }
+    
+    .areaADM {
+        font-size: 22px;
+    }
 }

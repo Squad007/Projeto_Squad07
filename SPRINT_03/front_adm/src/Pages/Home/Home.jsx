@@ -1,31 +1,30 @@
 import React from "react";
+
 import './Home.css'
 
 export default function Home() {
   return (
-    <div >
-      <main className="d-flex bg-dark">
+    <div className="Login w-100">
+      <main className="d-flex bg-dark h-100 row">
+
         <section
-          className="col d-flex justify-content-center align-items-center"
-        //   style={{width: '50vh', height: '100vh'}}
+          className="col-lg col-md col-sm col-xs d-flex justify-content-center align-items-center"
         >
            <img
-                className="my-1"
+                className="imgLogin my-1"
                 src={require('../../Assets/img/logo.svg').default}
-                width="80px"
               />
         </section>
 
         <section
-          className="login col d-flex justify-content-center align-items-stretch"
-        //   style="width: 50vh; height: 100vh;"
+          className="formlogin col-lg col-md col-sm col-xs d-flex justify-content-center align-items-stretch mx-3"
         >
           <form
             action=""
             method="post"
             className="d-flex flex-column justify-content-center align-items-center"
           >
-            <h3 className="mb-4 font-weight-bold text-white">
+            <h3 className="areaADM mb-4 font-weight-bold text-white">
               ÁREA DO ADMINISTRADOR
             </h3>
 
@@ -46,6 +45,7 @@ export default function Home() {
             </button>
           </form>
         </section>
+      
       </main>
     </div>
   );
