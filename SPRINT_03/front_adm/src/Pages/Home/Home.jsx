@@ -5,7 +5,7 @@ import './Home.css'
 export default function Home() {
   return (
     <div className="Login w-100">
-      <main className="d-flex bg-dark h-100 row">
+      <main className="d-flex bg-transparent h-100 row">
 
         <section
           className="col-lg col-md col-sm col-xs d-flex justify-content-center align-items-center"

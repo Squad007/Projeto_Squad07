@@ -5,7 +5,7 @@ import './msg.css';
 export default function FaleConosco() {
   return (
     <div>
-      <div class="MSG jumbotron card card-image bg-dark text-white">
+      <div class="MSG jumbotron card card-image  bg-transparent  text-white">
         <p class="text-center">
           Bem vindo ao sistema SOS, <b>{/*<?php echo $_SESSION['nome'] ?>*/}</b>
           ! - {/*(<?php echo $_SESSION['email'] ?>)*/}

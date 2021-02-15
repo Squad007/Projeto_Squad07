@@ -6,7 +6,7 @@ export default function Menu() {
   return (
     <div>
       <header>
-        <nav className="navbar navbar-expand-lg navbar-dark shadow nav-style">
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark shadow nav-style">
           <div class="container w-100">
             <Link to='/'>
               <img

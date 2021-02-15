@@ -5,7 +5,7 @@ import './ubs.css'
 export default function Ubs() {
   return (
     <>
-      <div className="UBS jumbotron card card-image text-white bg-dark h-100 ">
+      <div className="UBS jumbotron card card-image text-white bg-transparent h-100 ">
         {/* style="background-color: rgba(0,0,0,0);" */}
         <p className="text-center">Bem vindo ao sistema SOS, - </p>
         <h1 className="display-4 text-warning  font-weight-bold">UBS's</h1>

@@ -4,7 +4,7 @@ import './not.css'
 export default function Notificacaos() {
   return (
     <div>
-      <div className="NOT jumbotron card card-image bg-dark text-white">
+      <div className="NOT jumbotron card card-image bg-transparent  text-white">
         <p className="text-center">
           Bem vindo ao sistema SOS, <b>{/*<?php echo $_SESSION['nome'] ?>*/}</b>
           ! - {/*(<?php echo $_SESSION['email'] ?>)*/}

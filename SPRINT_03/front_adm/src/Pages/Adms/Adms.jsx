@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Adms() {
   return (
-    <div className="bg-dark">
+    <div className="bg-transparent ">
       <main class="container">
         <section class="row">
           <div class="col mt-5">

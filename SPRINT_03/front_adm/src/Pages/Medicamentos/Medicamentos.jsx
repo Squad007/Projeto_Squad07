@@ -7,7 +7,7 @@ export default function Medicamentos() {
     return (
         
         <>
-            <div class="MED jumbotron card card-image text-white bg-dark">
+            <div class="MED jumbotron card card-image text-white bg-transparent ">
             {/* style="background-color: rgba(0,0,0,0);" */}
                 <p class="text-center">Bem vindo ao sistema SOS,  -</p>
                 <h1 class="display-4 text-success  font-weight-bold">Medicamentos</h1>

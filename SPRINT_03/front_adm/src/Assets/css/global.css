@@ -12,3 +12,7 @@ html {
     font-family: "Roboto Mono", monospace;
     font-family: "Roboto Slab", serif; */
 }
+
+ body{
+  background: linear-gradient(180deg, rgba(18,18,20,1) 0%, rgba(44,35,69,1) 100%);
+ }
