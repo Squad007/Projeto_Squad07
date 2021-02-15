@@ -1,8 +1,19 @@
 import React, { useEffect } from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import Leaflet from "leaflet";
+
+
 import 'leaflet/dist/leaflet.css';
+import '../Assets/css/notification.css';
+import mapMarkerImg from "../Assets/img/favicon.svg";
 
 export default function Notification() {
+  const mapIcon = Leaflet.icon({
+    iconUrl: mapMarkerImg,
+    iconSize: [58, 68],
+    iconAnchor: [29, 68],
+    popupAnchor: [170, -10],
+  });
   return (
     <div>
       <h1>Notificação</h1>
@@ -28,41 +39,22 @@ export default function Notification() {
             </p>
           </p>
 
-          <p className="m-3">
-            <p className="lead font-weight-bold ">Notificação 1</p>
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque
-              fuga non recusandae animi nesciunt! Unde eaque voluptates eos
-              dignissimos temporibus?
-            </p>
-          </p>
-
-          <p className="m-3">
-            <p className="lead font-weight-bold ">Notificação 1</p>
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque
-              fuga non recusandae animi nesciunt! Unde eaque voluptates eos
-              dignissimos temporibus?
-            </p>
-          </p>
         </div>
         <div
           id="reportMap"
           className=""
         >
           <MapContainer
-            center={[-23.4936564,-46.4492472]}
+            center={[-23.479112376616733, -46.41956537170949]}
             zoom={13}
-            scrollWheelZoom={false}
             style={{ width: '75vw', height: '75vh' }}
           >
             <TileLayer
-              attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
-            <Marker position={[-23.4936564,-46.4492472]}>
-              <Popup>
-                A pretty CSS3 popup. <br /> Easily customizable.
+            <Marker icon={mapIcon} position={[-23.479181260413636, -46.419179134217195]}>
+              <Popup closeButton={false} minWidth={240} maxWidth={240} className="map-popup">
+                AMA/UBS Integrada Jardim Helena
               </Popup>
             </Marker>
           </MapContainer>
