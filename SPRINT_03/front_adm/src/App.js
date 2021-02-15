@@ -1,6 +1,6 @@
 import { BrowserRouter as Router } from 'react-router-dom';
 import React from 'react';
-import Routes from './Routes';
+import Rotas from './Routes';
 import Menu from './Components/Menu/Menu';
 import Footer from './Components/Footer/rodape';
 
@@ -11,7 +11,7 @@ function App() {
     <Router>
     <div className="App">
     <Menu />
-      <Routes />
+      <Rotas />
       <Footer />
     </div>
   </Router>

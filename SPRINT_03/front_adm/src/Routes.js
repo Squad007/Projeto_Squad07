@@ -7,7 +7,7 @@ import Notificacaos from "./Pages/Notificacaos/Notificacaos";
 import FaleConosco from "./Pages/FaleConosco/FaleConosco";
 import Adms from "./Pages/Adms/Adms";
 
-export default function Routs() {
+export default function Rotas() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
