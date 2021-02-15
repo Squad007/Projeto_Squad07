@@ -27,7 +27,7 @@ export default function Adms() {
                       // style="width: 60px;"
                     >
                       <img
-                        // src="<?php echo $rows['imagem'] ?>"
+                        src="https://avatars.githubusercontent.com/u/65695476?s=460&u=3d179b94c652bc8e71ef89e160bad45e23d80422&v=4"
                         width="45"
                         height="45"
                         class="d-inline-block align-top rounded-circle"

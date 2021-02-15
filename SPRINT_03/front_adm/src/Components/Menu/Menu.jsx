@@ -7,14 +7,40 @@ export default function Menu() {
     <div>
       <header>
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark shadow nav-style">
-          <div class="container w-100">
-            <Link to='/'>
+          <div className="container w-100">
+
+          <div className="btn-group mr-5 ">
+            <button
+              className="btn btn-dark dropdown-toggle font-weight-bold d-flex align-items-center"
+              data-toggle="dropdown-menu"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+            <img
+              src="https://avatars.githubusercontent.com/u/65695476?s=460&u=3d179b94c652bc8e71ef89e160bad45e23d80422&v=4"
+              width="30"
+              height="30"
+              className="d-inline-block align-top rounded-circle"
+              // alt="{/*<?php echo $_SESSION['nome'] ?>*/}"
+              loading="lazy"
+            />
+              <span className="ml-2">{/*<?php echo $_SESSION['username'] ?>*/}Usuario</span>
+            </button>
+
+            <div className="dropdown-menu">
+              <a className="dropdown-item font-weight-bold" href="#">Meu perfil</a>
+              <div className="dropdown-divider"></div>
+              <a className="dropdown-item font-weight-bold" href="#">Sair</a>
+            </div>
+          </div>
+
+            {/* <Link to='/'>
               <img
                 className="my-1"
                 src={require('../../Assets/img/logo.svg').default}
                 width="80px"
               />
-            </Link>
+            </Link> */}
 
             <button
               className="navbar-toggler"
