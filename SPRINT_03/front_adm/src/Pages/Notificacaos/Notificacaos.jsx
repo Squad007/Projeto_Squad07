@@ -1,7 +1,19 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import './not.css'
 
 export default function Notificacaos() {
+  const [notific, setNotific] = useState([]);
+
+  // ----------------------------- Api notificações
+  useEffect (() => {
+    async function fetchMyAPI() {
+      const response = await fetch("http://localhost:3001/den/forADM");
+      setNotific(await response.json());
+    }
+    fetchMyAPI()
+  }, []);
+
+
   return (
     <div>
       <div className="NOT jumbotron card card-image bg-transparent  text-white">
@@ -53,19 +65,26 @@ export default function Notificacaos() {
           while ($rows = $result->fetch_assoc()) {
         ?> */}
 
+            {notific.map((not) => (
               <tr>
                 <th className="align-middle text-left" scope="row ">
                   {/*<?php echo $rows["id"]; ?>*/}
+                  {not.id}
                 </th>
                 <td className="align-middle text-left ">
                   <details>
                     <summary>
                       <b>
-                        {/*<?php echo $rows["ubs"]; ?>*/}:{" "}
+                        {/*<?php echo $rows["ubs"]; ?>*/}
+                        {not.ubs}
+                        :{" "}
+
                         <span className="text-danger">FALTANDO</span>{" "}
                         {/*<?php echo $rows["id_med"]; ?>*/}
+                        {not.id_med}
                       </b>
                       {/* <?php echo $rows["med"]; ?> */}
+                      {not.med}
                     </summary>
 
                     <section>
@@ -74,6 +93,7 @@ export default function Notificacaos() {
                       <div>
                         <b className="text-danger">OBS. DO PACIENTE: </b>
                         {/* "<?php echo $rows["com"]; ?>" */}
+                        {not.com}
                       </div>
 
                       {/* <hr className="border border-white bg-white mx-0 my-2 p-0" /> */}
@@ -82,6 +102,7 @@ export default function Notificacaos() {
                 </td>
                 <td className="align-middle text-center">
                   {/*<?php echo date('d/m/Y', strtotime($rows['data'])); ?>*/}
+                  {not.data}
                 </td>
                 <td className="align-middle text-right">
                   <div className="btn-group">
@@ -89,7 +110,8 @@ export default function Notificacaos() {
                       <input
                         type="hidden"
                         name="id"
-                        // value={/*<?= $rows["id"] ?>*/}
+                        value={not.id}
+
                       />
 
                       <button
@@ -103,7 +125,8 @@ export default function Notificacaos() {
                   </div>
                 </td>
               </tr>
-
+            ))}
+              
               {/* <?php
           }
         } else {
