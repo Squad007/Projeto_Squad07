@@ -3,9 +3,9 @@ const connection = require('../config/connection');
 class MEDmodel {
   constructor() {
     this.id;
+    this.cadastrado_por_id;
     this.nome;
-    this.msg;
-
+    this.observacao;
     this.page;
     this.pageSize = 50;
   }
@@ -52,6 +52,39 @@ class MEDmodel {
       `,
       (error, result) => {
         error ? res.send(error) : res.json(result);
+      }
+    );
+  }
+
+  postMED(req, res) {
+    connection.query(
+      `INSERT INTO medicamento (cadastrado_por_id, id, nome, observacao) VALUES ('${this.cadastrado_por_id}', '${this.id}', '${this.nome}', '${this.observacao}');`,
+      (error, result) => {
+        error
+          ? res.send(error)
+          : res.status(201).send('Medicamento cadastrado');
+      }
+    );
+  }
+
+  putMED(req, res) {
+    connection.query(
+      `UPDATE medicamento SET cadastrado_por_id='${this.cadastrado_por_id}', nome='${this.nome}', observacao='${this.observacao}' WHERE id=${this.id};`,
+      (error, result) => {
+        error
+          ? res.send(error)
+          : res.status(201).send('Medicamento atualizado');
+      }
+    );
+  }
+
+  deleteMED(req, res) {
+    connection.query(
+      `delete from medicamento where id=${this.id}`,
+      (error, result) => {
+        error
+          ? res.send(error)
+          : res.status(201).send(`Medicamento ${this.id} apagado!`);
       }
     );
   }

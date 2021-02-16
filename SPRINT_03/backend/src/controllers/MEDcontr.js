@@ -19,6 +19,33 @@ class MEDcontr {
     MEDmodel.page = page;
     MEDmodel.getMEDbyPage(req, res);
   }
+
+  postMED(req, res) {
+    const { cadastrado_por_id, id, nome, observacao } = req.body;
+
+    MEDmodel.cadastrado_por_id = cadastrado_por_id.toUpperCase();
+    MEDmodel.id = id.toUpperCase();
+    MEDmodel.nome = nome.toUpperCase();
+    MEDmodel.observacao = observacao;
+    MEDmodel.postMED(req, res);
+  }
+
+  putMED(req, res) {
+    const { cadastrado_por_id, id, nome, observacao } = req.body;
+
+    MEDmodel.cadastrado_por_id = cadastrado_por_id.toUpperCase();
+    MEDmodel.id = id.toUpperCase();
+    MEDmodel.nome = nome.toUpperCase();
+    MEDmodel.observacao = observacao;
+    MEDmodel.putMED(req, res);
+  }
+
+  deleteMED(req, res) {
+    const { id } = req.body;
+
+    MEDmodel.id = id;
+    MEDmodel.deleteMED(req, res);
+  }
 }
 
 module.exports = new MEDcontr();

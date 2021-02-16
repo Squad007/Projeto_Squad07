@@ -74,6 +74,17 @@ class DENmodel {
       }
     );
   }
+
+  deleteDEN(req, res) {
+    connection.query(
+      `delete from denuncia where id=${this.id}`,
+      (error, result) => {
+        error
+          ? res.send(error)
+          : res.status(201).send(`Notificacao ${this.id} apagada!`);
+      }
+    );
+  }
 }
 
 module.exports = new DENmodel();

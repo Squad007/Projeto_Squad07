@@ -1,6 +1,6 @@
 const { Router } = require('express');
 
-// const ADMcontr = require('./controllers/ADMcontr');
+const ADMcontr = require('./controllers/ADMcontr');
 const DENcontr = require('./controllers/DENcontr');
 const MEDcontr = require('./controllers/MEDcontr');
 const MSGcontr = require('./controllers/MSGcontr');
@@ -8,8 +8,6 @@ const UBScontr = require('./controllers/UBScontr');
 
 const routes = new Router();
 
-//SITE USUARIO ######################
-//SITE USUARIO ######################
 //SITE USUARIO ######################
 //SITE USUARIO ######################
 //SITE USUARIO ######################
@@ -25,12 +23,23 @@ routes.post('/msg', MSGcontr.postMSG); // enviar msg
 //SITE ADM ######################
 //SITE ADM ######################
 //SITE ADM ######################
-//SITE ADM ######################
-//SITE ADM ######################
-routes.get('/med/DENcount', MEDcontr.getMEDwDENcount);
-routes.get('/med/totalPages', MEDcontr.getMEDtotalPages);
-routes.get('/med/page/:page', MEDcontr.getMEDbyPage);
-routes.get('/den/forADM', DENcontr.getDENforADM);
-routes.get('/msg', MSGcontr.getAllMSG);
+routes.get('/med/DENcount', MEDcontr.getMEDwDENcount); // lista completa medicamentos
+routes.get('/med/totalPages', MEDcontr.getMEDtotalPages); // retorna numero de paginas
+routes.get('/med/page/:page', MEDcontr.getMEDbyPage); // acesso por numero da pagina
+routes.get('/den/forADM', DENcontr.getDENforADM); // lista completa notificacao
+routes.get('/msg', MSGcontr.getAllMSG); // lista completa msg
+routes.get('/adm', ADMcontr.getAllADM); // lista completa adm
+
+routes.post('/ubs', UBScontr.postUBS); // cadastra nova ubs
+routes.post('/med', MEDcontr.postMED); // cadastra novo medicamento
+routes.post('/adm', ADMcontr.postADM); // cadastra novo adm
+
+routes.put('/ubs', UBScontr.putUBS); // atualiza ubs por id
+routes.put('/med', MEDcontr.putMED); // atualiza medicamento por id
+
+routes.delete('/ubs', UBScontr.deleteUBS); // apaga ubs por id
+routes.delete('/med', MEDcontr.deleteMED); // apaga medicamento por id
+routes.delete('/den', DENcontr.deleteDEN); // apaga notificacao por id
+routes.delete('/msg', MSGcontr.deleteMSG); // apaga mensagem por id
 
 module.exports = routes;

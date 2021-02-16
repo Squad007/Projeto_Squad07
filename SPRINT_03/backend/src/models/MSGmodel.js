@@ -25,6 +25,17 @@ class MSGmodel {
       }
     );
   }
+
+  deleteMSG(req, res) {
+    connection.query(
+      `delete from fale_conosco where id=${this.id}`,
+      (error, result) => {
+        error
+          ? res.send(error)
+          : res.status(201).send(`Mensagem ${this.id} apagada!`);
+      }
+    );
+  }
 }
 
 module.exports = new MSGmodel();

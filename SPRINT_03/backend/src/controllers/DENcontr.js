@@ -33,6 +33,13 @@ class DENcontr {
     DENmodel.data_ocorrencia = data_ocorrencia;
     DENmodel.postDEN(req, res);
   }
+
+  deleteDEN(req, res) {
+    const { id } = req.body;
+
+    DENmodel.id = id;
+    DENmodel.deleteDEN(req, res);
+  }
 }
 
 module.exports = new DENcontr();

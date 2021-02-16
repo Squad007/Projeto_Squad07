@@ -13,6 +13,13 @@ class MSGcontr {
     MSGmodel.email = email;
     MSGmodel.postMSG(req, res);
   }
+
+  deleteMSG(req, res) {
+    const { id } = req.body;
+
+    MSGmodel.id = id;
+    MSGmodel.deleteMSG(req, res);
+  }
 }
 
 module.exports = new MSGcontr();

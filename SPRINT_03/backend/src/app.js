@@ -10,6 +10,7 @@ class App {
     this.routes();
   }
 
+  //config in other words
   middlewares() {
     this.server.use(express.json());
     this.server.use(cors());
