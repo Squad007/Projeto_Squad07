@@ -13,14 +13,14 @@ const routes = new Router();
 //SITE USUARIO ######################
 //SITE USUARIO ######################
 //SITE USUARIO ######################
-routes.get('/ubs/DENcount', UBScontr.getUBSwDENcount);
-routes.get('/den', DENcontr.getDEN);
-routes.get('/den/byMonth/:month/:year', DENcontr.getDENbyMonth);
-routes.get('/den/byUBS/:ubsid', DENcontr.getDENbyUBS);
-routes.get('/med/dropdown', MEDcontr.getMEDdropdown);
-routes.get('/ubs/dropdown', UBScontr.getUBSdropdown);
-routes.post('/den', DENcontr.postDEN);
-routes.post('/msg', MSGcontr.postMSG);
+routes.get('/ubs/DENcount', UBScontr.getUBSwDENcount); // usar para os pins
+routes.get('/den', DENcontr.getDEN); // lista completa notificação
+routes.get('/den/byMonth/:month/:year', DENcontr.getDENbyMonth); // filtro por mês/ano
+routes.get('/den/byUBS/:ubsid', DENcontr.getDENbyUBS); // notificação por UBS
+routes.get('/med/dropdown', MEDcontr.getMEDdropdown); // Select medicamento
+routes.get('/ubs/dropdown', UBScontr.getUBSdropdown); // Select ubs
+routes.post('/den', DENcontr.postDEN); // enviar notificação
+routes.post('/msg', MSGcontr.postMSG); // enviar msg
 
 //SITE ADM ######################
 //SITE ADM ######################
