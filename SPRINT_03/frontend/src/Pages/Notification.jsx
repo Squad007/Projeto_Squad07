@@ -5,12 +5,12 @@ import Leaflet from "leaflet";
 
 import 'leaflet/dist/leaflet.css';
 import '../Assets/css/notification.css';
-import mapMarkerImg from "../Assets/img/favicon.svg";
+import mapMarkerImg from "../Assets/img/pin_sos.svg";
 
 export default function Notification() {
   const mapIcon = Leaflet.icon({
     iconUrl: mapMarkerImg,
-    iconSize: [58, 68],
+    iconSize: [38, 48],
     iconAnchor: [29, 68],
     popupAnchor: [170, -10],
   });
@@ -21,14 +21,14 @@ export default function Notification() {
         <div className=" table-responsive"
           style={{ width: '25vw', height: '75vh', background: 'aquamarine' }}
         >
-          <p className="m-3">
+          <div className="m-3">
             <p className="lead font-weight-bold ">Notificação 1</p>
             <p>
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque
               fuga non recusandae animi nesciunt! Unde eaque voluptates eos
               dignissimos temporibus?
             </p>
-          </p>
+          </div>
 
           <p className="m-3">
             <p className="lead font-weight-bold ">Notificação 1</p>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   width="100"
+   height="135"
+   viewBox="0 0 26.458333 35.718751"
+   version="1.1"
+   id="svg1040">
+  <defs
+     id="defs1034" />
+  <metadata
+     id="metadata1037">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1">
+    <path
+       id="rect55"
+       style="fill:#fd7e14;stroke:none;stroke-width:0.0867789;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+       d="m 7.6639578,25.504709 6.3493162,9.827043 6.349389,-9.827043 a 14.903642,14.777974 0 0 1 -6.349389,1.408249 14.903642,14.777974 0 0 1 -6.3493162,-1.408249 z" />
+    <g
+       id="g967-7"
+       transform="matrix(0.11238904,-0.03609702,0.03609702,0.11238904,-31.018974,10.045052)">
+      <circle
+         style="fill:#450ba5;stroke:none;stroke-width:1.32292;stroke-linecap:round;stroke-linejoin:round;paint-order:fill markers stroke"
+         id="circle107-5"
+         cx="344.24515"
+         cy="132.79033"
+         r="101.99417" />
+      <circle
+         style="fill:#450ba5;stroke:none;stroke-width:1.32292;stroke-linecap:round;stroke-linejoin:round;paint-order:fill markers stroke"
+         id="circle38-3"
+         cx="352.98834"
+         cy="143.56416"
+         r="101.99417" />
+      <path
+         id="path36-3-5"
+         style="fill:#6610f2;stroke:none;stroke-width:1.32292;stroke-linecap:round;stroke-linejoin:round;paint-order:fill markers stroke"
+         d="M 344.02345,30.796573 A 101.99417,101.99417 0 0 0 255.91564,81.793459 101.99417,101.99417 0 0 0 243.41667,117.41402 H 445.07361 A 101.99417,101.99417 0 0 0 395.24255,44.460855 101.99417,101.99417 0 0 0 344.02345,30.796573 Z M 243.41667,148.16667 a 101.99417,101.99417 0 0 0 49.83157,72.95317 101.99417,101.99417 0 0 0 139.32638,-37.33261 101.99417,101.99417 0 0 0 12.49899,-35.62056 z" />
+    </g>
+  </g>
+</svg>
