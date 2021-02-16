@@ -3,12 +3,22 @@ import "../Assets/css/register.css";
 
 export default function Register() {
   const [ubsSelect, setUbsSelect] = useState([])
+  const [medSelect, setMedSelect]= useState([])
 
   // ------------------------------ Api ubs
   useEffect(() => {
     async function fetchMyAPI() {
       const response = await fetch("http://localhost:3001/ubs/dropdown");
       setUbsSelect(await response.json());
+    }
+    fetchMyAPI();
+  }, []);
+
+//-------------------------------------------api med
+  useEffect(() => {
+    async function fetchMyAPI() {
+      const response = await fetch("http://localhost:3001/med/dropdown");
+      setMedSelect(await response.json());
     }
     fetchMyAPI();
   }, []);
@@ -37,6 +47,10 @@ export default function Register() {
                 Escolha o medicamento
               </option>
               {/* Seleção dos Medicamentos */}
+              {medSelect.map((med) => (
+                <option value={med.id}>{med.nome}</option>
+              ))}
+
             </select>
             <label for="data_denuncia">Data de quando faltou o remedio: </label>
             <input
