@@ -35,30 +35,46 @@ export default function Notification() {
     iconAnchor: [29, 68],
     popupAnchor: [170, -10],
   });
+
+  // ------------------------------ Formatação da data de mensagens
+  const formatDate = (rawDate) => {
+    const myDate = new Date(rawDate);
+    const d = myDate.getDay();
+    const mo = myDate.getMonth() + 1;
+    const y = myDate.getFullYear();
+    // const h = myDate.getHours();
+    // const mi = myDate.getMinutes();
+
+  return `${d}/${mo}/${y}`; {/*- ${h}:${mi}*/};
+  };
   return (
     <div className="container">
-      <div className="d-flex w-100 row"
-        style={{height: "90vh"}}
-      >
-
+      <div className="d-flex row" style={{ height: "90vh" }}>
         <div
-          className="col w-40 table-responsive my-5 rounded-3"
-          style={{ width: "20vw", height: "", background: "aquamarine" }}
+          className="card_not col-5 table-responsive p-3 mt-5 text-white"
+          style={{ width: "20vw", height: "", background: "#00b9b3" }}
         >
-          { notificationList.length > 0 && notificationList.map((not) => (
-            <div className="m-3">
-              <p className="lead font-weight-bold ">{not.nomeUbs}</p>
-              <p>
-                {not.nome}
-              </p>
-            </div>
-          ))}
+          <h4 className="border-bottom border-white">NOTIFICAÇÕES RECENTES</h4>
+          {notificationList.length > 0 &&
+            notificationList.map((not) => (
+              <div className="m-3 row">
+                <div className="col-8">
+                  <p>{not.nomeUbs}</p>
+                  <p className="lead font-weight-bold ">{not.nome}</p>
+                </div>
+                <div className="col-4 justify-content-center flex-column py-auto d-flex align-items-center">
+                  <p>Data da Falta:</p>
+                  <p>{formatDate(not.data_ocorrencia)}</p>
+                </div>
+              </div>
+            ))}
         </div>
-        <div id="reportMap" className="col my-5">
+        <div id="reportMap" className="col-7 mt-5 rounded-3">
           <MapContainer
-            center={[-23.49400273269489, -46.435508651940815]}
-            zoom={14}
+            center={[-23.49, -46.43]}
+            zoom={13}
             style={{ width: "100%", height: "100%" }}
+            className="card_map"
           >
             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
 
@@ -71,14 +87,18 @@ export default function Notification() {
                   maxWidth={240}
                   className="map-popup"
                 >
-                  <button onClick={() => setUbs(pin.id)}>Mostrar notificações</button>
+                  <button onClick={() => setUbs(pin.id)}>
+                    Mostrar notificações
+                  </button>
                   {pin.nomeUbs}
                 </Popup>
               </Marker>
             ))}
           </MapContainer>
         </div>
+
       </div>
+        <button className="btn-roxo my-3 border-0" style={{borderRadius: "20px", height: "40px", width: "40%"}}>Exportar todas as notificações (.CSV)</button>
     </div>
   );
 }
