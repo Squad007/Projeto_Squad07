@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import './Menu.css';
+import { FaEnvelopeOpenText, FaMapMarkedAlt, FaExclamationCircle } from "react-icons/fa";
+import { HiDocumentSearch } from "react-icons/hi";
 
 export default function Menu() {
   return (
@@ -35,6 +37,7 @@ export default function Menu() {
                     className="nav-link"
                     to='/notification'
                   >
+                    <FaMapMarkedAlt />{" "}
                     Notificações
                   </Link>
                 </li>
@@ -44,6 +47,7 @@ export default function Menu() {
                     className="nav-link"
                     to='/register'
                   >
+                    <FaExclamationCircle />{" "}
                     Registre 
                   </Link>
                 </li>
@@ -53,6 +57,7 @@ export default function Menu() {
                     className="nav-link"
                     to='/report'
                   >
+                    <HiDocumentSearch />
                     Relatórios 
                   </Link>
                 </li>
@@ -61,6 +66,7 @@ export default function Menu() {
                     className="nav-link"
                     to='/contact'
                   >
+                    <FaEnvelopeOpenText />{" "}
                     Fale Conosco
                   </Link>
                 </li>
