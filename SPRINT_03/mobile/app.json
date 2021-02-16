@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "mobile",
+    "name": "SosMedicamento",
     "slug": "mobile",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -17,9 +17,12 @@
       "**/*"
     ],
     "ios": {
+      "bundleIdentifier": "com.squad7.sosmedicamento",
+      "buildNumber": "1.0.0",
       "supportsTablet": true
     },
     "android": {
+      "package": "com.squad7.sosmedicamento",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
