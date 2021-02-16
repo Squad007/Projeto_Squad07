@@ -14,7 +14,7 @@ export default function Register() {
     fetchMyAPI();
   }, []);
 
-//-------------------------------------------api med
+  //-------------------------------- api med
   useEffect(() => {
     async function fetchMyAPI() {
       const response = await fetch("http://localhost:3001/med/dropdown");
@@ -47,6 +47,7 @@ export default function Register() {
                 Escolha o medicamento
               </option>
               {/* Seleção dos Medicamentos */}
+              
               {medSelect.map((med) => (
                 <option value={med.id}>{med.nome}</option>
               ))}
