@@ -1,10 +1,40 @@
 import React, { useState, useEffect } from "react";
 
 import "./med.css";
-import formatDate from '../../Assets/functions/formatDate';
+import formatDate from "../../Assets/functions/formatDate";
 
 export default function Medicamentos() {
   const [medic, setMedic] = useState([]);
+  const [formData, setFormData] = useState({
+    id: "",
+    nome: "",
+    observacao: "",
+    cadastrado_por_id: "",
+  });
+
+  // ------------------------------ Postagens form register
+  const sendForm = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await fetch("http://localhost:3001/med", {
+        method: "POST",
+        body: JSON.stringify(formData),
+        headers: { "Content-Type": "application/json" },
+      }).then((dados) => {
+        setFormData({
+          id: "",
+          nome: "",
+          observacao: "",
+          cadastrado_por_id: "",
+        });
+      });
+    } catch (err) {
+      alert("Erro: mensagem não cadastrada, tente mais tarde!");
+    }
+  };
+
+  const onChangeInput = (e) =>
+    setFormData({ ...formData, [e.target.name]: e.target.value });
 
   // ----------------------------- Api medicamentos
   useEffect(() => {
@@ -49,6 +79,7 @@ export default function Medicamentos() {
             </thead>
             <tbody>
               {medic.map((med) => (
+                
                 <tr>
                   <th class="align-middle text-left" scope="row ">
                     {med.id}
@@ -80,13 +111,13 @@ export default function Medicamentos() {
                       <button
                         class="btn btn-outline-info font-weight-bold"
                         data-toggle="modal"
-                        data-target="#atualizarMEDModal"
+                        data-target={"#atualizarMEDModal"+(med.id)}
                       >
                         EDITAR
                       </button>
                       <div
                         class="modal fade text-dark"
-                        id="atualizarMEDModal"
+                        id={"atualizarMEDModal"+(med.id)}
                         data-backdrop="static"
                         data-keyboard="false"
                         tabindex="-1"
@@ -111,10 +142,10 @@ export default function Medicamentos() {
 
                             <div class="modal-body">
                               <form
-                                id="atualizarMED"
+                                id={"atualizarMED"+(med.id)}
                                 class="container-fluid"
-                                action="#"
                                 method="post"
+                                name="form"
                               >
                                 <div class="row">
                                   <div class=" col-sm-5 form-group">
@@ -125,7 +156,12 @@ export default function Medicamentos() {
                                       class="custom-select mr-sm-2 border border-primary"
                                       name="cadastrado_por_id"
                                     >
-                                      <option selected value={med.cadastrado_por_id}>{med.cadastrado_por_id}</option>
+                                      <option
+                                        selected
+                                        value={med.cadastrado_por_id}
+                                      >
+                                        {med.cadastrado_por_id}
+                                      </option>
                                     </select>
                                   </div>
                                 </div>
@@ -147,7 +183,9 @@ export default function Medicamentos() {
                                   <textarea
                                     class="form-control border border-primary"
                                     name="nome"
-                                  >{med.nome}</textarea>
+                                  >
+                                    {med.nome}
+                                  </textarea>
                                 </div>
 
                                 <div class="form-group">
@@ -182,6 +220,7 @@ export default function Medicamentos() {
                                   value="LIMPAR"
                                 />
                                 <input
+                                  name="submit"
                                   type="submit"
                                   class="btn btn-primary mx-2"
                                   form="atualizarMED"
@@ -239,9 +278,9 @@ export default function Medicamentos() {
 
             <div class="modal-body">
               <form
+                onSubmit={sendForm}
                 id="cadastrarMED"
                 class="container-fluid"
-                action="#"
                 method="post"
               >
                 <div class="row">
@@ -261,6 +300,8 @@ export default function Medicamentos() {
                   <input
                     type="text"
                     name="id"
+                    value={formData.id}
+                    onChange={onChangeInput}
                     class="form-control border border-primary"
                     placeholder="Digite o ID oficial do medicamento"
                     required
@@ -272,6 +313,8 @@ export default function Medicamentos() {
                   <textarea
                     class="form-control border border-primary"
                     name="nome"
+                    value={formData.nome}
+                    onChange={onChangeInput}
                     placeholder="Digite o nome completo do medicamento"
                     required
                   ></textarea>
@@ -284,6 +327,8 @@ export default function Medicamentos() {
                   <textarea
                     class="form-control border border-primary"
                     name="observacao"
+                    value={formData.observacao}
+                    onChange={onChangeInput}
                     placeholder="Opcional"
                   ></textarea>
                 </div>

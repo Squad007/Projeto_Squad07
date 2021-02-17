@@ -28,11 +28,7 @@ export default function Register() {
         });
       });
     } catch (err) {
-      // setMsg({
-      //   formSave: false,
-      //   type: "error",
-      //   message: "Erro: mensagem não cadastrada, tente mais tarde!",
-      // });
+      alert("Erro: mensagem não cadastrada, tente mais tarde!");
     }
   };
 
@@ -48,7 +44,7 @@ export default function Register() {
     fetchMyAPI();
   }, []);
 
-  //-------------------------------- api med
+  //-------------------------------- Api med
   useEffect(() => {
     async function fetchMyAPI() {
       const response = await fetch("http://localhost:3001/med/dropdown");
