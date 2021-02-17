@@ -5,6 +5,7 @@ import formatDate from "../../Assets/functions/formatDate";
 
 export default function Medicamentos() {
   const [medic, setMedic] = useState([]);
+  const [adm, setAdm] = useState([]);
   const [formData, setFormData] = useState({
     id: "",
     nome: "",
@@ -15,6 +16,7 @@ export default function Medicamentos() {
   // ------------------------------ Postagens form register
   const sendForm = async (e) => {
     e.preventDefault();
+    console.log(formData);
     try {
       const res = await fetch("http://localhost:3001/med", {
         method: "POST",
@@ -41,6 +43,15 @@ export default function Medicamentos() {
     async function fetchMyAPI() {
       const response = await fetch("http://localhost:3001/med/DENcount");
       setMedic(await response.json());
+    }
+    fetchMyAPI();
+  }, []);
+
+   // ----------------------------- Api ADM
+   useEffect(() => {
+    async function fetchMyAPI() {
+      const response = await fetch("http://localhost:3001/adm");
+      setAdm(await response.json());
     }
     fetchMyAPI();
   }, []);
@@ -79,7 +90,6 @@ export default function Medicamentos() {
             </thead>
             <tbody>
               {medic.map((med) => (
-                
                 <tr>
                   <th class="align-middle text-left" scope="row ">
                     {med.id}
@@ -111,13 +121,13 @@ export default function Medicamentos() {
                       <button
                         class="btn btn-outline-info font-weight-bold"
                         data-toggle="modal"
-                        data-target={"#atualizarMEDModal"+(med.id)}
+                        data-target={"#atualizarMEDModal" + med.id}
                       >
                         EDITAR
                       </button>
                       <div
                         class="modal fade text-dark"
-                        id={"atualizarMEDModal"+(med.id)}
+                        id={"atualizarMEDModal" + med.id}
                         data-backdrop="static"
                         data-keyboard="false"
                         tabindex="-1"
@@ -142,7 +152,7 @@ export default function Medicamentos() {
 
                             <div class="modal-body">
                               <form
-                                id={"atualizarMED"+(med.id)}
+                                id={"atualizarMED" + med.id}
                                 class="container-fluid"
                                 method="post"
                                 name="form"
@@ -250,7 +260,7 @@ export default function Medicamentos() {
           </table>
         </div>
       </div>
-
+      {/* Cadastrar novo medicamento */}
       <div
         class="modal fade text-dark"
         id="cadastroMEDModal"
@@ -285,15 +295,27 @@ export default function Medicamentos() {
               >
                 <div class="row">
                   <div class=" col-sm-5 form-group">
-                    <label class="col-form-label">CADASTRADO POR:</label>
+                    <label for="cadastrado_por_id" class="col-form-label">
+                      CADASTRADO POR:
+                    </label>
                     <select
                       class="custom-select mr-sm-2 border border-primary"
                       name="cadastrado_por_id"
+                      value={formData.cadastrado_por_id}
+                      onChange={onChangeInput}
+                      required
                     >
-                      <option selected></option>
+                      {adm.map((adm) => (
+                        <option value={adm.username}>
+                        {adm.username}
+                      </option>
+                      ))}
+                      
                     </select>
                   </div>
                 </div>
+
+
 
                 <div class="form-group">
                   <label class="col-form-label">ID:</label>
