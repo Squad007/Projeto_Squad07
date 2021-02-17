@@ -1,8 +1,21 @@
-import React from "react";
+import React,{ useState, useEffect } from "react";
 
 import './ubs.css'
 
 export default function Ubs() {
+
+  const [ubs, setUbs] = useState([]);
+// ----------------------------- Api ubs
+useEffect (() => {
+  async function fetchMyAPI() {
+    const response = await fetch("http://localhost:3001/ubs/DENcount");
+    setUbs(await response.json());
+  }
+  fetchMyAPI()
+}, []);
+
+
+
   return (
     <>
       <div className="UBS jumbotron card card-image text-white bg-transparent h-100 ">
@@ -22,6 +35,7 @@ export default function Ubs() {
         <div className="table-responsive">
           <table className="table table-striped table-hover table-dark bg-dark text-center ">
             <thead>
+
               <tr>
                 <th scope="col" onclick="ordenarID()">
                   ID
@@ -35,41 +49,41 @@ export default function Ubs() {
             </thead>
             <tbody>
               <tr>
-                <th className="align-middle text-left" scope="row "></th>
+                <th className="align-middle text-left" scope="row ">{ubs.id}</th>
                 <td className="align-middle text-left">
                   <details>
-                    <summary className="font-weight-bold"></summary>
+                    <summary className="font-weight-bold">{ubs.nomeUbs}</summary>
                     <section>
                       <hr className="border border-white bg-white mx-0 my-2 p-0" />
                       <div>
-                        <b className="text-warning">Endereço: </b>
+                        <b className="text-warning">Endereço: {ubs.bairro}</b>
                       </div>
                       <div>
-                        <b className="text-warning">CEP: </b>
+                        <b className="text-warning">CEP:{ubs.cep} </b>
                       </div>
                       <div>
-                        <b className="text-warning">Telefone: </b>
+                        <b className="text-warning">Telefone:{ubs.telefone} </b>
                       </div>
                       <div>
-                        <b className="text-warning">Coordenada: </b>
+                        <b className="text-warning">Coordenada:{ubs.longitude} </b>
                       </div>
                       <div>
-                        <b className="text-warning">Descricao: </b>
+                        <b className="text-warning">Descricao:{ubs.descricao} </b>
                       </div>
                       <hr className="border border-white bg-white mx-0 my-2 p-0" />
                       <div>
-                        <b className="text-warning">Cadastrado por: </b>
+                        <b className="text-warning">Cadastrado por:{ubs.cadastrado_por_id} </b>
                       </div>
                       <div>
-                        <b className="text-warning">Cadastrado em: </b>
+                        <b className="text-warning">Cadastrado em:{ubs.data_cadastro} </b>
                       </div>
 
                       <hr className="border border-white bg-white mx-0 my-2 p-0" />
                     </section>
                   </details>
                 </td>
-                <td className="align-middle text-left"></td>
-                <td className="align-middle text-center"></td>
+                <td className="align-middle text-left">{ubs.zona}</td>
+                <td className="align-middle text-center">{ubs.qtde}</td>
                 <td className="align-middle text-right">
                   <div className="btn-group">
                     <button

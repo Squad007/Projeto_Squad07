@@ -5,7 +5,7 @@ import {
   TextInput,
   TouchableOpacity,
   StyleSheet,
-  Platform,
+  Platform, Image,Alert
 } from "react-native";
 
 
@@ -14,14 +14,30 @@ const styles = StyleSheet.create({
     height: Platform.OS === "web" ? "100vh" : "100%",
     
   },
+  tinyLogo: {
+    width:100,
+    height:50,
+   
+    
+   
+  },
+  tinyBack: {
+   backgroundColor:'#00b9b3',
+   padding:5,
+   display:'flex',
+   flexDirection:'row',
+   justifyContent:'space-between'
+  },
   titulo: {
     color: "#00b9b3",
     fontSize: 32,
-    marginTop: 50,
+    marginTop: 10,
+    fontWeight: 'bold',
+    padding: 20
   },
   inputs: {
     width: "100%",
-    padding: 8,
+    padding: 15,
   },
   input: {
     backgroundColor: "white",
@@ -35,8 +51,16 @@ const styles = StyleSheet.create({
     marginTop: 12,
     padding: 10,
     borderRadius: 4,
-    marginLeft: 50,
-    marginRight: 50,
+    
+  },
+  btnMenu: {
+    backgroundColor: "#6f42c1",
+    marginTop: 12,
+    padding: 10,
+    borderRadius: 4,
+    width: '50%',
+    marginBottom: 20,
+    
   },
   texto: {
     fontSize: 18,
@@ -51,11 +75,26 @@ const styles = StyleSheet.create({
     marginTop: 12,
     borderRadius: 8,
   },
+  rodape: {
+    textAlign: 'center',
+    marginTop: 'auto'
+  }
 });
 
-function FaleConosco() {
+const FaleConosco = () =>  {
+  function msg() {
+    Alert.alert("Mensagem enviada com Sucesso!!");
+}
   return (
     <View style={styles.caixa}>
+       <View style={styles.tinyBack}>
+            <TouchableOpacity style={styles.btnMenu}>
+          <Text style={styles.texto}>MENU</Text>
+        </TouchableOpacity>
+        <Image  style={styles.tinyLogo}
+          source={require("../../assets/logo.png")}/>
+        
+          </View>
       <View>
         <Text style={styles.titulo}>Enviar Mensagem</Text>
       </View>
@@ -79,10 +118,11 @@ function FaleConosco() {
           numberOfLines={10}
           multiline={true}
         />
-        <TouchableOpacity style={styles.btn}>
+        <TouchableOpacity style={styles.btn} onPress={msg}>
           <Text style={styles.texto}>Enviar</Text>
         </TouchableOpacity>
       </View>
+      <Text style={styles.rodape}>© Squad 007 Recode Pro 2020</Text>
     </View>
   );
 }
