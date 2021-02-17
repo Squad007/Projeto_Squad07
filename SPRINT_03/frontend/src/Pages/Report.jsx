@@ -3,7 +3,7 @@ import CardReport from "../Components/CardReport/index";
 
 export default function Report() {
   return (
-    <div className="section-3">
+    <div className="section-3" style={{minHeight: "calc(100vh - 68px - 56px )"}}>
       <h2>Selecione o mês</h2>
       <div className="box">
         <section className="categories-container">
