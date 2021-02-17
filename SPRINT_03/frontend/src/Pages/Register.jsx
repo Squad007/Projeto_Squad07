@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "../Assets/css/register.css";
+
 
 export default function Register() {
   const [ubsSelect, setUbsSelect] = useState([]);
@@ -11,7 +11,7 @@ export default function Register() {
     data_ocorrencia: "",
   });
 
-  // ------------------------------ Postagens formulario
+  // ------------------------------ Postagens form register
   const sendForm = async (e) => {
     e.preventDefault();
     try {
@@ -58,8 +58,8 @@ export default function Register() {
   }, []);
 
   return (
-    <>
-      <div className="main-not container p-3 bg-light rounded shadow-lg">
+    <main style={{minHeight: "calc(100vh - 68px - 56px )"}}>
+      <div className=" container p-3 bg-light rounded shadow-lg">
         <form onSubmit={sendForm} name="form" method="post">
           <div className="form-group">
             <h1 className="my-4">Cadastrar Notificação</h1>
@@ -174,6 +174,6 @@ export default function Register() {
           </div>
         </form>
       </div>
-    </>
+    </main>
   );
 }
