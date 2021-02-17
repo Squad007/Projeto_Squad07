@@ -1,11 +1,23 @@
-import React from 'react';
+import React , { useState, useEffect } from 'react';
 
 import './med.css';
 
 
 export default function Medicamentos() {
+    const [medic, setMedic] = useState([]);
+
+    // ----------------------------- Api medicamentos
+  useEffect (() => {
+    async function fetchMyAPI() {
+      const response = await fetch("http://localhost:3001/med/DENcount");
+      setMedic(await response.json());
+    }
+    fetchMyAPI()
+  }, []);
+
+
     return (
-        
+       
         <>
             <div class="MED jumbotron card card-image text-white bg-transparent ">
             {/* style="background-color: rgba(0,0,0,0);" */}
@@ -28,24 +40,28 @@ export default function Medicamentos() {
                     </tr>
                 </thead>
                 <tbody>
+
+                {medic.map((med) => (
+
                         <tr>
                        
-                        <th class="align-middle text-left" scope="row "></th>
+                        <th class="align-middle text-left" scope="row ">{med.id}</th>
                         <td class="align-middle text-left">
 
                             <details>
-                            <summary class="font-weight-bold"></summary>
+                            <summary class="font-weight-bold">{med.nome}</summary>
                             <section>
 
                                 <hr class="border border-white bg-white mx-0 my-2 p-0" />
 
                                 <div>
-                                <b class="text-success">Cadastrado por: </b>
+                                <b class="text-success">{med.Cadastrado_por}</b>
+                                
                                
                                 </div>
 
                                 <div>
-                                <b class="text-success">Cadastrado em: </b>
+                                <b class="text-success">{med.Cadastrado_em}</b>
                                 
                                 </div>
 
@@ -55,7 +71,7 @@ export default function Medicamentos() {
                             </details>
 
                         </td>
-                        <td class="align-middle text-center"></td>
+                        <td class="align-middle text-center">{med.qtde}</td>
                         <td class="align-middle text-right">
                             <div class="btn-group">
 
@@ -99,7 +115,7 @@ export default function Medicamentos() {
 
                                         <div class="form-group">
                                         <label class="col-form-label">Observações extras sobre o medicamento a ser cadastrado:</label>
-                                        <textarea class="form-control border border-primary" name="observacao"></textarea>
+                                        <textarea class="form-control border border-primary" name="observacao">{med.observacao}</textarea>
                                         </div>
 
                                     </form>
@@ -129,8 +145,7 @@ export default function Medicamentos() {
                             </div>
                         </td>
                         </tr>
-
-
+                ))}
                 </tbody>
                 </table>
                 </div>
@@ -164,7 +179,7 @@ export default function Medicamentos() {
                         <label class="col-form-label">ID:</label>
                         <input type="text" name="id" class="form-control border border-primary" placeholder="Digite o ID oficial do medicamento"required/>
                         </div>
-
+                        
                         <div class="form-group">
                         <label class="col-form-label">DESCRIÇÃO COMPLETA:</label>
                         <textarea class="form-control border border-primary" name="nome" placeholder="Digite o nome completo do medicamento" required></textarea>
@@ -174,7 +189,7 @@ export default function Medicamentos() {
                         <label class="col-form-label">Observações extras sobre o medicamento a ser cadastrado:</label>
                         <textarea class="form-control border border-primary" name="observacao" placeholder="Opcional"></textarea>
                         </div>
-
+                       
                     </form>
 
                     </div>
@@ -192,9 +207,9 @@ export default function Medicamentos() {
             </div>
 
             </>
+             
     )
-{/* 
-            <!-- Modal para cadastro de medicamento --> */}
+
           
 
       
