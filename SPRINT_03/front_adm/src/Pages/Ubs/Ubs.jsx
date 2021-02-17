@@ -27,6 +27,7 @@ useEffect (() => {
           className="btn btn-warning btn-lg font-weight-bold"
           data-toggle="modal"
           data-target="#cadastroUBSModal"
+          value={ubs.name}
         >
           CADASTRAR NOVA UBS
         </button>
@@ -48,6 +49,7 @@ useEffect (() => {
               </tr>
             </thead>
             <tbody>
+            {ubs.map((ubs) => (
               <tr>
                 <th className="align-middle text-left" scope="row ">{ubs.id}</th>
                 <td className="align-middle text-left">
@@ -56,7 +58,7 @@ useEffect (() => {
                     <section>
                       <hr className="border border-white bg-white mx-0 my-2 p-0" />
                       <div>
-                        <b className="text-warning">Endereço: {ubs.bairro}</b>
+                        <b className="text-warning">Endereço: {ubs.endereco} {ubs.bairro}</b>
                       </div>
                       <div>
                         <b className="text-warning">CEP:{ubs.cep} </b>
@@ -82,7 +84,7 @@ useEffect (() => {
                     </section>
                   </details>
                 </td>
-                <td className="align-middle text-left">{ubs.zona}</td>
+                <td className="align-middle text-left"> {ubs. distrito} / {ubs.zona}</td>
                 <td className="align-middle text-center">{ubs.qtde}</td>
                 <td className="align-middle text-right">
                   <div className="btn-group">
@@ -90,7 +92,7 @@ useEffect (() => {
                       type="button"
                       className="btn btn-outline-info  font-weight-bold"
                       data-toggle="modal"
-                      data-target="#atualizarUBSModal"
+                      data-target={"#atualizarUBSModal"+(ubs.id)}
                     >
                       EDITAR
                     </button>
@@ -98,12 +100,13 @@ useEffect (() => {
                     {/* <!-- Modal para atualizar UBS --> */}
                     <div
                       className="modal fade text-dark"
-                      id="atualizarUBSModal"
+                      id={"atualizarUBSModal"+(ubs.id)}
                       data-backdrop="static"
                       data-keyboard="false"
                       tabindex="-1"
                       aria-labelledby="staticBackdropLabel"
                       aria-hidden="true"
+                      
                     >
                       <div className="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
                         <div className="modal-content">
@@ -125,12 +128,14 @@ useEffect (() => {
                           </div>
                           <div className="modal-body">
                             <form
-                              id="atualizarUBS"
+                              id={"atualizarUBS"+(ubs.id)}
                               className="container-fluid"
                               action="#"
                               method="post"
+                              // id//
+                              
                             >
-                              <input type="hidden" name="id" />
+                              <input type="hidden" name="id"/>
                               <div className="row">
                                 <div className=" col-sm-5 form-group">
                                   <label className="col-form-label">
@@ -139,8 +144,11 @@ useEffect (() => {
                                   <select
                                     className="custom-select mr-sm-2 border border-primary"
                                     name="cadastrado_por_id"
+                                  value={ubs.cadastrado_por_id}
+
+                                
                                   >
-                                    <option selected></option>
+                                    <option selected>{ubs.cadastrado_por_id}</option>
                                   </select>
                                 </div>
                               </div>
@@ -150,6 +158,7 @@ useEffect (() => {
                                   type="text"
                                   name="nome"
                                   className="form-control border border-primary"
+                                  value={ubs.nomeUbs}
                                 />
                               </div>
 
@@ -157,6 +166,7 @@ useEffect (() => {
                                 <textarea
                                   className="form-control border border-primary"
                                   name="descricao"
+                                  value={ubs.descricao}
                                 ></textarea>
                               </div>
 
@@ -165,6 +175,7 @@ useEffect (() => {
                                   type="text"
                                   name="endereco"
                                   className="form-control border border-primary"
+                                  value={ubs.endereco}
                                 />
                               </div>
 
@@ -174,6 +185,7 @@ useEffect (() => {
                                     type="text"
                                     name="bairro"
                                     className="form-control border border-primary"
+                                    value={ubs.bairro}
                                   />
                                 </div>
                               </div>
@@ -183,8 +195,10 @@ useEffect (() => {
                                   <select
                                     className="custom-select mr-sm-2 border border-primary"
                                     name="distrito"
+                                    value={ubs.distrito}
+                                    
                                   >
-                                    <option selected></option>
+                                    <option selected>{ubs.distrito}</option>
                                   </select>
                                 </div>
 
@@ -243,8 +257,9 @@ useEffect (() => {
                                   <select
                                     className="custom-select mr-sm-2 border border-primary"
                                     name="uf"
+                                    value={ubs.uf}
                                   >
-                                    <option selected></option>
+                                    <option selected>{ubs.uf}</option>
                                   </select>
                                 </div>
                               </div>
@@ -254,6 +269,7 @@ useEffect (() => {
                                   <input
                                     type="text"
                                     name="cep"
+                                    value={ubs.cep}
                                     className="form-control border border-primary"
                                   />
                                 </div>
@@ -262,6 +278,7 @@ useEffect (() => {
                                   <input
                                     type="text"
                                     name="telefone"
+                                    value={ubs.telefone}
                                     className="form-control border border-primary"
                                   />
                                 </div>
@@ -272,6 +289,7 @@ useEffect (() => {
                                   <input
                                     type="text"
                                     name="latitude"
+                                    value={ubs.latitude}
                                     className="form-control border border-primary"
                                   />
                                 </div>
@@ -280,6 +298,7 @@ useEffect (() => {
                                   <input
                                     type="text"
                                     name="longitude"
+                                    value={ubs.longitude}
                                     className="form-control border border-primary"
                                   />
                                 </div>
@@ -306,6 +325,7 @@ useEffect (() => {
                                 type="submit"
                                 className="btn btn-primary mx-2"
                                 value="ATUALIZAR"
+                                value={ubs.id}
                               />
                             </div>
                           </div>
@@ -314,7 +334,7 @@ useEffect (() => {
                     </div>
 
                     <form method="post">
-                      <input type="hidden" name="id" />
+                      <input type="hidden" name="id" value={ubs.id} />
 
                       <button
                         type="submit"
@@ -327,6 +347,7 @@ useEffect (() => {
                   </div>
                 </td>
               </tr>
+            ))}
             </tbody>
           </table>
         </div>
@@ -372,8 +393,9 @@ useEffect (() => {
                     <select
                       className="custom-select mr-sm-2 border border-primary"
                       name="cadastrado_por_id"
+                      value={ubs.username}
                     >
-                      <option selected></option>
+                      <option selected>{ubs.username}</option>
                     </select>
                   </div>
                 </div>
