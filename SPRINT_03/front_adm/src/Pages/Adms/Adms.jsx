@@ -1,6 +1,18 @@
-import React from "react";
+import React,{useState,useEffect} from "react";
 
 export default function Adms() {
+  const [adms, setAdms] = useState([]);
+
+  useEffect(()=> {
+    async function fetchMyAPI(){
+      const response = await fetch ("http://localhost:3001/adm");
+      setAdms( await response.json());
+    }
+    fetchMyAPI();
+  },[]);
+
+
+
   return (
     <div className="bg-transparent ">
       <main class="container">
@@ -20,6 +32,9 @@ export default function Adms() {
                 while ($rows = $result->fetch_assoc()) {
               ?> */}
 
+
+                {adms.map((adms) =>(
+
                   <tr>
                     <th
                       class="align-middle text-center"
@@ -27,39 +42,46 @@ export default function Adms() {
                       // style="width: 60px;"
                     >
                       <img
-                        src="https://avatars.githubusercontent.com/u/65695476?s=460&u=3d179b94c652bc8e71ef89e160bad45e23d80422&v=4"
+                        src={adms.imagem}
+                              
                         width="45"
                         height="45"
                         class="d-inline-block align-top rounded-circle"
-                        // alt="{/*<?php echo $rows['nome'] ?>*/}"
+                        alt={adms.nome}
                         loading="lazy"
                       />
+                      
                     </th>
 
                     <td class="align-middle text-left">
                       <details>
                         <summary class="font-weight-bold">
                           {/*<?php echo $rows["nome"]; ?>*/}
+                          {adms.nome}
                         </summary>
                         <section>
                           <div>
                             <b>Username: </b>
                             {/* <?php echo $rows["username"]; ?> */}
+                            {adms.username}
                           </div>
 
                           <div>
                             <b>Email: </b>
                             {/* <?php echo $rows["email"]; ?> */}
+                            {adms.email}
                           </div>
 
                           <div>
                             <b>Membro desde: </b>
                             {/* <?php echo date('m/Y', strtotime($rows['adm_desde'])); ?> */}
+                            {adms.adm_desde}
                           </div>
                         </section>
                       </details>
                     </td>
                   </tr>
+                  ))}
 
                   {/* <?php
                 }
@@ -71,7 +93,7 @@ export default function Adms() {
               </table>
             </div>
           </div>
-
+        
           <div class="col mt-5">
             <div class="jumbotron card card-image text-white bg-transparent">
               <h1 class="display-4 text-light  font-weight-bold">CADASTRAR</h1>
