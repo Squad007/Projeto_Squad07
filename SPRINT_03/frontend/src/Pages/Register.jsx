@@ -2,8 +2,42 @@ import React, { useEffect, useState } from "react";
 import "../Assets/css/register.css";
 
 export default function Register() {
-  const [ubsSelect, setUbsSelect] = useState([])
-  const [medSelect, setMedSelect]= useState([])
+  const [ubsSelect, setUbsSelect] = useState([]);
+  const [medSelect, setMedSelect] = useState([]);
+  const [formData, setFormData] = useState({
+    ubs_id: "",
+    medicamento_id: "",
+    comentario: "",
+    data_ocorrencia: "",
+  });
+
+  // ------------------------------ Postagens formulario
+  const sendForm = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await fetch("http://localhost:3001/den", {
+        method: "POST",
+        body: JSON.stringify(formData),
+        headers: { "Content-Type": "application/json" },
+      }).then((dados) => {
+        setFormData({
+          ubs_id: "",
+          medicamento_id: "",
+          comentario: "",
+          data_ocorrencia: "",
+        });
+      });
+    } catch (err) {
+      // setMsg({
+      //   formSave: false,
+      //   type: "error",
+      //   message: "Erro: mensagem não cadastrada, tente mais tarde!",
+      // });
+    }
+  };
+
+  const onChangeInput = (e) =>
+    setFormData({ ...formData, [e.target.name]: e.target.value });
 
   // ------------------------------ Api ubs
   useEffect(() => {
@@ -25,12 +59,18 @@ export default function Register() {
 
   return (
     <>
-      <div class="main-not container p-3 bg-light rounded shadow-lg">
-        <form>
-          <div class="form-group">
-            <h1 class="my-4">Cadastrar Notificação</h1>
+      <div className="main-not container p-3 bg-light rounded shadow-lg">
+        <form onSubmit={sendForm} name="form" method="post">
+          <div className="form-group">
+            <h1 className="my-4">Cadastrar Notificação</h1>
             <label for="ubs_id">Escolha a UBS</label>
-            <select name="ubs_id" class="form-control mb-3" required>
+            <select
+              name="ubs_id"
+              value={formData.ubs_id}
+              onChange={onChangeInput}
+              className="form-control mb-3"
+              required
+            >
               <option value="0" required>
                 Escolha a UBS
               </option>
@@ -39,36 +79,46 @@ export default function Register() {
               {ubsSelect.map((ubs) => (
                 <option value={ubs.id}>{ubs.nomeUbs}</option>
               ))}
-
             </select>
             <label for="medicamento_id">Medicamentos em falta</label>
-            <select name="medicamento_id" class="form-control mb-3" required>
+            <select
+              name="medicamento_id"
+              value={formData.medicamento_id}
+              onChange={onChangeInput}
+              className="form-control mb-3"
+              required
+            >
               <option value="0" required>
                 Escolha o medicamento
               </option>
               {/* Seleção dos Medicamentos */}
-              
+
               {medSelect.map((med) => (
                 <option value={med.id}>{med.nome}</option>
               ))}
-
             </select>
-            <label for="data_denuncia">Data de quando faltou o remedio: </label>
+            <label for="data_ocorrencia">
+              Data de quando faltou o remedio:{" "}
+            </label>
             <input
+              name="data_ocorrencia"
+              value={formData.data_ocorrencia}
+              onChange={onChangeInput}
               type="date"
-              name="data_denuncia"
-              class="form-control data mb-3"
+              className="form-control data mb-3"
               required
             />
             <label for="comentario">Observações e comentarios: </label>
             <textarea
-              class="form-control mb-3"
               name="comentario"
+              value={formData.comentario}
+              onChange={onChangeInput}
+              className="form-control mb-3"
               placeholder="Digite um comentario opcional"
             ></textarea>
             <button
               type="button"
-              class="btn btn-primary"
+              className="btn btn-primary"
               data-toggle="modal"
               data-target="#modalconfirma"
             >
@@ -76,33 +126,42 @@ export default function Register() {
             </button>
 
             {/* Modal de confirmação para cadastrar a notificação */}
-            <div class="container">
-              <div class="modal" id="modalconfirma" tabindex="-1" role="dialog">
+            <div className="container">
+              <div
+                className="modal"
+                id="modalconfirma"
+                tabindex="-1"
+                role="dialog"
+              >
                 <div
-                  class="modal-dialog modal-dialog-centered modal-sm"
+                  className="modal-dialog modal-dialog-centered modal-sm"
                   role="document"
                 >
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h4 class="modal-title">Confirma</h4>
-                      <button type="button" class="closer" data-dismiss="modal">
+                  <div className="modal-content">
+                    <div className="modal-header">
+                      <h4 className="modal-title">Confirma</h4>
+                      <button
+                        type="button"
+                        className="closer"
+                        data-dismiss="modal"
+                      >
                         <span> &times; </span>
                       </button>
                     </div>
-                    <div class="modal-body">
+                    <div className="modal-body">
                       <p>Confirmar o envio da denúncia?</p>
                     </div>
-                    <div class="modal-footer">
+                    <div className="modal-footer">
                       <button
                         type="submit"
                         name="submit"
-                        class="btn btn-success"
+                        className="btn btn-success"
                       >
                         Ok
                       </button>
                       <button
                         type="button"
-                        class="btn btn-danger"
+                        className="btn btn-danger"
                         data-dismiss="modal"
                       >
                         Cancelar
