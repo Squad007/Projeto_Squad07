@@ -7,6 +7,8 @@ const styles = StyleSheet.create({
     color: "#FF0000",
     fontSize: 32,
     marginTop: 50,
+    fontWeight: 'bold',
+    padding:20
   },
   btnexclu: {
     backgroundColor: "#FF0000",
@@ -14,7 +16,8 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     marginLeft: 10,
     marginRight: '20%',
-    padding: 10
+    padding: 10,
+    opacity: 0.5,
    
   },
   textoexclu: {
@@ -26,6 +29,14 @@ const styles = StyleSheet.create({
     fontSize: 18,
     color: "black",
     textAlign: "center",
+    marginTop:50,
+    fontWeight: 'bold'
+  },
+  cadas: {
+    fontSize: 18,
+    color: "black",
+    padding: 18,
+    fontWeight: "bold",
   },
 });
 const Notificacao = () => {
@@ -33,7 +44,8 @@ const Notificacao = () => {
     <View>
        <Text style={styles.texto}>Bem vindo ao sistema SOS, NAY LOPES! - (NL@ITAU.COM)</Text>
       <Text style={styles.titulo}>Notificações</Text>
-      <DataTable>
+      <Text style={styles.cadas}>Notificações presentes no sistema:</Text>
+      <DataTable style={{ padding: 30 }}>
         <DataTable.Header>
           <DataTable.Title>ID</DataTable.Title>
           <DataTable.Title>UBS/MEDICAMENTO</DataTable.Title>
@@ -58,7 +70,11 @@ const Notificacao = () => {
         </DataTable.Row>
        
       </DataTable>
+      <Text style={{ marginBottom: "auto", textAlign: "center" }}>
+        © Squad 007 Recode Pro 2020 - 2021
+      </Text>
     </View>
+    
   );
 };
 

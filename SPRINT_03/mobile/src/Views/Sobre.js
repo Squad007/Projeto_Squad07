@@ -62,11 +62,17 @@ const styles = StyleSheet.create({
     textAlign: "center",
     marginTop: "auto",
   },
+  ims: {
+    display: "flex",
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    alignItems: "center",
+  }
 });
 
 const Sobre = () => {
   return (
-    <ScrollView>
+    <ScrollView >
       <View style={styles.tinyBack}>
         <TouchableOpacity style={styles.btnMenu}>
           <Text style={styles.textobtn}>MENU</Text>

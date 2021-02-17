@@ -7,6 +7,7 @@ const styles = StyleSheet.create({
     color: "#28a745",
     fontSize: 32,
     marginTop: 50,
+    fontWeight: 'bold'
    
   },
   tituTable: {
@@ -27,8 +28,8 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     marginLeft: 40,
     marginRight: 40,
-    padding: 10
-  
+    padding: 10,
+    opacity: 0.5,
   },
   btnexclu: {
     backgroundColor: "#FF0000",
@@ -36,13 +37,22 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     marginLeft: 40,
     marginRight: 40,
-    padding: 10
+    padding: 10,
+    opacity: 0.5,
    
   },
   texto: {
     fontSize: 18,
     color: "black",
     textAlign: "center",
+    marginTop:30,
+    fontWeight:'bold'
+  },
+  textocad:{
+    fontSize: 18,
+    color: "black",
+    textAlign: "center",
+    fontWeight: "bold",
   },
   textoedit: {
     fontSize: 18,
@@ -62,10 +72,10 @@ const Medicamentos = () => {
       <Text style={styles.texto}>Bem vindo ao sistema SOS, NAY LOPES! - (NL@ITAU.COM)</Text>
     <Text style={styles.titulo}>Medicamentos</Text>
     <TouchableOpacity style={styles.btn}>
-          <Text style={styles.texto}>CADASTRAR NOVO MEDICAMENTO</Text>
+          <Text style={styles.textocad}>CADASTRAR NOVO MEDICAMENTO</Text>
         </TouchableOpacity>
-    <DataTable>
-      <DataTable.Header >
+    <DataTable  style={{ padding: 30 }}>
+      <DataTable.Header  >
         <DataTable.Title >ID</DataTable.Title>
         <DataTable.Title>NOME</DataTable.Title>
         <DataTable.Title>Nº_NOTIFICAÇÕES</DataTable.Title>
@@ -95,6 +105,9 @@ const Medicamentos = () => {
       </DataTable.Row>
      
     </DataTable>
+    <Text style={{ marginBottom: "auto", textAlign: "center" }}>
+        © Squad 007 Recode Pro 2020 - 2021
+      </Text>
   </View>
   );
 };

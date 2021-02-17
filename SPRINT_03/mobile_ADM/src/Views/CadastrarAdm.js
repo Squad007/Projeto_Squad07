@@ -6,7 +6,7 @@ import {
   StyleSheet,
   TouchableOpacity,
   Platform,
-  Image,
+  Image
 } from "react-native";
 
 const styles = StyleSheet.create({
@@ -17,6 +17,7 @@ const styles = StyleSheet.create({
     color: "#00b9b3",
     fontSize: 32,
     marginTop: 50,
+    
   },
   inputs: {
     width: "100%",
@@ -29,19 +30,14 @@ const styles = StyleSheet.create({
     marginTop: 12,
     borderRadius: 8,
   },
-  pagComple: {
-    display: "flex",
-    flexDirection: "row",
-    flexWrap: 'wrap',
-    justifyContent: 'space-between'
-  },
+
   btnCad: {
     backgroundColor: "#6f42c1",
     marginTop: 12,
     padding: 10,
     borderRadius: 4,
     width: "40%",
-    marginLeft: 20,
+    
   },
   btnLim: {
     backgroundColor: "#6f42c1",
@@ -49,7 +45,13 @@ const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 4,
     width: "50%",
-    marginLeft: 100,
+    
+  },
+  btns:{
+    display: "flex",
+    flexDirection: 'row-reverse',
+    justifyContent: 'space-between',
+    alignItems: "center",
   },
   texto: {
     fontSize: 18,
@@ -68,16 +70,34 @@ const styles = StyleSheet.create({
     width: 50,
     height: 50,
     borderRadius: 30,
+    marginLeft: 10
   },
+  area: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: 'space-between',
+    alignItems: "center",
+  }, 
+  ims: {
+    display: "flex",
+    flexDirection: 'column',
+    justifyContent: 'space-around',
+    alignItems: "center",
+  }
 });
 
 const Notificacao = () => {
   return (
-    <View style={styles.inputs}>
-      <View style={styles.pagComple}>
-        <Text style={styles.titulo}>ADM'S</Text>
+    
+    <View style={styles.caixa}>
+     
+       
+      <View style={styles.ims}>
+      <View >
+      <Text style={styles.titulo}>ADM'S</Text>
 
         <Text style={styles.label}>Atuais ADM's do sistema SOS</Text>
+        
         <Image
           style={styles.tinyLogo}
           source={require("../../assets/eliana.jpg")}
@@ -105,10 +125,11 @@ const Notificacao = () => {
         <Text>Raquel Mendonça</Text>
         <Image
           style={styles.tinyLogo}
-          source={require("../../assets/raquel.jpg")}
+          source={require("../../assets/roger.jpg")}
         />
         <Text>Willi Roger</Text>
-      
+        </View>
+        <View >
       <Text style={styles.titulo}>CADASTRAR</Text>
 
       <Text style={styles.label}>Data de quando faltou o remedio</Text>
@@ -143,6 +164,7 @@ const Notificacao = () => {
         style={styles.input}
         secureTextEntry={true}
       />
+      <View style={styles.btns}>
     
         <TouchableOpacity style={styles.btnCad}>
           <Text style={styles.texto}>Limpar</Text>
@@ -150,8 +172,12 @@ const Notificacao = () => {
         <TouchableOpacity style={styles.btnLim}>
           <Text style={styles.texto}>Cadastrar</Text>
         </TouchableOpacity>
-      
+        </View>
       </View>
+      </View>
+      <Text style={{ marginBottom: "auto", textAlign: "center" }}>
+        © Squad 007 Recode Pro 2020 - 2021
+      </Text>
     </View>
   );
 };
