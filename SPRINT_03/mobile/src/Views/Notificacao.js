@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   Image,
   Platform,
+  ScrollView,
 } from "react-native";
 
 const styles = StyleSheet.create({
@@ -30,7 +31,7 @@ const styles = StyleSheet.create({
     marginTop: 20,
     fontWeight: "bold",
     padding: 10,
-    textAlign: 'center'
+    textAlign: "center",
   },
   btn: {
     backgroundColor: "#28a745",
@@ -56,25 +57,29 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
   img: {
-    backgroundColor: '#cecece',
-    padding:50
-  },  
-  mapa:{
-    width:'100%',
-    height:'50%',
-    marginTop:'10%'
-   
-   
+    backgroundColor: "#cecece",
+    padding: 50,
+  },
+  mapa: {
+    width: Platform.OS === "web" ? "95vw" : 360,
+    height: Platform.OS === "web" ? "100vh" : 180,
+    marginTop: 20,
+    marginLeft: Platform.OS === "web" ? 20 : 1,
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
+    alignItems: "center",
+    borderRadius: 15,
   },
 
   rodape: {
     textAlign: "center",
-    marginTop: "auto",
+    marginTop: Platform.OS === "web" ? 30 : "70%",
   },
 });
 const Notificacao = () => {
   return (
-    <View style={styles.caixa}>
+    <ScrollView style={styles.caixa}>
       <View style={styles.tinyBack}>
         <TouchableOpacity style={styles.btnMenu}>
           <Text style={styles.texto}>MENU</Text>
@@ -86,10 +91,10 @@ const Notificacao = () => {
       </View>
       <Text style={styles.titulo}>Verifique no Mapa as Notificações</Text>
       <View style={styles.mapa}>
-        <Image style={styles.mapa}source={require("../../assets/mapa.jpeg")} />
+        <Image style={styles.mapa} source={require("../../assets/mapa.jpeg")} />
       </View>
       <Text style={styles.rodape}>© Squad 007 Recode Pro 2020</Text>
-    </View>
+    </ScrollView>
   );
 };
 

@@ -10,11 +10,11 @@ import {
 
 const styles = StyleSheet.create({
   tinyImg: {
-    width:80,
-    height:80,
-    borderRadius:50,
-    marginLeft: 136
-  },  
+    width: 80,
+    height: 80,
+    borderRadius: 50,
+    marginTop: 20,
+  },
   tinyLogo: {
     width: 100,
     height: 50,
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
   texto: {
     padding: 15,
     color: "#121212",
-    textAlign: "justify",
+    textAlign: "center",
     lineHeight: 25,
   },
   textobtn: {
@@ -49,13 +49,13 @@ const styles = StyleSheet.create({
     marginTop: 12,
     padding: 10,
     borderRadius: 4,
-    width:150,
+    width: 150,
     marginBottom: 20,
-    
   },
   nome: {
     textAlign: "center",
     fontWeight: "bold",
+    marginTop: 10,
   },
 
   rodape: {
@@ -64,15 +64,15 @@ const styles = StyleSheet.create({
   },
   ims: {
     display: "flex",
-    flexDirection: 'column',
-    justifyContent: 'space-between',
+    flexDirection: "column",
+    justifyContent: "space-between",
     alignItems: "center",
-  }
+  },
 });
 
 const Sobre = () => {
   return (
-    <ScrollView >
+    <ScrollView>
       <View style={styles.tinyBack}>
         <TouchableOpacity style={styles.btnMenu}>
           <Text style={styles.textobtn}>MENU</Text>
@@ -82,98 +82,101 @@ const Sobre = () => {
           source={require("../../assets/logo.png")}
         />
       </View>
-      <Text style={styles.titulo}>Nossa História</Text>
-
-      <Text style={styles.texto}>
-        {"      "}A ideia para o site surgiu a partir de um problema: a falta de
-        medicamentos no SUS. Uma das formas de intervir, e dar voz às pessoas, é
-        ajudar na construção de meios que auxiliem a participação da comunidade
-        no controle, gestão e fiscalização dos recursos públicos de saúde. O
-        site nasceu com essa proposta, ser uma plataforma de publicização e
-        monitoramento do desabastecimento.
-      </Text>
-      <Text style={styles.titulo}>Nossa Visão</Text>
-      <Text style={styles.texto}>
-        {"      "}
-        Prestar com excelência o serviço de notificação de falta de medicamentos
-        para que as dores dos cidadãos sejam ouvidas e minimizadas.{" "}
-      </Text>
-      <Text style={styles.titulo}>Nossa Missão</Text>
-
-      <Text style={styles.texto}>
-        {"      "}
-        Oferecer um meio de notificações para população, atigindo principalmente
-        o público mais vulnerável, que necessita dos medicamentos
-        disponibilizados pelo Sistema Único de Saúde (SUS).
-      </Text>
-      <Text style={styles.titulo}>Nossos Valores</Text>
-
-      <Text style={styles.texto}>
-        {"      "}
-        Despertar o controle social pela população usuária do Sistema Único de
-        Saúde (SUS) e contribuir para a melhoria da disponibilidade de
-        medicamentos.
-      </Text>
-
-      <Text style={styles.titulo}>
-        Nosso Time - Squad 07 (SP1) Recode Pro 2020
-      </Text>
-
       <View>
-        <Image
-          style={styles.tinyImg}
-          source={require("../../assets/eliana.jpg")}
-        />
-        <Text style={styles.nome}>Eliana Souza</Text>
+        <Text style={styles.titulo}>Nossa História</Text>
+
         <Text style={styles.texto}>
-          Formada em Tecnologia em Gestão da Qualidade. Empreendedora, Gosto de
-          ler sobre vários assuntos.
+          {"      "}A ideia para o site surgiu a partir de um problema: a falta
+          de medicamentos no SUS. Uma das formas de intervir, e dar voz às
+          pessoas, é ajudar na construção de meios que auxiliem a participação
+          da comunidade no controle, gestão e fiscalização dos recursos públicos
+          de saúde. O site nasceu com essa proposta, ser uma plataforma de
+          publicização e monitoramento do desabastecimento.
         </Text>
-        <Image
-          style={styles.tinyImg}
-          source={require("../../assets/cris.jpg")}
-        />
-        <Text style={styles.nome}>Cristiano Santana</Text>
+        <Text style={styles.titulo}>Nossa Visão</Text>
         <Text style={styles.texto}>
-          Desenvolvedor Full Stack apoixonado por tecnologia Estudante Full
-          Stack Dev | Eng. Mecânico | Téc. Mecatrônico.
+          {"      "}
+          Prestar com excelência o serviço de notificação de falta de
+          medicamentos para que as dores dos cidadãos sejam ouvidas e
+          minimizadas.{" "}
         </Text>
-        <Image
-          style={styles.tinyImg}
-          source={require("../../assets/mit.jpg")}
-        />
-        <Text style={styles.nome}>Mitsuhiko Takushi</Text>
+        <Text style={styles.titulo}>Nossa Missão</Text>
+
         <Text style={styles.texto}>
-          Atualmente desenvolvendo habilidades para uma carreira em Engenharia
-          de Software. Full Stack Web na Recode Pro.
+          {"      "}
+          Oferecer um meio de notificações para população, atigindo
+          principalmente o público mais vulnerável, que necessita dos
+          medicamentos disponibilizados pelo Sistema Único de Saúde (SUS).
         </Text>
-        <Image
-          style={styles.tinyImg}
-          source={require("../../assets/nay.jpg")}
-        />
-        <Text style={styles.nome}>Nayara Suelen</Text>
+        <Text style={styles.titulo}>Nossos Valores</Text>
+
         <Text style={styles.texto}>
-          Uma estudante de 26 anos e apaixonada por tecnologia. Adoro aprender e
-          contribuir de todas as formas possíveis.
+          {"      "}
+          Despertar o controle social pela população usuária do Sistema Único de
+          Saúde (SUS) e contribuir para a melhoria da disponibilidade de
+          medicamentos.
         </Text>
-        <Image
-          style={styles.tinyImg}
-          source={require("../../assets/raquel.jpg")}
-        />
-        <Text style={styles.nome}>Raquel Mendonça</Text>
-        <Text style={styles.texto}>
-          Conhecimento e habilidades para execução da estratégia comercial;
-          Compromisso com as metas estabelecidas.
+
+        <Text style={styles.titulo}>
+          Nosso Time - Squad 07 (SP1) Recode Pro 2020
         </Text>
-        <Image
-          style={styles.tinyImg}
-          source={require("../../assets/roger.jpg")}
-        />
-        <Text style={styles.nome}>Willi Roger</Text>
-        <Text style={styles.texto}>
-          Full stack developer, Philosophy Student in University of São Paulo
-          Science, Technology, Society, Law and Philosophy.
-        </Text>
+
+        <View style={styles.ims}>
+          <Image
+            style={styles.tinyImg}
+            source={require("../../assets/eliana.jpg")}
+          />
+          <Text style={styles.nome}>Eliana Souza</Text>
+          <Text style={styles.texto}>
+            Formada em Tecnologia em Gestão da Qualidade. Empreendedora, Gosto
+            de ler sobre vários assuntos.
+          </Text>
+          <Image
+            style={styles.tinyImg}
+            source={require("../../assets/cris.jpg")}
+          />
+          <Text style={styles.nome}>Cristiano Santana</Text>
+          <Text style={styles.texto}>
+            Desenvolvedor Full Stack apoixonado por tecnologia Estudante Full
+            Stack Dev | Eng. Mecânico | Téc. Mecatrônico.
+          </Text>
+          <Image
+            style={styles.tinyImg}
+            source={require("../../assets/mit.jpg")}
+          />
+          <Text style={styles.nome}>Mitsuhiko Takushi</Text>
+          <Text style={styles.texto}>
+            Atualmente desenvolvendo habilidades para uma carreira em Engenharia
+            de Software. Full Stack Web na Recode Pro.
+          </Text>
+          <Image
+            style={styles.tinyImg}
+            source={require("../../assets/nay.jpg")}
+          />
+          <Text style={styles.nome}>Nayara Suelen</Text>
+          <Text style={styles.texto}>
+            Uma estudante de 26 anos e apaixonada por tecnologia. Adoro aprender
+            e contribuir de todas as formas possíveis.
+          </Text>
+          <Image
+            style={styles.tinyImg}
+            source={require("../../assets/raquel.jpg")}
+          />
+          <Text style={styles.nome}>Raquel Mendonça</Text>
+          <Text style={styles.texto}>
+            Conhecimento e habilidades para execução da estratégia comercial;
+            Compromisso com as metas estabelecidas.
+          </Text>
+          <Image
+            style={styles.tinyImg}
+            source={require("../../assets/roger.jpg")}
+          />
+          <Text style={styles.nome}>Willi Roger</Text>
+          <Text style={styles.texto}>
+            Full stack developer, Philosophy Student in University of São Paulo
+            Science, Technology, Society, Law and Philosophy.
+          </Text>
+        </View>
       </View>
       <Text style={styles.rodape}>© Squad 007 Recode Pro 2020</Text>
     </ScrollView>

@@ -29,7 +29,7 @@ async function  delForm (e)  {
 };
 
 
-  // ------------------------------ Postagens form register
+  // ------------------------------ Cadastro medicamentos
   const sendForm = async (e) => {
     e.preventDefault();
     console.log(formData);
@@ -394,6 +394,7 @@ async function  delForm (e)  {
                   class="btn btn-primary mx-2"
                   form="cadastrarMED"
                   value="CADASTRAR"
+                  // data-dismiss="modal"
                 />
               </div>
             </div>

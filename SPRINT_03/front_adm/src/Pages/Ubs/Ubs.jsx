@@ -76,7 +76,7 @@ export default function Ubs() {
       setUbs(await response.json());
     }
     fetchMyAPI();
-  }, []);
+  }, [ubs]);
 
   // ----------------------------- Api ADM
   useEffect(() => {
