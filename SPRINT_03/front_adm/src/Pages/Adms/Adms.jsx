@@ -42,7 +42,7 @@ export default function Adms() {
       setAdms( await response.json());
     }
     fetchMyAPI();
-  },[]);
+  },[adms]);
 
   return (
     <div className="bg-transparent ">
