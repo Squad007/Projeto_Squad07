@@ -1,20 +1,18 @@
-import React,{useState,useEffect} from "react";
+import React, { useState, useEffect } from "react";
 
-import './msg.css';
+import "./msg.css";
 
 export default function FaleConosco() {
   const [faleConosco, setFaleConosco] = useState([]);
 
   //api adms-----------------
-  useEffect(()=> {
-    async function fetchMyAPI(){
-      const response = await fetch ("http://localhost:3001/msg");
-      setFaleConosco( await response.json());
+  useEffect(() => {
+    async function fetchMyAPI() {
+      const response = await fetch("http://localhost:3001/msg");
+      setFaleConosco(await response.json());
     }
     fetchMyAPI();
-  },[]);
-
-
+  }, []);
 
   return (
     <div>
@@ -49,47 +47,40 @@ export default function FaleConosco() {
           while ($rows = $result->fetch_assoc()) {
         ?> */}
 
-              
-            {faleConosco.map((falecon) =>(
-              
-              <tr>
-                <th class="align-middle text-center text-primary" scope="row ">
-                  {/* <?php echo date('d/m/Y', strtotime($rows['data'])); ?> */}
-                  {/* <?php echo date('h:i A', strtotime($rows['data'])); ?> */}
-                  {falecon.data}
-                </th>
-                <td class="align-middle text-left">
-                  <b class="text-primary">
-                    {/*<?php echo $rows["nome"]; ?>*/}:
-                    {falecon.nome}
-                  </b>
-                  {/* <?php echo $rows["msg"]; ?> */}
-                  {falecon.msg}
-                </td>
-                <td class="align-middle text-right">
-                  <div class="btn-group">
-                    <form method="post">
-                      <input
-                        type="hidden"
-                        name="id"
-                            value={falecon.id}
-            
-                        
-                      />
-                    
+              {faleConosco.map((falecon) => (
+                <tr>
+                  <th
+                    class="align-middle text-center text-primary"
+                    scope="row "
+                  >
+                    {/* <?php echo date('d/m/Y', strtotime($rows['data'])); ?> */}
+                    {/* <?php echo date('h:i A', strtotime($rows['data'])); ?> */}
+                    {falecon.data}
+                  </th>
+                  <td class="align-middle text-left">
+                    <b class="text-primary">
+                      {/*<?php echo $rows["nome"]; ?>*/}:{falecon.nome}
+                    </b>
+                    {/* <?php echo $rows["msg"]; ?> */}
+                    {falecon.msg}
+                  </td>
+                  <td class="align-middle text-right">
+                    <div class="btn-group">
+                      <form method="post">
+                        <input type="hidden" name="id" value={falecon.id} />
 
-                      <button
-                        type="submit"
-                        class="btn btn-outline-danger  font-weight-bold"
-                      >
-                        <input type="hidden" name="excluir" />
-                        APAGAR{" "}
-                      </button>
-                    </form>
-                  </div>
-                </td>
-              </tr>
-            ))}
+                        <button
+                          type="submit"
+                          class="btn btn-outline-danger  font-weight-bold"
+                        >
+                          <input type="hidden" name="excluir" />
+                          APAGAR{" "}
+                        </button>
+                      </form>
+                    </div>
+                  </td>
+                </tr>
+              ))}
 
               {/* <?php
           }

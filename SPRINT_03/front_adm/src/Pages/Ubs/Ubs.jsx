@@ -6,7 +6,7 @@ export default function Ubs() {
   const [ubs, setUbs] = useState([]);
   const [adm, setAdm] = useState([]);
   const [formData, setFormData] = useState({
-    // id: "",
+    id: "",
     cadastrado_por_id: "",
     nomeUbs: "",
     descricao: "",
@@ -21,13 +21,11 @@ export default function Ubs() {
     latitude: "",
     longitude: "",
   });
-  const [del, setDel] = useState(0);
-  const [id, setId] = useState(0);
 
   // ------------------------------ Postagens form register
   const sendForm = async (e) => {
     e.preventDefault();
-    console.log(formData)
+    console.log(formData);
     try {
       const res = await fetch("http://localhost:3001/ubs", {
         method: "POST",
@@ -55,9 +53,9 @@ export default function Ubs() {
   };
 
   // ------------------------------ Delete
-  const delForm = async (event) => {
-    const  id  = event
-    console.log(id)
+  const delForm = async (e) => {
+    e.preventDefault();
+    let id = document.querySelector("#inputDelete").value
      try {
       const res = await fetch(`http://localhost:3001/ubs/${id}`, {
         method: "delete",
@@ -67,9 +65,6 @@ export default function Ubs() {
       alert("Erro: mensagem não cadastrada, tente mais tarde!");
     }
   };
-
-  const onChangeInputDelete = (e) =>
-    setDel({ ...del, [e.target.name]: e.target.value });
 
   const onChangeInput = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -223,7 +218,6 @@ export default function Ubs() {
                               <form
                                 id={"atualizarUBS" + ubs.id}
                                 className="container-fluid"
-                                action="#"
                                 method="post"
                                 // id//
                               >
@@ -416,7 +410,6 @@ export default function Ubs() {
                                   type="submit"
                                   className="btn btn-primary mx-2"
                                   value="ATUALIZAR"
-                                  value={ubs.id}
                                 />
                               </div>
                             </div>
@@ -424,18 +417,26 @@ export default function Ubs() {
                         </div>
                       </div>
 
-                      
-
+                      <form
+                        id="formDelete"
+                        name="formDelete"
+                        onSubmit={delForm}
+                        method="post"
+                      >
+                        <input
+                          id="inputDelete"
+                          type="hidden"
+                          name="id"
+                          value={ubs.id}
+                        />
                         <button
-                          id={ubs.id}
-                          type="button"
-                          onClick={delForm()}
+                          type="submit"
+                          form="formDelete"
                           className="btn btn-outline-danger font-weight-bold"
                         >
-                          <input type="hidden" name="excluir" />
                           APAGAR{" "}
                         </button>
-                      
+                      </form>
                     </div>
                   </td>
                 </tr>
