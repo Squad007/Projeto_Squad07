@@ -38,7 +38,7 @@ routes.put('/ubs', UBScontr.putUBS); // atualiza ubs por id
 routes.put('/med', MEDcontr.putMED); // atualiza medicamento por id
 
 routes.delete('/ubs/:id', UBScontr.deleteUBS); // apaga ubs por id
-routes.delete('/med', MEDcontr.deleteMED); // apaga medicamento por id
+routes.delete('/med/:id', MEDcontr.deleteMED); // apaga medicamento por id
 routes.delete('/den/:id', DENcontr.deleteDEN); // apaga notificacao por id
 routes.delete('/msg/:id', MSGcontr.deleteMSG); // apaga mensagem por id
 

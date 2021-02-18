@@ -41,7 +41,7 @@ class MEDcontr {
   }
 
   deleteMED(req, res) {
-    const { id } = req.body;
+    const { id } = req.params;
 
     MEDmodel.id = id;
     MEDmodel.deleteMED(req, res);

@@ -13,6 +13,22 @@ export default function Medicamentos() {
     cadastrado_por_id: "",
   });
 
+// ------------------------------ Delete
+async function  delForm (e)  {
+  // e.preventDefault();
+  let id = e
+  console.log(e)
+   try {
+    const res = await fetch(`http://localhost:3001/med/${id}`, {
+      method: "delete",
+    });
+   
+  } catch (err) {
+    alert("Erro: mensagem não cadastrada, tente mais tarde!");
+  }
+};
+
+
   // ------------------------------ Postagens form register
   const sendForm = async (e) => {
     e.preventDefault();
@@ -45,7 +61,7 @@ export default function Medicamentos() {
       setMedic(await response.json());
     }
     fetchMyAPI();
-  }, []);
+  }, [medic]);
 
    // ----------------------------- Api ADM
    useEffect(() => {
@@ -241,17 +257,17 @@ export default function Medicamentos() {
                           </div>
                         </div>
                       </div>
-                      <form method="post">
-                        <input type="hidden" name="id" value={med.id} />
+                      
 
                         <button
                           type="submit"
                           class="btn btn-outline-danger  font-weight-bold"
+                          onClick={() => delForm(med.id)}
                         >
-                          <input type="hidden" name="excluir" />
+                         
                           APAGAR{" "}
                         </button>
-                      </form>
+                      
                     </div>
                   </td>
                 </tr>
