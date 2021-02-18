@@ -15,7 +15,7 @@ class MSGcontr {
   }
 
   deleteMSG(req, res) {
-    const { id } = req.body;
+    const { id } = req.params;
 
     MSGmodel.id = id;
     MSGmodel.deleteMSG(req, res);

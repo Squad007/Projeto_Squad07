@@ -5,6 +5,21 @@ import "./msg.css";
 export default function FaleConosco() {
   const [faleConosco, setFaleConosco] = useState([]);
 
+  // ------------------------------ Delete
+  const delForm = async (e) => {
+    e.preventDefault();
+    let id = document.querySelector("#inputDelete").value
+     try {
+      const res = await fetch(`http://localhost:3001/msg/${id}`, {
+        method: "delete",
+      });
+      console.log(res)
+    } catch (err) {
+      alert("Erro: mensagem não cadastrada, tente mais tarde!");
+    }
+  };
+
+
   //api adms-----------------
   useEffect(() => {
     async function fetchMyAPI() {
@@ -66,11 +81,12 @@ export default function FaleConosco() {
                   </td>
                   <td class="align-middle text-right">
                     <div class="btn-group">
-                      <form method="post">
-                        <input type="hidden" name="id" value={falecon.id} />
+                      <form id="formDelete" name="formDelete" onSubmit={delForm} method="post">
+                        <input  id="inputDelete"  type="hidden" name="id" value={falecon.id} />
 
                         <button
                           type="submit"
+                          form="formDelete"
                           class="btn btn-outline-danger  font-weight-bold"
                         >
                           <input type="hidden" name="excluir" />

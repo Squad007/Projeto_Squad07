@@ -35,7 +35,7 @@ class DENcontr {
   }
 
   deleteDEN(req, res) {
-    const { id } = req.body;
+    const { id } = req.params;
 
     DENmodel.id = id;
     DENmodel.deleteDEN(req, res);
