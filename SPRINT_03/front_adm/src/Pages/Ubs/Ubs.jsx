@@ -22,7 +22,7 @@ export default function Ubs() {
     longitude: "",
   });
 
-  // ------------------------------ Postagens form register
+  // ------------------------------ Cadastro Ubs
   const sendForm = async (e) => {
     e.preventDefault();
     console.log(formData);
@@ -53,9 +53,9 @@ export default function Ubs() {
   };
 
   // ------------------------------ Delete
-  const delForm = async (e) => {
-    e.preventDefault();
-    let id = document.querySelector("#inputDelete").value
+  async function delForm(e) {
+    let id = e
+    console.log(e)
      try {
       const res = await fetch(`http://localhost:3001/ubs/${id}`, {
         method: "delete",
@@ -90,7 +90,6 @@ export default function Ubs() {
   return (
     <>
       <div className="UBS jumbotron card card-image text-white bg-transparent h-100 ">
-        {/* style="background-color: rgba(0,0,0,0);" */}
         <p className="text-center">Bem vindo ao sistema SOS, - </p>
         <h1 className="display-4 text-warning  font-weight-bold">UBS's</h1>
         <button
@@ -416,27 +415,14 @@ export default function Ubs() {
                           </div>
                         </div>
                       </div>
-
-                      <form
-                        id="formDelete"
-                        name="formDelete"
-                        onSubmit={delForm}
-                        method="post"
-                      >
-                        <input
-                          id="inputDelete"
-                          type="hidden"
-                          name="id"
-                          value={ubs.id}
-                        />
+                      
                         <button
-                          type="submit"
-                          form="formDelete"
+                          type="text"
+                          onClick={() => delForm(ubs.id)}
                           className="btn btn-outline-danger font-weight-bold"
                         >
                           APAGAR{" "}
                         </button>
-                      </form>
                     </div>
                   </td>
                 </tr>

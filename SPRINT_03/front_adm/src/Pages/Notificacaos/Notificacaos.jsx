@@ -12,12 +12,10 @@ export default function Notificacaos() {
       const res = await fetch(`http://localhost:3001/den/${id}`, {
         method: "delete",
       });
-      console.log(res)
     } catch (err) {
       alert("Erro: mensagem não cadastrada, tente mais tarde!");
     }
   };
-
 
   // ----------------------------- Api notificações
   useEffect (() => {
@@ -27,7 +25,6 @@ export default function Notificacaos() {
     }
     fetchMyAPI()
   }, []);
-
 
   return (
     <div>
