@@ -4,27 +4,29 @@ import './not.css'
 export default function Notificacaos() {
   const [notific, setNotific] = useState([]);
 
+
   // ------------------------------ Delete
-  const delForm = async (e) => {
-    e.preventDefault();
-    let id = document.querySelector("#inputDelete").value
+  async   function delForm (e) {
+    // e.preventDefault();
+    let id = e
      try {
       const res = await fetch(`http://localhost:3001/den/${id}`, {
         method: "delete",
       });
+      console.log(res)
     } catch (err) {
       alert("Erro: mensagem não cadastrada, tente mais tarde!");
     }
   };
-
+  
   // ----------------------------- Api notificações
   useEffect (() => {
     async function fetchMyAPI() {
       const response = await fetch("http://localhost:3001/den/forADM");
       setNotific(await response.json());
     }
-    fetchMyAPI()
-  }, []);
+    fetchMyAPI();
+  }, [notific]);
 
   return (
     <div>
@@ -118,23 +120,24 @@ export default function Notificacaos() {
                 </td>
                 <td className="align-middle text-right">
                   <div className="btn-group">
-                    <form id="formDelete"name="formDelete" method="post" onSubmit={delForm}>
-                      <input id="inputDelete"
+                    
+                        <button
                         type="hidden"
                         name="id"
                         value={not.id}
-
+                        
                       />
 
                       <button
                         type="submit"
                         className="btn btn-outline-danger font-weight-bold"
                         form="formDelete"
+                        onClick={()=> delForm(not.id)}
                       >
-                        <input type="hidden" name="excluir" />
+                       
                         APAGAR
                       </button>
-                    </form>
+                   
                   </div>
                 </td>
               </tr>
