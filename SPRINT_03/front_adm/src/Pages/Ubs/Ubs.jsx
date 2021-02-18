@@ -6,6 +6,7 @@ export default function Ubs() {
   const [ubs, setUbs] = useState([]);
   const [adm, setAdm] = useState([]);
   const [formData, setFormData] = useState({
+    // id: "",
     cadastrado_por_id: "",
     nomeUbs: "",
     descricao: "",
@@ -20,10 +21,13 @@ export default function Ubs() {
     latitude: "",
     longitude: "",
   });
+  const [del, setDel] = useState(0);
+  const [id, setId] = useState(0);
 
   // ------------------------------ Postagens form register
   const sendForm = async (e) => {
     e.preventDefault();
+    console.log(formData)
     try {
       const res = await fetch("http://localhost:3001/ubs", {
         method: "POST",
@@ -50,6 +54,23 @@ export default function Ubs() {
     }
   };
 
+  // ------------------------------ Delete
+  const delForm = async (event) => {
+    const  id  = event
+    console.log(id)
+     try {
+      const res = await fetch(`http://localhost:3001/ubs/${id}`, {
+        method: "delete",
+      });
+      console.log(res)
+    } catch (err) {
+      alert("Erro: mensagem não cadastrada, tente mais tarde!");
+    }
+  };
+
+  const onChangeInputDelete = (e) =>
+    setDel({ ...del, [e.target.name]: e.target.value });
+
   const onChangeInput = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
@@ -62,8 +83,8 @@ export default function Ubs() {
     fetchMyAPI();
   }, []);
 
-   // ----------------------------- Api ADM
-   useEffect(() => {
+  // ----------------------------- Api ADM
+  useEffect(() => {
     async function fetchMyAPI() {
       const response = await fetch("http://localhost:3001/adm");
       setAdm(await response.json());
@@ -403,17 +424,18 @@ export default function Ubs() {
                         </div>
                       </div>
 
-                      <form method="post">
-                        <input type="hidden" name="id" value={ubs.id} />
+                      
 
                         <button
-                          type="submit"
-                          className="btn btn-outline-danger  font-weight-bold"
+                          id={ubs.id}
+                          type="button"
+                          onClick={delForm()}
+                          className="btn btn-outline-danger font-weight-bold"
                         >
                           <input type="hidden" name="excluir" />
                           APAGAR{" "}
                         </button>
-                      </form>
+                      
                     </div>
                   </td>
                 </tr>
@@ -459,7 +481,9 @@ export default function Ubs() {
               >
                 <div className="row">
                   <div className=" col-sm-5 form-group">
-                    <label for="cadastrado_por_id" className="col-form-label">Cadastrado por:</label>
+                    <label for="cadastrado_por_id" className="col-form-label">
+                      Cadastrado por:
+                    </label>
                     <select
                       className="custom-select mr-sm-2 border border-primary"
                       name="cadastrado_por_id"
@@ -468,9 +492,7 @@ export default function Ubs() {
                       required
                     >
                       {adm.map((adm) => (
-                        <option value={adm.username}>
-                        {adm.username}
-                      </option>
+                        <option value={adm.username}>{adm.username}</option>
                       ))}
                     </select>
                   </div>

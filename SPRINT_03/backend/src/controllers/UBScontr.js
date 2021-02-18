@@ -78,7 +78,7 @@ class UBScontr {
   }
 
   deleteUBS(req, res) {
-    const { id } = req.body;
+    const { id } = req.params;
 
     UBSmodel.id = id;
     UBSmodel.deleteUBS(req, res);
