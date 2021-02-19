@@ -97,9 +97,7 @@ const styles = StyleSheet.create({
 });
 
 const Home = ({ navigation }) => {
-  // function menu() {
-  //   Alert.alert("Deslize do lado esquerdo para o direito!!");
-  // }
+
   function notifique() {
     navigation.navigate("Notifique");
   }

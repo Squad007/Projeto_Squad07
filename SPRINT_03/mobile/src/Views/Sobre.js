@@ -8,6 +8,8 @@ import {
   TouchableOpacity,
 } from "react-native";
 
+import { Entypo } from '@expo/vector-icons';
+
 const styles = StyleSheet.create({
   tinyImg: {
     width: 80,
@@ -39,6 +41,12 @@ const styles = StyleSheet.create({
     textAlign: "center",
     lineHeight: 25,
   },
+  textoMenu: {
+    fontSize: 17,
+    color: "white",
+    textAlign: "center",
+    fontWeight: "bold",
+  },
   textobtn: {
     fontSize: 18,
     color: "white",
@@ -49,8 +57,10 @@ const styles = StyleSheet.create({
     marginTop: 12,
     padding: 10,
     borderRadius: 4,
-    width: 150,
+    width: "30%",
     marginBottom: 20,
+    flexDirection: 'column',
+    justifyContent: 'center',
   },
   nome: {
     textAlign: "center",
@@ -70,13 +80,13 @@ const styles = StyleSheet.create({
   },
 });
 
-const Sobre = () => {
+const Sobre = ({navigation}) => {
   return (
     <ScrollView>
       <View style={styles.tinyBack}>
-        <TouchableOpacity style={styles.btnMenu}>
-          <Text style={styles.textobtn}>MENU</Text>
-        </TouchableOpacity>
+      <TouchableOpacity style={styles.btnMenu} onPress={() => navigation.openDrawer()}>
+            <Text style={styles.textoMenu}><Entypo name="menu" size={24} color="white" /> MENU</Text>
+          </TouchableOpacity>
         <Image
           style={styles.tinyLogo}
           source={require("../../assets/logo.png")}

@@ -1,5 +1,4 @@
 import React from "react";
-import { DataTable } from "react-native-paper";
 import {
   View,
   Text,
@@ -9,6 +8,8 @@ import {
   Platform,
   ScrollView,
 } from "react-native";
+
+import { Entypo } from '@expo/vector-icons';
 
 const styles = StyleSheet.create({
   caixa: {
@@ -47,8 +48,10 @@ const styles = StyleSheet.create({
     marginTop: 12,
     padding: 10,
     borderRadius: 4,
-    width: "50%",
+    width: "30%",
     marginBottom: 20,
+    flexDirection: 'column',
+    justifyContent: 'center',
   },
   texto: {
     fontSize: 15,
@@ -56,6 +59,12 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontWeight: "bold",
   },
+  textoMenu: {
+    fontSize: 17,
+    color: "white",
+    textAlign: "center",
+    fontWeight: "bold",
+  },  
   img: {
     backgroundColor: "#cecece",
     padding: 50,
@@ -77,13 +86,13 @@ const styles = StyleSheet.create({
     marginTop: Platform.OS === "web" ? 30 : "70%",
   },
 });
-const Notificacao = () => {
+const Notificacao = ({navigation}) => {
   return (
     <ScrollView style={styles.caixa}>
       <View style={styles.tinyBack}>
-        <TouchableOpacity style={styles.btnMenu}>
-          <Text style={styles.texto}>MENU</Text>
-        </TouchableOpacity>
+      <TouchableOpacity style={styles.btnMenu} onPress={() => navigation.openDrawer()}>
+            <Text style={styles.textoMenu}><Entypo name="menu" size={24} color="white" /> MENU</Text>
+          </TouchableOpacity>
         <Image
           style={styles.tinyLogo}
           source={require("../../assets/logo.png")}
