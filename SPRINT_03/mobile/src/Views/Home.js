@@ -10,6 +10,7 @@ import {
   StatusBar,
 } from "react-native";
 
+
 import { Entypo } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
 // import { NavigationContainer } from '@react-navigation/native';
@@ -39,11 +40,15 @@ const styles = StyleSheet.create({
     padding: 20,
     fontWeight: "bold",
   },
+  pill: {
+    width: 200,
+    height: 125,
+    textAlign: "center",
+  },
   tituloCard: {
     color: "#FFF",
     fontWeight: "bold",
   },
-
   card: {
     backgroundColor: "#00b9b3",
     marginBottom: 15,
@@ -91,21 +96,23 @@ const styles = StyleSheet.create({
     textAlign: "center",
     marginTop: "auto",
   },
-  // icons: {
-  //   paddingRight: 10,
-  // },
+  container: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 15,
+  },
 });
 
 const Home = ({ navigation }) => {
 
   function notifique() {
-    navigation.navigate("Notifique");
+    navigation.navigate("NOTIFIQUE");
   }
   function notificacao() {
-    navigation.navigate("Notificações");
+    navigation.navigate("NOTIFICAÇÕES");
   }
   function sobre() {
-    navigation.navigate("Sobre");
+    navigation.navigate("SOBRE");
   }
 
   return (
@@ -119,6 +126,12 @@ const Home = ({ navigation }) => {
           <Image
             style={styles.tinyLogo}
             source={require("../../assets/logo.png")}
+          />
+        </View>
+        <View style={styles.container}>
+          <Image
+            style={styles.pill}
+            source={require("../../assets/pill.png")}
           />
         </View>
         <Text style={styles.titulo}>

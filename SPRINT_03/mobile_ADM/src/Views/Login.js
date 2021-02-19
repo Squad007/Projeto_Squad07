@@ -9,9 +9,11 @@ import {
   StyleSheet,
 } from "react-native";
 
+import { AntDesign } from '@expo/vector-icons';
+
 const apiUsuario = {
   id: 1,
-  email: "nayara@teste.com",
+  email: "sos",
   senha: "123",
 };
 
@@ -34,18 +36,21 @@ function Login({ navigation }) {
     <View style={styles.caixa}>
       <View>
         <View style={styles.inputs}>
+        <AntDesign name="lock" size={70} color="white" />
           <Text style={styles.titulo}>ÁREA DO ADMINISTRADOR</Text>
 
           <TextInput
-            placeholder="Digite o seu username"
+            placeholder="username"
+            placeholderTextColor="#a47cef"
             style={styles.input}
             value={usuario}
             onChangeText={(text) => setUsuario(text)}
           />
 
           <TextInput
-            placeholder="Digite o senha"
+            placeholder="senha"
             style={styles.input}
+            placeholderTextColor="#a47cef"
             secureTextEntry={true}
             value={senha}
             onChangeText={(text) => setSenha(text)}
@@ -60,7 +65,7 @@ function Login({ navigation }) {
 }
 const styles = StyleSheet.create({
   caixa: {
-    backgroundColor: "#121212",
+    backgroundColor: "#6f42c1",
     width: "100%",
     height: "100%",
   },
@@ -69,23 +74,20 @@ const styles = StyleSheet.create({
     width: "70%",
     padding: 10,
     borderBottomWidth: 2,
-    borderColor: "#fff5",
-    color: "white",
+    borderColor: "#00b9b3",
+    color: "#FFF",
     fontSize: 20,
     fontWeight: "bold",
     borderRadius: 10,
     margin: 5,
   },
-
   btn: {
-    backgroundColor: "#FFF3",
+    backgroundColor: "#00b9b3",
     marginTop: 12,
     padding: 8,
     borderRadius: 10,
     width: "50%",
-    opacity: 0.5,
   },
-
   inputs: {
     display: "flex",
     flexDirection: "column",

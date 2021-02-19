@@ -8,7 +8,10 @@ import {
   Platform,
   Image,
   Alert,
+  StatusBar,
 } from "react-native";
+import { Entypo } from '@expo/vector-icons';
+
 import { Entypo } from '@expo/vector-icons';
 
 const styles = StyleSheet.create({
@@ -16,8 +19,9 @@ const styles = StyleSheet.create({
     height: Platform.OS === "web" ? "100vh" : "100%",
   },
   tinyLogo: {
-    width: 100,
-    height: 50,
+    width: 122,
+    height: 70,
+    justifyContent: 'center'
   },
   tinyBack: {
     backgroundColor: "#00b9b3",
@@ -84,13 +88,19 @@ const styles = StyleSheet.create({
   },
 });
 
+<<<<<<< HEAD
 const Notifique = ({navigation}) => {
+=======
+const Notifique = ({ navigation }) => {
+>>>>>>> 43092ee84e032c2fac9e76b4c328827d39bdf5e5
   function notifique() {
     Alert.alert("Notificação enviada com Sucesso!!");
   }
 
+
   return (
     <View style={styles.caixa}>
+<<<<<<< HEAD
       <View style={styles.tinyBack}>
       <TouchableOpacity style={styles.btnMenu} onPress={() => navigation.openDrawer()}>
             <Text style={styles.texto}><Entypo name="menu" size={24} color="white" /> MENU</Text>
@@ -99,6 +109,19 @@ const Notifique = ({navigation}) => {
           style={styles.tinyLogo}
           source={require("../../assets/logo.png")}
         />
+=======
+      <StatusBar hidden={false} />
+      <View>
+        <View style={styles.tinyBack}>
+          <TouchableOpacity style={styles.btnMenu} onPress={() => navigation.openDrawer()}>
+            <Text style={styles.texto}><Entypo name="menu" size={24} color="white" /> MENU</Text>
+          </TouchableOpacity>
+          <Image
+            style={styles.tinyLogo}
+            source={require("../../assets/logo.png")}
+          />
+        </View>
+>>>>>>> 43092ee84e032c2fac9e76b4c328827d39bdf5e5
       </View>
       <View style={styles.inputs}>
         <Text style={styles.titulo}>Cadastrar Notificação</Text>
@@ -109,7 +132,7 @@ const Notifique = ({navigation}) => {
           
         />
 
-        <Text style={styles.label}>Data de quando faltou o remedio</Text>
+        <Text style={styles.label}>Data de quando faltou o remédio</Text>
         <TextInput
           placeholder="Digite a data"
           style={styles.input}

@@ -6,6 +6,7 @@ import {
   StyleSheet,
   ScrollView,
   TouchableOpacity,
+  StatusBar,
 } from "react-native";
 
 import { Entypo } from '@expo/vector-icons';
@@ -18,8 +19,9 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   tinyLogo: {
-    width: 100,
-    height: 50,
+    width: 122,
+    height: 70,
+    justifyContent: 'center'
   },
   tinyBack: {
     backgroundColor: "#00b9b3",
@@ -67,7 +69,11 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     marginTop: 10,
   },
-
+  texto_menu: {
+    fontSize: 18,
+    color: "white",
+    textAlign: "center",
+  },
   rodape: {
     textAlign: "center",
     marginTop: "auto",
@@ -80,6 +86,7 @@ const styles = StyleSheet.create({
   },
 });
 
+<<<<<<< HEAD
 const Sobre = ({navigation}) => {
   return (
     <ScrollView>
@@ -92,6 +99,20 @@ const Sobre = ({navigation}) => {
           source={require("../../assets/logo.png")}
         />
       </View>
+=======
+const Sobre = ({ navigation }) => {
+  return (
+    <ScrollView>
+        <View style={styles.tinyBack}>
+          <TouchableOpacity style={styles.btnMenu} onPress={() => navigation.openDrawer()}>
+            <Text style={styles.texto_menu}><Entypo name="menu" size={24} color="white" /> MENU</Text>
+          </TouchableOpacity>
+          <Image
+            style={styles.tinyLogo}
+            source={require("../../assets/logo.png")}
+          />
+        </View>
+>>>>>>> 43092ee84e032c2fac9e76b4c328827d39bdf5e5
       <View>
         <Text style={styles.titulo}>Nossa História</Text>
 

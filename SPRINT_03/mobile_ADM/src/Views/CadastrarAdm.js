@@ -6,7 +6,8 @@ import {
   StyleSheet,
   TouchableOpacity,
   Platform,
-  Image
+  Image,
+  ScrollView
 } from "react-native";
 
 const styles = StyleSheet.create({
@@ -83,56 +84,103 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'space-around',
     alignItems: "center",
+    marginBottom: 25,
+  },
+  container_row: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: "center",
+    alignItems: "center",
+    marginBottom: 10,
+  },
+  container: {
+    flex: 2,
+    flexDirection: 'column',
+    justifyContent: 'space-around',
+    alignItems: "center",
   }
 });
 
 const Notificacao = () => {
   return (
     
-    <View style={styles.caixa}>
-     
-       
-      <View style={styles.ims}>
-      <View >
-      <Text style={styles.titulo}>ADM'S</Text>
-
-        <Text style={styles.label}>Atuais ADM's do sistema SOS</Text>
-        
-        <Image
-          style={styles.tinyLogo}
-          source={require("../../assets/eliana.jpg")}
-        />
-        <Text>Eliana Souza</Text>
-        <Image
-          style={styles.tinyLogo}
-          source={require("../../assets/cris.jpg")}
-        />
-        <Text>Cristiano Santana</Text>
-        <Image
-          style={styles.tinyLogo}
-          source={require("../../assets/mit.jpg")}
-        />
-        <Text>Mitsuhiko Takushi</Text>
-        <Image
-          style={styles.tinyLogo}
-          source={require("../../assets/nay.jpg")}
-        />
-        <Text>Nayara Suelen</Text>
-        <Image
-          style={styles.tinyLogo}
-          source={require("../../assets/raquel.jpg")}
-        />
-        <Text>Raquel Mendonça</Text>
-        <Image
-          style={styles.tinyLogo}
-          source={require("../../assets/roger.jpg")}
-        />
-        <Text>Willi Roger</Text>
+    <ScrollView style={styles.caixa}>
+            
+        <View style={styles.ims}>
+          <Text style={styles.titulo}>ADM'S</Text>
+          <Text style={styles.label}>Atuais ADM's do sistema SOS</Text>
         </View>
-        <View >
+    
+     <View style={styles.container_row}>
+        <View style={styles.container}>
+                <Image
+                style={styles.tinyLogo}
+                source={require("../../assets/eliana.jpg")}
+                />
+              <Text>Eliana Souza</Text>
+        </View>
+        <View style={styles.container}>
+              <Image
+                style={styles.tinyLogo}
+                source={require("../../assets/cris.jpg")}
+              />
+              <Text>Cristiano Santana</Text>
+        </View>
+      </View>
+
+      <View style={styles.container_row}>
+        <View style={styles.container}>
+          <Image
+              style={styles.tinyLogo}
+              source={require("../../assets/mit.jpg")}
+          />
+          <Text>Mitsuhiko Takushi</Text>
+        </View>
+        <View style={styles.container}>
+        <Image
+            style={styles.tinyLogo}
+            source={require("../../assets/nay.jpg")}
+          />
+          <Text>Nayara Suelen</Text>
+        </View>
+      </View>
+
+      <View style={styles.container_row}>
+        <View style={styles.container}>
+          <Image
+              style={styles.tinyLogo}
+              source={require("../../assets/raquel.jpg")}
+            />
+          <Text>Raquel Mendonça</Text>
+        </View>
+        <View style={styles.container}> 
+        <Image
+            style={styles.tinyLogo}
+            source={require("../../assets/roger.jpg")}
+          />
+          <Text>Willi Roger</Text>
+        </View>
+      </View>
+
+
+
+
+{/* 
+
+          
+
+      </View> 
+
+      <View style={styles.container}> 
+
+      </View>  */}
+      
+      <View style={styles.ims}>
+      
+      <View >
       <Text style={styles.titulo}>CADASTRAR</Text>
 
-      <Text style={styles.label}>Data de quando faltou o remedio</Text>
+      <Text style={styles.label}>Data de quando faltou o medicamento</Text>
       <TextInput
         placeholder="Digite o nome"
         style={styles.input}
@@ -178,7 +226,7 @@ const Notificacao = () => {
       <Text style={{ marginBottom: "auto", textAlign: "center" }}>
         © Squad 007 Recode Pro 2020 - 2021
       </Text>
-    </View>
+    </ScrollView>
   );
 };
 
