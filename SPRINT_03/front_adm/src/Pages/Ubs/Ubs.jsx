@@ -52,29 +52,7 @@ export default function Ubs() {
     }
   };
 
-  //---------  Atualizar UBS
-  //---------  Atualizar UBS
-  //---------  Atualizar UBS
-  //---------  Atualizar UBS
-  //---------  Atualizar UBS
-  //---------  Atualizar UBS
-  //---------  Atualizar UBS
-  //---------  Atualizar UBS
-  //---------  Atualizar UBS
-  //---------  Atualizar UBS
-  //---------  Atualizar UBS
-  //---------  Atualizar UBS
-  //---------  Atualizar UBS
-  //---------  Atualizar UBS
-  //---------  Atualizar UBS
-  //---------  Atualizar UBS
-  //---------  Atualizar UBS
-  //---------  Atualizar UBS
-  //---------  Atualizar UBS
-  //---------  Atualizar UBS
-  //---------  Atualizar UBS
-  //---------  Atualizar UBS
-  //---------  Atualizar UBS
+  // ---------------------------------------  Atualizar UBS
 
   const updateForm = async (e) => {
     e.preventDefault();
@@ -84,23 +62,7 @@ export default function Ubs() {
         method: 'PUT', // GET, POST, PUT, DELETE
         body: JSON.stringify(formData),
         headers: { 'Content-Type': 'application/json' },
-      }).then((dados) => {
-        setFormData({
-          id: '',
-          nomeUbs: '',
-          descricao: '',
-          endereco: '',
-          bairro: '',
-          distrito: '',
-          zona: '',
-          cidade: '',
-          uf: '',
-          cep: '',
-          telefone: '',
-          latitude: '',
-          longitude: '',
-        });
-      });
+      })
     } catch (err) {
       alert('Erro: UBS não atualizada, tente mais tarde!');
     }
@@ -272,26 +234,6 @@ export default function Ubs() {
                       >
                         EDITAR
                       </button>
-
-                      {/* <!-- Modal para atualizar UBS --> */}
-                      {/* <!-- Modal para atualizar UBS --> */}
-                      {/* <!-- Modal para atualizar UBS --> */}
-                      {/* <!-- Modal para atualizar UBS --> */}
-                      {/* <!-- Modal para atualizar UBS --> */}
-                      {/* <!-- Modal para atualizar UBS --> */}
-                      {/* <!-- Modal para atualizar UBS --> */}
-                      {/* <!-- Modal para atualizar UBS --> */}
-                      {/* <!-- Modal para atualizar UBS --> */}
-                      {/* <!-- Modal para atualizar UBS --> */}
-                      {/* <!-- Modal para atualizar UBS --> */}
-                      {/* <!-- Modal para atualizar UBS --> */}
-                      {/* <!-- Modal para atualizar UBS --> */}
-                      {/* <!-- Modal para atualizar UBS --> */}
-                      {/* <!-- Modal para atualizar UBS --> */}
-                      {/* <!-- Modal para atualizar UBS --> */}
-                      {/* <!-- Modal para atualizar UBS --> */}
-                      {/* <!-- Modal para atualizar UBS --> */}
-                      {/* <!-- Modal para atualizar UBS --> */}
                       {/* <!-- Modal para atualizar UBS --> */}
                       <div
                         className="modal fade text-dark"
@@ -347,16 +289,6 @@ export default function Ubs() {
                                       </option>
                                     </select>
                                   </div>
-                                </div>
-
-                                <div className="form-group">
-                                  <input
-                                    type="text"
-                                    name="nome"
-                                    className="form-control border border-primary"
-                                    id="input"
-                                    disabled="true"
-                                  />
                                 </div>
 
                                 <div className="form-group">
@@ -561,6 +493,7 @@ export default function Ubs() {
                                   className="btn btn-primary mx-2"
                                   form={'atualizarUBS' + ubs.id}
                                   value="ATUALIZAR"
+                                  onClick={() => alert("Atualizado com sucesso")}
                                 />
                               </div>
                             </div>

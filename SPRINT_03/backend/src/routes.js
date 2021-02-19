@@ -14,7 +14,7 @@ const routes = new Router();
 routes.get('/ubs/DENcount', UBScontr.getUBSwDENcount); // usar para os pins --OK
 routes.get('/den', DENcontr.getDEN); // lista completa notificação --OK
 routes.get('/den/byMonth/:month/:year', DENcontr.getDENbyMonth); // filtro por mês/ano
-routes.get('/den/byUBS/:ubsid', DENcontr.getDENbyUBS); // notificação por UBS
+routes.get('/den/byUBS/:ubsid', DENcontr.getDENbyUBS); // notificação por UBS  --OK
 routes.get('/med/dropdown', MEDcontr.getMEDdropdown); // Select medicamento --OK
 routes.get('/ubs/dropdown', UBScontr.getUBSdropdown); // Select ubs --OK
 routes.post('/den', DENcontr.postDEN); // enviar notificação --OK
@@ -34,12 +34,12 @@ routes.post('/ubs', UBScontr.postUBS); // cadastra nova ubs --OK
 routes.post('/med', MEDcontr.postMED); // cadastra novo medicamento --OK
 routes.post('/adm', ADMcontr.postADM); // cadastra novo adm --OK (falta "if" para confirmar a senha)
 
-routes.put('/ubs', UBScontr.putUBS); // atualiza ubs por id
-routes.put('/med', MEDcontr.putMED); // atualiza medicamento por id
+routes.put('/ubs', UBScontr.putUBS); // atualiza ubs por id --OK
+routes.put('/med', MEDcontr.putMED); // atualiza medicamento por id --OK
 
-routes.delete('/ubs/:id', UBScontr.deleteUBS); // apaga ubs por id
-routes.delete('/med/:id', MEDcontr.deleteMED); // apaga medicamento por id
-routes.delete('/den/:id', DENcontr.deleteDEN); // apaga notificacao por id
-routes.delete('/msg/:id', MSGcontr.deleteMSG); // apaga mensagem por id
+routes.delete('/ubs/:id', UBScontr.deleteUBS); // apaga ubs por id --OK
+routes.delete('/med/:id', MEDcontr.deleteMED); // apaga medicamento por id --OK
+routes.delete('/den/:id', DENcontr.deleteDEN); // apaga notificacao por id --OK
+routes.delete('/msg/:id', MSGcontr.deleteMSG); // apaga mensagem por id --OK
 
 module.exports = routes;

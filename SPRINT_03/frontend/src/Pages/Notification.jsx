@@ -7,12 +7,9 @@ import "../Assets/css/notification.css";
 import mapMarkerImg from "../Assets/img/pin_sos.svg";
 
 export default function Notification() {
-
-  
-  
   const [pinArray, setPinArray] = useState([]);
-  const [ubs, setUbs] = useState(1); //O PROBLEMA ESTA AQUI
   const [notificationButton, setnotificationButton] = useState([]);
+  const [urlDen, setUrlDen] = useState("http://localhost:3001/den/")
 
   // ------------------------------ Api notificações
   useEffect(() => {
@@ -21,19 +18,17 @@ export default function Notification() {
       setPinArray(await response.json());
     }
     fetchMyAPI();
-  }, [ubs]);
+  }, [urlDen]);
 
   // ------------------------------ Api ubs
-  useEffect(() => { //Funciona lado Direito
+  useEffect(() => { 
     async function fetchMyAPI() {
-      const response = await fetch(`http://localhost:3001/den/byUBS/${ubs}` ); //Mostra por ID
+      const response = await fetch(urlDen);
       const dados = await response.json();
       setnotificationButton(dados);
     }
     fetchMyAPI();
-  }, [ubs]);
-
-
+  }, [urlDen]);
 
   const mapIcon = Leaflet.icon({
     iconUrl: mapMarkerImg,
@@ -85,8 +80,8 @@ export default function Notification() {
             className="card_map"
           >
             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-
-            {pinArray.map((pin) => (
+          
+             {pinArray.map((pin) => (
               <Marker icon={mapIcon} position={[pin.latitude, pin.longitude]}>
                 <Tooltip>{pin.qtde}</Tooltip>
                 <Popup
@@ -95,23 +90,7 @@ export default function Notification() {
                   maxWidth={240}
                   className="map-popup"
                 >
-                  <button onClick={() =>  setUbs(pin.id)}>
-                    Mostrar notificações
-                  </button>
-                  {ubs.length > 0 && 
-            ubs.map((not) => (
-              <div className="m-3 row">
-                <div className="col-8">
-                  <p>{not.nomeUbs}</p>
-                  <p className="lead font-weight-bold ">{not.nome}</p>
-                  
-                </div>
-                <div className="col-4 justify-content-center flex-column py-auto d-flex align-items-center">
-                  <p>Data da Falta:</p>
-                  <p>{formatDate(not.data_ocorrencia)}</p>
-                </div>
-              </div>
-            ))}
+                  <button onClick={() => setUrlDen(`http://localhost:3001/den/byUBS/${pin.id}`)}>Mostrar notificações</button>
                   {pin.nomeUbs}
                 </Popup>
               </Marker>

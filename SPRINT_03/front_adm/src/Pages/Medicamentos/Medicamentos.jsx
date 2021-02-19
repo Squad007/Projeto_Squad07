@@ -257,7 +257,7 @@ async function  delForm (e)  {
                           </div>
                         </div>
                       </div>
-                      
+
 
                         <button
                           type="submit"
