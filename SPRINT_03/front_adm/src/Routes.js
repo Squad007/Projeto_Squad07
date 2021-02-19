@@ -18,6 +18,8 @@ export default function Rotas() {
       <RoutesPrivate path="/notificacao" exact component={Notificacaos} />
       <RoutesPrivate path="/faleConosco" exact component={FaleConosco} />
       <RoutesPrivate path="/adms" exact component={Adms} />
+      <RoutesPrivate path="*" exact component={Home} />
+      <RoutesPrivate2 path="*" exact component={Home} />
     </Switch>
   );
 }
