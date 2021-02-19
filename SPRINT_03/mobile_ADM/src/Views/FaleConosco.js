@@ -7,14 +7,23 @@ import {
 } from "react-native";
 import { DataTable } from "react-native-paper";
 
+import { AntDesign } from '@expo/vector-icons';
+
 
 const styles = StyleSheet.create({
   titulo: {
     color: "#007bff",
     fontSize: 32,
     marginTop: 50,
-    fontWeight: 'bold',
-    padding:20
+    padding:20,
+    fontWeight: '700',
+    textAlign: "center"
+  },
+  header: {
+    flexDirection: 'row',
+    alignContent: 'space-between',
+    margin: 4,
+    padding: 4,
   },
   btnexclu: {
     backgroundColor: "#FF0000",
@@ -24,7 +33,6 @@ const styles = StyleSheet.create({
     marginRight: '20%',
     padding: 10,
     opacity:0.5
-   
   },
   textoexclu: {
     fontSize: 18,
@@ -47,11 +55,16 @@ const styles = StyleSheet.create({
   },
 });
 
-function FaleConosco() {
+function FaleConosco({navigation}) {
   return (
     <View>
-       <Text style={styles.texto}>Bem vindo ao sistema SOS, NAY LOPES! - (NL@ITAU.COM)</Text>
-      <Text style={styles.titulo}>Mensagens</Text>
+      <View style={styles.header} >
+          <Text style={styles.texto} onPress={() => navigation.openDrawer()}>
+            <AntDesign name="menu-fold" size={30} color="black"  />  Bem vindo ao sistema SOS!
+          </Text>
+      </View>
+
+      <Text style={styles.titulo}>Mensagens <AntDesign name="mail" size={30} color="#007bff" /></Text>
       
       <Text style={styles.cadas}>Mensagens recentes:</Text>
       <DataTable style={{ padding: 30 }}>

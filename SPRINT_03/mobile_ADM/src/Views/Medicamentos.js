@@ -2,18 +2,25 @@ import React from "react";
 import { View, Text, StyleSheet,TouchableOpacity } from "react-native";
 import { DataTable } from "react-native-paper";
 
+import { AntDesign } from '@expo/vector-icons';
+import { FontAwesome5 } from '@expo/vector-icons';
+
 const styles = StyleSheet.create({
   titulo: {
     color: "#28a745",
     fontSize: 32,
     marginTop: 50,
     fontWeight: 'bold'
-   
   },
+  header: {
+    flexDirection: 'row',
+    alignContent: 'space-between',
+    margin: 4,
+    padding: 4,
+    },
   tituTable: {
     textAlign: "center",
   },
-
   btn: {
     backgroundColor: "#28a745",
     marginTop: 12,
@@ -39,7 +46,6 @@ const styles = StyleSheet.create({
     marginRight: 40,
     padding: 10,
     opacity: 0.5,
-   
   },
   texto: {
     fontSize: 18,
@@ -63,14 +69,25 @@ const styles = StyleSheet.create({
     fontSize: 18,
     color: "white",
     textAlign: "center",
-  }
+  },
+  titulo: {
+    color: "#28a745",
+    fontSize: 32,
+    marginTop: 50,
+    fontWeight: '700',
+    textAlign: "center"
+  },
 });
 
-const Medicamentos = () => {
+const Medicamentos = ({ navigation }) => {
   return (
     <View >
-      <Text style={styles.texto}>Bem vindo ao sistema SOS, NAY LOPES! - (NL@ITAU.COM)</Text>
-    <Text style={styles.titulo}>Medicamentos</Text>
+      <View style={styles.header} >
+          <Text style={styles.texto} onPress={() => navigation.openDrawer()}>
+            <AntDesign name="menu-fold" size={30} color="black"  />  Bem vindo ao sistema SOS!
+          </Text>
+      </View>
+      <Text style={styles.titulo}>Medicamentos <FontAwesome5 name="pills" size={30} color="green" /></Text>
     <TouchableOpacity style={styles.btn}>
           <Text style={styles.textocad}>CADASTRAR NOVO MEDICAMENTO</Text>
         </TouchableOpacity>

@@ -2,13 +2,22 @@ import React from "react";
 import { DataTable } from "react-native-paper";
 import { View, Text, StyleSheet,TouchableOpacity } from "react-native";
 
+import { AntDesign } from '@expo/vector-icons';
+
 const styles = StyleSheet.create({
   titulo: {
     color: "#FF0000",
     fontSize: 32,
     marginTop: 50,
-    fontWeight: 'bold',
-    padding:20
+    padding:20,
+    fontWeight: '700',
+    textAlign: "center"
+  },
+  header: {
+    flexDirection: 'row',
+    alignContent: 'space-between',
+    margin: 4,
+    padding: 4,
   },
   btnexclu: {
     backgroundColor: "#FF0000",
@@ -18,7 +27,6 @@ const styles = StyleSheet.create({
     marginRight: '20%',
     padding: 10,
     opacity: 0.5,
-   
   },
   textoexclu: {
     fontSize: 18,
@@ -39,11 +47,15 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
 });
-const Notificacao = () => {
+const Notificacao = ({ navigation }) => {
   return (
     <View>
-       <Text style={styles.texto}>Bem vindo ao sistema SOS, NAY LOPES! - (NL@ITAU.COM)</Text>
-      <Text style={styles.titulo}>Notificações</Text>
+      <View style={styles.header} >
+          <Text style={styles.texto} onPress={() => navigation.openDrawer()}>
+            <AntDesign name="menu-fold" size={30} color="black"  />  Bem vindo ao sistema SOS!
+          </Text>
+      </View>
+      <Text style={styles.titulo}>Notificações <AntDesign name="exclamationcircleo" size={30} color="red" /></Text>
       <Text style={styles.cadas}>Notificações presentes no sistema:</Text>
       <DataTable style={{ padding: 30 }}>
         <DataTable.Header>

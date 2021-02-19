@@ -1,6 +1,13 @@
 import React from "react";
-import { Text, View, StyleSheet, TouchableOpacity } from "react-native";
+import { Text,
+         View,
+         StyleSheet, 
+         TouchableOpacity, 
+         Button,
+        } from "react-native";
 import { DataTable } from "react-native-paper";
+
+import { AntDesign } from '@expo/vector-icons';
 
 const styles = StyleSheet.create({
   caixa: {
@@ -8,16 +15,22 @@ const styles = StyleSheet.create({
     height: "100%",
     
   },
-
+  header: {
+  flexDirection: 'row',
+  alignContent: 'space-between',
+  margin: 4,
+  padding: 4,
+  },
   titulo: {
     color: "#ffc107",
     fontSize: 32,
     marginTop: 50,
+    fontWeight: '700',
+    textAlign: "center"
   },
   tituTable: {
     textAlign: "center",
   },
-
   btn: {
     backgroundColor: "#ffc107",
     marginTop: 12,
@@ -52,8 +65,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     color: "black",
     textAlign: "center",
-    fontWeight: 'bold'
-   
+    fontWeight: 'bold' 
   },
   textoedit: {
     fontSize: 5,
@@ -72,15 +84,18 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
 });
-const Ubs = () => {
+const Ubs = ({ navigation }) => {
   return (
     <View style={styles.caixa}>
-      <Text style={styles.texto}>
-        Bem vindo ao sistema SOS, NAY LOPES! - (NL@ITAU.COM)
-      </Text>
+      {/* <Button onPress={() => navigation.goBack()} title="Go back home" /> */}
+      <View style={styles.header} >
+          <Text style={styles.texto} onPress={() => navigation.openDrawer()}>
+            <AntDesign name="menu-fold" size={30} color="black"  />  Bem vindo ao sistema SOS!
+          </Text>
+      </View>
       <Text style={styles.titulo}>UBS's</Text>
       <TouchableOpacity style={styles.btn}>
-        <Text style={styles.textocad}>CADASTRAR NOVA UBS</Text>
+        <Text style={styles.textocad}>CADASTRAR NOVA UBS <AntDesign name="totop" size={24} color="black" /></Text>
       </TouchableOpacity>
       <Text style={styles.cadas}>Atualmente cadastradas:</Text>
       <DataTable style={{ padding: 10 }}>
