@@ -1,17 +1,20 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 
-import "./med.css";
-import formatDate from "../../Assets/functions/formatDate";
+import './med.css';
+import formatDate from '../../Assets/functions/formatDate';
 
 export default function Medicamentos() {
   const [medic, setMedic] = useState([]);
   const [adm, setAdm] = useState([]);
   const [formData, setFormData] = useState({
-    id: "",
-    nome: "",
-    observacao: "",
-    cadastrado_por_id: "",
+    id: '',
+    nome: '',
+    observacao: '',
+    cadastrado_por_id: '',
   });
+
+  const credentials = useSelector((state) => state.credentials);
 
   // ------------------------------ Delete
   async function delForm(e) {
@@ -20,10 +23,10 @@ export default function Medicamentos() {
     console.log(e);
     try {
       const res = await fetch(`http://localhost:3001/med/${id}`, {
-        method: "delete",
+        method: 'delete',
       });
     } catch (err) {
-      alert("Erro: mensagem não cadastrada, tente mais tarde!");
+      alert('Erro: mensagem não cadastrada, tente mais tarde!');
     }
   }
 
@@ -33,13 +36,13 @@ export default function Medicamentos() {
     e.preventDefault();
     console.log(formData);
     try {
-      const res = await fetch("http://localhost:3001/med", {
-        method: "PUT", // GET, POST, PUT, DELETE
+      const res = await fetch('http://localhost:3001/med', {
+        method: 'PUT', // GET, POST, PUT, DELETE
         body: JSON.stringify(formData),
-        headers: { "Content-Type": "application/json" },
+        headers: { 'Content-Type': 'application/json' },
       });
     } catch (err) {
-      alert("Erro: UBS não atualizada, tente mais tarde!");
+      alert('Erro: UBS não atualizada, tente mais tarde!');
     }
   };
 
@@ -48,20 +51,20 @@ export default function Medicamentos() {
     e.preventDefault();
     console.log(formData);
     try {
-      const res = await fetch("http://localhost:3001/med", {
-        method: "POST",
+      const res = await fetch('http://localhost:3001/med', {
+        method: 'POST',
         body: JSON.stringify(formData),
-        headers: { "Content-Type": "application/json" },
+        headers: { 'Content-Type': 'application/json' },
       }).then((dados) => {
         setFormData({
-          id: "",
-          nome: "",
-          observacao: "",
-          cadastrado_por_id: "",
+          id: '',
+          nome: '',
+          observacao: '',
+          cadastrado_por_id: '',
         });
       });
     } catch (err) {
-      alert("Erro: mensagem não cadastrada, tente mais tarde!");
+      alert('Erro: mensagem não cadastrada, tente mais tarde!');
     }
   };
 
@@ -71,7 +74,7 @@ export default function Medicamentos() {
   // ----------------------------- Api medicamentos
   useEffect(() => {
     async function fetchMyAPI() {
-      const response = await fetch("http://localhost:3001/med/DENcount");
+      const response = await fetch('http://localhost:3001/med/DENcount');
       setMedic(await response.json());
     }
     fetchMyAPI();
@@ -80,7 +83,7 @@ export default function Medicamentos() {
   // ----------------------------- Api ADM
   useEffect(() => {
     async function fetchMyAPI() {
-      const response = await fetch("http://localhost:3001/adm");
+      const response = await fetch('http://localhost:3001/adm');
       setAdm(await response.json());
     }
     fetchMyAPI();
@@ -89,7 +92,10 @@ export default function Medicamentos() {
   return (
     <>
       <div class="MED jumbotron card card-image text-white bg-transparent ">
-        <p class="text-center">Bem vindo ao sistema SOS, -</p>
+        <p class="text-center">
+          Bem vindo ao sistema SOS, <b>{credentials.nome}</b>! - (
+          {credentials.email})
+        </p>
         <h1 class="display-4 text-success  font-weight-bold">Medicamentos</h1>
 
         <button
@@ -99,10 +105,10 @@ export default function Medicamentos() {
           data-target="#cadastroMEDModal"
           onClick={() => {
             setFormData({
-              id: "",
-              nome: "",
-              observacao: "",
-              cadastrado_por_id: "",
+              id: '',
+              nome: '',
+              observacao: '',
+              cadastrado_por_id: '',
             });
           }}
         >
@@ -159,7 +165,7 @@ export default function Medicamentos() {
                       <button
                         class="btn btn-outline-info font-weight-bold"
                         data-toggle="modal"
-                        data-target={"#atualizarMEDModal" + med.id}
+                        data-target={'#atualizarMEDModal' + med.id}
                         onClick={() => {
                           setFormData({
                             id: med.id,
@@ -173,7 +179,7 @@ export default function Medicamentos() {
                       </button>
                       <div
                         class="modal fade text-dark"
-                        id={"atualizarMEDModal" + med.id}
+                        id={'atualizarMEDModal' + med.id}
                         data-backdrop="static"
                         data-keyboard="false"
                         tabindex="-1"
@@ -198,7 +204,7 @@ export default function Medicamentos() {
 
                             <div class="modal-body">
                               <form
-                                id={"atualizarMED" + med.id}
+                                id={'atualizarMED' + med.id}
                                 class="container-fluid"
                                 method="post"
                                 name="form"
@@ -215,9 +221,9 @@ export default function Medicamentos() {
                                     >
                                       <option
                                         selected
-                                        value={med.cadastrado_por_id}
+                                        value={credentials.username}
                                       >
-                                        {med.cadastrado_por_id}
+                                        {credentials.username}
                                       </option>
                                     </select>
                                   </div>
@@ -278,10 +284,10 @@ export default function Medicamentos() {
                                   value="LIMPAR"
                                   onClick={() => {
                                     setFormData({
-                                      id: "",
-                                      nome: "",
-                                      observacao: "",
-                                      cadastrado_por_id: "",
+                                      id: '',
+                                      nome: '',
+                                      observacao: '',
+                                      cadastrado_por_id: '',
                                     });
                                   }}
                                 />
@@ -292,7 +298,7 @@ export default function Medicamentos() {
                                   form="atualizarMED"
                                   value="ATUALIZAR"
                                   onClick={() =>
-                                    alert("Atualizado com sucesso")
+                                    alert('Atualizado com sucesso')
                                   }
                                 />
                               </div>
@@ -306,7 +312,7 @@ export default function Medicamentos() {
                         class="btn btn-outline-danger font-weight-bold"
                         onClick={() => delForm(med.id)}
                       >
-                        APAGAR{" "}
+                        APAGAR{' '}
                       </button>
                     </div>
                   </td>
@@ -357,7 +363,7 @@ export default function Medicamentos() {
                     <select
                       class="custom-select mr-sm-2 border border-primary"
                       name="cadastrado_por_id"
-                      value={formData.cadastrado_por_id}
+                      value={credentials.username}
                       onChange={onChangeInput}
                       required
                     >
@@ -425,10 +431,10 @@ export default function Medicamentos() {
                   value="LIMPAR"
                   onClick={() => {
                     setFormData({
-                      id: "",
-                      nome: "",
-                      observacao: "",
-                      cadastrado_por_id: "",
+                      id: '',
+                      nome: '',
+                      observacao: '',
+                      cadastrado_por_id: '',
                     });
                   }}
                 />
@@ -437,7 +443,7 @@ export default function Medicamentos() {
                   class="btn btn-primary mx-2"
                   form="cadastrarMED"
                   value="CADASTRAR"
-                  onClick={() => alert("Cadastrado com sucesso")}
+                  onClick={() => alert('Cadastrado com sucesso')}
                 />
               </div>
             </div>

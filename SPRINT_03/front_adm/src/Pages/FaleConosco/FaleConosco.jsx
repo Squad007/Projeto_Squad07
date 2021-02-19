@@ -1,9 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 
-import "./msg.css";
+import './msg.css';
 
 export default function FaleConosco() {
   const [faleConosco, setFaleConosco] = useState([]);
+
+  const credentials = useSelector((state) => state.credentials);
 
   // ------------------------------ Delete
   async function delForm(e) {
@@ -11,18 +14,18 @@ export default function FaleConosco() {
     let id = e;
     try {
       const res = await fetch(`http://localhost:3001/msg/${id}`, {
-        method: "delete",
+        method: 'delete',
       });
       console.log(res);
     } catch (err) {
-      alert("Erro: mensagem não cadastrada, tente mais tarde!");
+      alert('Erro: mensagem não cadastrada, tente mais tarde!');
     }
   }
 
   //api adms-----------------
   useEffect(() => {
     async function fetchMyAPI() {
-      const response = await fetch("http://localhost:3001/msg");
+      const response = await fetch('http://localhost:3001/msg');
       setFaleConosco(await response.json());
     }
     fetchMyAPI();
@@ -42,7 +45,7 @@ export default function FaleConosco() {
 
   function pad(num, size = 2) {
     num = num.toString();
-    while (num.length < size) num = "0" + num;
+    while (num.length < size) num = '0' + num;
     return num;
   }
 
@@ -50,8 +53,8 @@ export default function FaleConosco() {
     <div>
       <div class="MSG jumbotron card card-image  bg-transparent  text-white">
         <p class="text-center">
-          Bem vindo ao sistema SOS, <b>{/*<?php echo $_SESSION['nome'] ?>*/}</b>
-          ! - {/*(<?php echo $_SESSION['email'] ?>)*/}
+          Bem vindo ao sistema SOS, <b>{credentials.nome}</b>! - (
+          {credentials.email})
         </p>
         <h1 class="display-4 text-primary  font-weight-bold">Mensagens</h1>
         <hr class="my-4 bg-white" />
@@ -89,7 +92,7 @@ export default function FaleConosco() {
                         class="btn btn-outline-danger  font-weight-bold"
                         onClick={() => delForm(falecon.id)}
                       >
-                        APAGAR{" "}
+                        APAGAR{' '}
                       </button>
                     </div>
                   </td>

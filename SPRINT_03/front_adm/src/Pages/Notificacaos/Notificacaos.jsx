@@ -1,10 +1,13 @@
-import React, { useState, useEffect } from "react";
-import "./not.css";
+import React, { useState, useEffect } from 'react';
+import './not.css';
+import { useSelector } from 'react-redux';
 
-import formatDate from "../../Assets/functions/formatDate";
+import formatDate from '../../Assets/functions/formatDate';
 
 export default function Notificacaos() {
   const [notific, setNotific] = useState([]);
+
+  const credentials = useSelector((state) => state.credentials);
 
   // ------------------------------ Delete
   async function delForm(e) {
@@ -12,18 +15,18 @@ export default function Notificacaos() {
     let id = e;
     try {
       const res = await fetch(`http://localhost:3001/den/${id}`, {
-        method: "delete",
+        method: 'delete',
       });
       console.log(res);
     } catch (err) {
-      alert("Erro: mensagem não cadastrada, tente mais tarde!");
+      alert('Erro: mensagem não cadastrada, tente mais tarde!');
     }
   }
 
   // ----------------------------- Api notificações
   useEffect(() => {
     async function fetchMyAPI() {
-      const response = await fetch("http://localhost:3001/den/forADM");
+      const response = await fetch('http://localhost:3001/den/forADM');
       setNotific(await response.json());
     }
     fetchMyAPI();
@@ -33,8 +36,8 @@ export default function Notificacaos() {
     <div>
       <div className="NOT jumbotron card card-image bg-transparent  text-white">
         <p className="text-center">
-          Bem vindo ao sistema SOS, <b>{/*<?php echo $_SESSION['nome'] ?>*/}</b>
-          ! - {/*(<?php echo $_SESSION['email'] ?>)*/}
+          Bem vindo ao sistema SOS, <b>{credentials.nome}</b>! - (
+          {credentials.email})
         </p>
         <h1 className="display-4 text-danger  font-weight-bold">
           Notificações
@@ -69,7 +72,8 @@ export default function Notificacaos() {
                       <summary>
                         <b>
                           {not.ubs}:
-                          <span className="text-danger">FALTANDO</span><br/>
+                          <span className="text-danger">FALTANDO</span>
+                          <br />
                           {not.id_med}
                         </b>
                         {not.med}
@@ -85,7 +89,9 @@ export default function Notificacaos() {
                       </section>
                     </details>
                   </td>
-                  <td className="align-middle text-center">{formatDate(not.data)}</td>
+                  <td className="align-middle text-center">
+                    {formatDate(not.data)}
+                  </td>
                   <td className="align-middle text-right">
                     <div className="btn-group">
                       <button type="hidden" name="id" value={not.id} />

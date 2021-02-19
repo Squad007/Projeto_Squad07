@@ -1,39 +1,42 @@
-import React, { useState, useEffect } from "react";
-import formatDate from "../../Assets/functions/formatDate";
-import "./ubs.css";
+import React, { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import formatDate from '../../Assets/functions/formatDate';
+import './ubs.css';
 
 export default function Ubs() {
   const [ubs, setUbs] = useState([]);
   const [adm, setAdm] = useState([]);
   const [formData, setFormData] = useState({
-    id: "",
-    cadastrado_por_id: "",
-    nomeUbs: "",
-    descricao: "",
-    endereco: "",
-    bairro: "",
-    distrito: "",
-    zona: "",
-    cidade: "",
-    uf: "",
-    cep: "",
-    telefone: "",
-    latitude: "",
-    longitude: "",
+    id: '',
+    cadastrado_por_id: '',
+    nomeUbs: '',
+    descricao: '',
+    endereco: '',
+    bairro: '',
+    distrito: '',
+    zona: '',
+    cidade: '',
+    uf: '',
+    cep: '',
+    telefone: '',
+    latitude: '',
+    longitude: '',
   });
+
+  const credentials = useSelector((state) => state.credentials);
 
   // ------------------------------ Cadastro Ubs
   const sendForm = async (e) => {
     e.preventDefault();
     console.log(formData);
     try {
-      const res = await fetch("http://localhost:3001/ubs", {
-        method: "POST", // GET, POST, PUT, DELETE
+      const res = await fetch('http://localhost:3001/ubs', {
+        method: 'POST', // GET, POST, PUT, DELETE
         body: JSON.stringify(formData),
-        headers: { "Content-Type": "application/json" },
+        headers: { 'Content-Type': 'application/json' },
       });
     } catch (err) {
-      alert("Erro: mensagem não cadastrada, tente mais tarde!");
+      alert('Erro: mensagem não cadastrada, tente mais tarde!');
     }
   };
 
@@ -43,13 +46,13 @@ export default function Ubs() {
     e.preventDefault();
     console.log(formData);
     try {
-      const res = await fetch("http://localhost:3001/ubs", {
-        method: "PUT", // GET, POST, PUT, DELETE
+      const res = await fetch('http://localhost:3001/ubs', {
+        method: 'PUT', // GET, POST, PUT, DELETE
         body: JSON.stringify(formData),
-        headers: { "Content-Type": "application/json" },
+        headers: { 'Content-Type': 'application/json' },
       });
     } catch (err) {
-      alert("Erro: UBS não atualizada, tente mais tarde!");
+      alert('Erro: UBS não atualizada, tente mais tarde!');
     }
   };
 
@@ -59,11 +62,11 @@ export default function Ubs() {
     console.log(e);
     try {
       const res = await fetch(`http://localhost:3001/ubs/${id}`, {
-        method: "delete",
+        method: 'delete',
       });
       console.log(res);
     } catch (err) {
-      alert("Erro: mensagem não cadastrada, tente mais tarde!");
+      alert('Erro: mensagem não cadastrada, tente mais tarde!');
     }
   }
 
@@ -73,7 +76,7 @@ export default function Ubs() {
   // ----------------------------- Api ubs
   useEffect(() => {
     async function fetchMyAPI() {
-      const response = await fetch("http://localhost:3001/ubs/DENcount");
+      const response = await fetch('http://localhost:3001/ubs/DENcount');
       setUbs(await response.json());
     }
     fetchMyAPI();
@@ -82,7 +85,7 @@ export default function Ubs() {
   // ----------------------------- Api ADM
   useEffect(() => {
     async function fetchMyAPI() {
-      const response = await fetch("http://localhost:3001/adm");
+      const response = await fetch('http://localhost:3001/adm');
       setAdm(await response.json());
     }
     fetchMyAPI();
@@ -91,7 +94,10 @@ export default function Ubs() {
   return (
     <>
       <div className="UBS jumbotron card card-image text-white bg-transparent h-100 ">
-        <p className="text-center">Bem vindo ao sistema SOS, - </p>
+        <p className="text-center">
+          Bem vindo ao sistema SOS, <b>{credentials.nome}</b>! - (
+          {credentials.email})
+        </p>
         <h1 className="display-4 text-warning  font-weight-bold">UBS's</h1>
         <button
           type="button"
@@ -101,19 +107,19 @@ export default function Ubs() {
           value={ubs.name}
           onClick={() => {
             setFormData({
-              id: "",
-              nomeUbs: "",
-              descricao: "",
-              endereco: "",
-              bairro: "",
-              distrito: "",
-              zona: "",
-              cidade: "",
-              uf: "",
-              cep: "",
-              telefone: "",
-              latitude: "",
-              longitude: "",
+              id: '',
+              nomeUbs: '',
+              descricao: '',
+              endereco: '',
+              bairro: '',
+              distrito: '',
+              zona: '',
+              cidade: '',
+              uf: '',
+              cep: '',
+              telefone: '',
+              latitude: '',
+              longitude: '',
             });
           }}
         >
@@ -197,7 +203,7 @@ export default function Ubs() {
                         type="button"
                         className="btn btn-outline-info  font-weight-bold"
                         data-toggle="modal"
-                        data-target={"#atualizarUBSModal" + ubs.id}
+                        data-target={'#atualizarUBSModal' + ubs.id}
                         onClick={() => {
                           setFormData({
                             id: ubs.id,
@@ -222,7 +228,7 @@ export default function Ubs() {
                       {/* <!-- Modal para atualizar UBS --> */}
                       <div
                         className="modal fade text-dark"
-                        id={"atualizarUBSModal" + ubs.id}
+                        id={'atualizarUBSModal' + ubs.id}
                         data-backdrop="static"
                         data-keyboard="false"
                         tabindex="-1"
@@ -249,7 +255,7 @@ export default function Ubs() {
                             </div>
                             <div className="modal-body">
                               <form
-                                id={"atualizarUBS" + ubs.id}
+                                id={'atualizarUBS' + ubs.id}
                                 className="container-fluid"
                                 onSubmit={updateForm}
                               >
@@ -267,10 +273,10 @@ export default function Ubs() {
                                     <select
                                       className="custom-select mr-sm-2 border border-primary"
                                       name="cadastrado_por_id"
-                                      value={formData.cadastrado_por_id}
+                                      value={credentials.username}
                                     >
                                       <option selected>
-                                        {formData.cadastrado_por_id}
+                                        {credentials.username}
                                       </option>
                                     </select>
                                   </div>
@@ -340,7 +346,7 @@ export default function Ubs() {
                                         type="radio"
                                         name="zona"
                                         value="ZN"
-                                      />{" "}
+                                      />{' '}
                                       ZN
                                     </label>
                                     <label className="btn btn-outline-primary active">
@@ -349,7 +355,7 @@ export default function Ubs() {
                                         name="zona"
                                         value="ZL"
                                         checked
-                                      />{" "}
+                                      />{' '}
                                       ZL
                                     </label>
                                     <label className="btn btn-outline-primary">
@@ -357,7 +363,7 @@ export default function Ubs() {
                                         type="radio"
                                         name="zona"
                                         value="ZS"
-                                      />{" "}
+                                      />{' '}
                                       ZS
                                     </label>
                                     <label className="btn btn-outline-primary">
@@ -365,7 +371,7 @@ export default function Ubs() {
                                         type="radio"
                                         name="zona"
                                         value="ZO"
-                                      />{" "}
+                                      />{' '}
                                       ZO
                                     </label>
                                   </div>
@@ -455,20 +461,20 @@ export default function Ubs() {
                                   className="btn btn-outline-warning mx-2"
                                   onClick={() => {
                                     setFormData({
-                                      id: "",
-                                      cadastrado_por_id: "",
-                                      nomeUbs: "",
-                                      descricao: "",
-                                      endereco: "",
-                                      bairro: "",
-                                      distrito: "",
-                                      zona: "",
-                                      cidade: "",
-                                      uf: "",
-                                      cep: "",
-                                      telefone: "",
-                                      latitude: "",
-                                      longitude: "",
+                                      id: '',
+                                      cadastrado_por_id: '',
+                                      nomeUbs: '',
+                                      descricao: '',
+                                      endereco: '',
+                                      bairro: '',
+                                      distrito: '',
+                                      zona: '',
+                                      cidade: '',
+                                      uf: '',
+                                      cep: '',
+                                      telefone: '',
+                                      latitude: '',
+                                      longitude: '',
                                     });
                                   }}
                                   value="LIMPAR"
@@ -476,10 +482,10 @@ export default function Ubs() {
                                 <input
                                   type="submit"
                                   className="btn btn-primary mx-2"
-                                  form={"atualizarUBS" + ubs.id}
+                                  form={'atualizarUBS' + ubs.id}
                                   value="ATUALIZAR"
                                   onClick={() =>
-                                    alert("Atualizado com sucesso")
+                                    alert('Atualizado com sucesso')
                                   }
                                 />
                               </div>
@@ -493,7 +499,7 @@ export default function Ubs() {
                         onClick={() => delForm(ubs.id)}
                         className="btn btn-outline-danger font-weight-bold"
                       >
-                        APAGAR{" "}
+                        APAGAR{' '}
                       </button>
                     </div>
                   </td>
@@ -544,7 +550,7 @@ export default function Ubs() {
                     <select
                       className="custom-select mr-sm-2 border border-primary"
                       name="cadastrado_por_id"
-                      value={formData.cadastrado_por_id}
+                      value={credentials.username}
                       onChange={onChangeInput}
                       required
                     >
@@ -735,20 +741,20 @@ export default function Ubs() {
                   value="LIMPAR"
                   onClick={() => {
                     setFormData({
-                      id: "",
-                      cadastrado_por_id: "",
-                      nomeUbs: "",
-                      descricao: "",
-                      endereco: "",
-                      bairro: "",
-                      distrito: "",
-                      zona: "",
-                      cidade: "",
-                      uf: "",
-                      cep: "",
-                      telefone: "",
-                      latitude: "",
-                      longitude: "",
+                      id: '',
+                      cadastrado_por_id: '',
+                      nomeUbs: '',
+                      descricao: '',
+                      endereco: '',
+                      bairro: '',
+                      distrito: '',
+                      zona: '',
+                      cidade: '',
+                      uf: '',
+                      cep: '',
+                      telefone: '',
+                      latitude: '',
+                      longitude: '',
                     });
                   }}
                 />
@@ -757,7 +763,7 @@ export default function Ubs() {
                   className="btn btn-primary mx-2"
                   form="cadastrarUBS"
                   value="CADASTRAR"
-                  onClick={() => alert("Cadastrado com sucesso")}
+                  onClick={() => alert('Cadastrado com sucesso')}
                 />
               </div>
             </div>
