@@ -8,15 +8,19 @@ import {
   Platform,
   Image,
   Alert,
+  StatusBar,
 } from "react-native";
+
+import { Entypo } from '@expo/vector-icons';
 
 const styles = StyleSheet.create({
   caixa: {
     height: Platform.OS === "web" ? "100vh" : "100%",
   },
   tinyLogo: {
-    width: 100,
-    height: 50,
+    width: 122,
+    height: 70,
+    justifyContent: 'center'
   },
   tinyBack: {
     backgroundColor: "#00b9b3",
@@ -55,8 +59,10 @@ const styles = StyleSheet.create({
     marginTop: 12,
     padding: 10,
     borderRadius: 4,
-    width: "50%",
+    width: "30%",
     marginBottom: 20,
+    flexDirection: 'column',
+    justifyContent: 'center',
   },
   texto: {
     fontSize: 18,
@@ -81,21 +87,21 @@ const styles = StyleSheet.create({
   },
 });
 
-const FaleConosco = () => {
+const FaleConosco = ({ navigation }) => {
   function msg() {
     Alert.alert("Mensagem enviada com Sucesso!!");
   }
   return (
     <View style={styles.caixa}>
       <View style={styles.tinyBack}>
-        <TouchableOpacity style={styles.btnMenu}>
-          <Text style={styles.texto}>MENU</Text>
-        </TouchableOpacity>
-        <Image
-          style={styles.tinyLogo}
-          source={require("../../assets/logo.png")}
-        />
-      </View>
+          <TouchableOpacity style={styles.btnMenu} onPress={() => navigation.openDrawer()}>
+            <Text style={styles.texto}><Entypo name="menu" size={24} color="white" /> MENU</Text>
+          </TouchableOpacity>
+          <Image
+            style={styles.tinyLogo}
+            source={require("../../assets/logo.png")}
+          />
+        </View>
       <View>
         <Text style={styles.titulo}>Enviar Mensagem</Text>
       </View>
