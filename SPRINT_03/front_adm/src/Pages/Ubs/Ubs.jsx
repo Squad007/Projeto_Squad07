@@ -77,8 +77,6 @@ export default function Ubs() {
   //---------  Atualizar UBS
 
   const updateForm = async (e) => {
-    alert('TESTE');
-
     e.preventDefault();
     console.log(formData);
     try {
@@ -837,6 +835,24 @@ export default function Ubs() {
                   className="btn btn-outline-warning mx-2"
                   form="cadastrarUBS"
                   value="LIMPAR"
+                  onClick={() => {
+                    setFormData({
+                      id: '',
+                      cadastrado_por_id: '',
+                      nomeUbs: '',
+                      descricao: '',
+                      endereco: '',
+                      bairro: '',
+                      distrito: '',
+                      zona: '',
+                      cidade: '',
+                      uf: '',
+                      cep: '',
+                      telefone: '',
+                      latitude: '',
+                      longitude: '',
+                    });
+                  }}
                 />
                 <input
                   type="submit"
