@@ -7,8 +7,12 @@ import {
   TouchableOpacity,
   Image,
   Platform,
-  Alert,
+  StatusBar,
 } from "react-native";
+
+import { Entypo } from '@expo/vector-icons';
+import { AntDesign } from '@expo/vector-icons';
+// import { NavigationContainer } from '@react-navigation/native';
 import { Card, Title } from "react-native-paper";
 
 const styles = StyleSheet.create({
@@ -16,8 +20,9 @@ const styles = StyleSheet.create({
     height: Platform.OS === "web" ? "100vh" : "100%",
   },
   tinyLogo: {
-    width: 100,
-    height: 50,
+    width: 122,
+    height: 70,
+    justifyContent: 'center'
   },
   tinyBack: {
     backgroundColor: "#00b9b3",
@@ -66,8 +71,10 @@ const styles = StyleSheet.create({
     marginTop: 12,
     padding: 10,
     borderRadius: 4,
-    width: "50%",
+    width: "30%",
     marginBottom: 20,
+    flexDirection: 'column',
+    justifyContent: 'center',
   },
   texto: {
     fontSize: 17,
@@ -84,12 +91,15 @@ const styles = StyleSheet.create({
     textAlign: "center",
     marginTop: "auto",
   },
+  // icons: {
+  //   paddingRight: 10,
+  // },
 });
 
 const Home = ({ navigation }) => {
-  function menu() {
-    Alert.alert("Deslize do lado esquerdo para o direito!!");
-  }
+  // function menu() {
+  //   Alert.alert("Deslize do lado esquerdo para o direito!!");
+  // }
   function notifique() {
     navigation.navigate("Notifique");
   }
@@ -102,10 +112,11 @@ const Home = ({ navigation }) => {
 
   return (
     <ScrollView style={styles.caixa}>
+      <StatusBar hidden={false} />
       <View>
         <View style={styles.tinyBack}>
-          <TouchableOpacity style={styles.btnMenu} onPress={menu}>
-            <Text style={styles.texto}>MENU</Text>
+          <TouchableOpacity style={styles.btnMenu} onPress={() => navigation.openDrawer()}>
+            <Text style={styles.texto}><Entypo name="menu" size={24} color="white" /> MENU</Text>
           </TouchableOpacity>
           <Image
             style={styles.tinyLogo}
@@ -117,7 +128,9 @@ const Home = ({ navigation }) => {
         </Text>
         <View style={styles.btnfalta}>
           <TouchableOpacity onPress={notifique}>
-            <Text style={styles.texto}>NOTIFIQUE A FALTA</Text>
+            <Text style={styles.texto}>
+              NOTIFIQUE A FALTA <AntDesign name="exclamationcircleo" size={20} color="white" />
+            </Text>
           </TouchableOpacity>
         </View>
       </View>
