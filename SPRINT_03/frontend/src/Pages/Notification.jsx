@@ -44,12 +44,17 @@ export default function Notification() {
     const mo = myDate.getMonth() + 1;
     const y = myDate.getFullYear();
 
-
-  return `${d}/${mo}/${y}`; {/*- ${h}:${mi}*/};
+    return `${pad(d)}/${pad(mo)}/${y}`;
   };
+
+  function pad(num, size = 2) {
+    num = num.toString();
+    while (num.length < size) num = "0" + num;
+    return num;
+  }
   return (
     <div className="container">
-      <div className="d-flex row" style={{ height: "90vh" }}>
+      <div className="d-flex row" style={{ height: "85vh" }}>
        
         <div
           className="card_not col-5 table-responsive p-3 mt-5 text-white anyClass"
@@ -58,15 +63,15 @@ export default function Notification() {
           <h4 className="border-bottom border-white">NOTIFICAÇÕES RECENTES</h4>
           {notificationButton.length > 0 && 
             notificationButton.map((not) => (
-              <div className="m-3 row">
-                <div className="col-8">
-                  <p>{not.nomeUbs}</p>
+              <div className="m-3 row border-bottom border-white">
+                <div className="col-8 ">
+                  <b className="nome_ubs">{not.nomeUbs}</b>
                   <p className="lead font-weight-bold ">{not.nome}</p>
                   
                 </div>
                 <div className="col-4 justify-content-center flex-column py-auto d-flex align-items-center">
-                  <p>Data da Falta:</p>
-                  <p>{formatDate(not.data_ocorrencia)}</p>
+                  <p className="m-0">Data da Falta:</p>
+                  <p style={{fontSize: "25px"}} >{formatDate(not.data_ocorrencia)}</p>
                 </div>
               </div>
             ))}
@@ -76,30 +81,31 @@ export default function Notification() {
           <MapContainer
             center={[-23.49, -46.43]}
             zoom={13}
-            style={{ width: "100%", height: "100%" }}
+            style={{ width: "100%", height: "550px" }}
             className="card_map"
           >
             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
           
              {pinArray.map((pin) => (
               <Marker icon={mapIcon} position={[pin.latitude, pin.longitude]}>
-                <Tooltip>{pin.qtde}</Tooltip>
+                <Tooltip
+                  style={{background: "blue"}}
+                >{pin.qtde}</Tooltip>
                 <Popup
                   closeButton={false}
                   minWidth={240}
                   maxWidth={240}
                   className="map-popup"
                 >
-                  <button onClick={() => setUrlDen(`http://localhost:3001/den/byUBS/${pin.id}`)}>Mostrar notificações</button>
+                  <button className="btn btn-primary" onClick={() => setUrlDen(`http://localhost:3001/den/byUBS/${pin.id}`)}>Notificações</button>
                   {pin.nomeUbs}
                 </Popup>
               </Marker>
             ))}
+            
           </MapContainer>
         </div>
-
       </div>
-        <button className="btn-roxo my-3 border-0" style={{borderRadius: "20px", height: "40px", width: "40%"}}>Exportar todas as notificações (.CSV)</button>
     </div>
   );
 }

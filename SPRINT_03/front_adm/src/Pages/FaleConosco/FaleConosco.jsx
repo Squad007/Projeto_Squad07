@@ -5,20 +5,19 @@ import "./msg.css";
 export default function FaleConosco() {
   const [faleConosco, setFaleConosco] = useState([]);
 
-
-// ------------------------------ Delete
-async   function delForm (e) {
-  // e.preventDefault();
-  let id = e
-   try {
-    const res = await fetch(`http://localhost:3001/msg/${id}`, {
-      method: "delete",
-    });
-    console.log(res)
-  } catch (err) {
-    alert("Erro: mensagem não cadastrada, tente mais tarde!");
+  // ------------------------------ Delete
+  async function delForm(e) {
+    // e.preventDefault();
+    let id = e;
+    try {
+      const res = await fetch(`http://localhost:3001/msg/${id}`, {
+        method: "delete",
+      });
+      console.log(res);
+    } catch (err) {
+      alert("Erro: mensagem não cadastrada, tente mais tarde!");
+    }
   }
-};
 
   //api adms-----------------
   useEffect(() => {
@@ -28,6 +27,24 @@ async   function delForm (e) {
     }
     fetchMyAPI();
   }, [faleConosco]);
+
+  // ------------------------------ Formatação da data
+  const formatDate = (rawDate) => {
+    const myDate = new Date(rawDate);
+    const d = myDate.getDay();
+    const mo = myDate.getMonth() + 1;
+    const y = myDate.getFullYear();
+    const h = myDate.getHours();
+    const mi = myDate.getMinutes();
+
+    return `${pad(d)}/${pad(mo)}/${y} - ${pad(h)}:${pad(mi)}`;
+  };
+
+  function pad(num, size = 2) {
+    num = num.toString();
+    while (num.length < size) num = "0" + num;
+    return num;
+  }
 
   return (
     <div>
@@ -52,45 +69,28 @@ async   function delForm (e) {
               </tr>
             </thead>
             <tbody>
-              {/* <?php
-        $sql = "
-            SELECT * FROM fale_conosco ORDER BY fale_conosco.data DESC;
-        ";
-        $result = $conn->query($sql);
-
-        if ($result->num_rows > 0) {
-          while ($rows = $result->fetch_assoc()) {
-        ?> */}
-
               {faleConosco.map((falecon) => (
                 <tr>
                   <th
                     class="align-middle text-center text-primary"
                     scope="row "
                   >
-                    {/* <?php echo date('d/m/Y', strtotime($rows['data'])); ?> */}
-                    {/* <?php echo date('h:i A', strtotime($rows['data'])); ?> */}
-                    {falecon.data}
+                    {formatDate(falecon.data)}
                   </th>
                   <td class="align-middle text-left">
-                    <b class="text-primary">
-                      {/*<?php echo $rows["nome"]; ?>*/}:{falecon.nome}
-                    </b>
-                    {/* <?php echo $rows["msg"]; ?> */}
+                    <b class="text-primary">{falecon.nome}</b>
+                    <br />
                     {falecon.msg}
                   </td>
                   <td class="align-middle text-right">
                     <div class="btn-group">
-                     
-                        <button
-                          type="button"
-                          class="btn btn-outline-danger  font-weight-bold"
-                          onClick={() => delForm(falecon.id)}
-                        >
-                          
-                          APAGAR{" "}
-                        </button>
-                      
+                      <button
+                        type="button"
+                        class="btn btn-outline-danger  font-weight-bold"
+                        onClick={() => delForm(falecon.id)}
+                      >
+                        APAGAR{" "}
+                      </button>
                     </div>
                   </td>
                 </tr>

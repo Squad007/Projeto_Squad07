@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from "react";
 
 export default function Adms() {
+  const [senhaConfirmada, setSenhaConfirmada] = useState("")
   const [adms, setAdms] = useState([]);
   const [formData, setFormData] = useState({
     username: "",
@@ -13,7 +14,8 @@ export default function Adms() {
    // ------------------------------ Cadastro form novos Adms
    const sendForm = async (e) => {
     e.preventDefault();
-    try {
+    if (senhaConfirmada === formData.senha) {
+      try {
       const res = await fetch("http://localhost:3001/adm", {
         method: "POST",
         body: JSON.stringify(formData),
@@ -26,9 +28,13 @@ export default function Adms() {
           nome: "",
           imagem: ""
         });
+        setSenhaConfirmada("")
       });
     } catch (err) {
       alert("Erro: mensagem não cadastrada, tente mais tarde!");
+    }
+    }else {
+      alert("Senhas não iguais")
     }
   };
 
@@ -162,6 +168,8 @@ export default function Adms() {
                   type="password"
                   name="conf_senha"
                   placeholder="Confirme a senha"
+                  value={senhaConfirmada}
+                  onChange={(event) => setSenhaConfirmada(event.target.value)}
                 />
                 <div className="d-flex justify-content-between btn-block">
                   <button className="btn btn-outline-light w-25" type="reset">

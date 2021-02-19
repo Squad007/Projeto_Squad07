@@ -13,21 +13,35 @@ export default function Medicamentos() {
     cadastrado_por_id: "",
   });
 
-// ------------------------------ Delete
-async function  delForm (e)  {
-  // e.preventDefault();
-  let id = e
-  console.log(e)
-   try {
-    const res = await fetch(`http://localhost:3001/med/${id}`, {
-      method: "delete",
-    });
-   
-  } catch (err) {
-    alert("Erro: mensagem não cadastrada, tente mais tarde!");
+  // ------------------------------ Delete
+  async function delForm(e) {
+    // e.preventDefault();
+    let id = e;
+    console.log(e);
+    try {
+      const res = await fetch(`http://localhost:3001/med/${id}`, {
+        method: "delete",
+      });
+    } catch (err) {
+      alert("Erro: mensagem não cadastrada, tente mais tarde!");
+    }
   }
-};
 
+  // ---------------------------------------  Atualizar medicamento
+
+  const updateForm = async (e) => {
+    e.preventDefault();
+    console.log(formData);
+    try {
+      const res = await fetch("http://localhost:3001/med", {
+        method: "PUT", // GET, POST, PUT, DELETE
+        body: JSON.stringify(formData),
+        headers: { "Content-Type": "application/json" },
+      });
+    } catch (err) {
+      alert("Erro: UBS não atualizada, tente mais tarde!");
+    }
+  };
 
   // ------------------------------ Cadastro medicamentos
   const sendForm = async (e) => {
@@ -63,8 +77,8 @@ async function  delForm (e)  {
     fetchMyAPI();
   }, [medic]);
 
-   // ----------------------------- Api ADM
-   useEffect(() => {
+  // ----------------------------- Api ADM
+  useEffect(() => {
     async function fetchMyAPI() {
       const response = await fetch("http://localhost:3001/adm");
       setAdm(await response.json());
@@ -83,6 +97,14 @@ async function  delForm (e)  {
           class="btn btn-success btn-lg font-weight-bold"
           data-toggle="modal"
           data-target="#cadastroMEDModal"
+          onClick={() => {
+            setFormData({
+              id: "",
+              nome: "",
+              observacao: "",
+              cadastrado_por_id: "",
+            });
+          }}
         >
           CADASTRAR NOVO MEDICAMENTO
         </button>
@@ -138,6 +160,14 @@ async function  delForm (e)  {
                         class="btn btn-outline-info font-weight-bold"
                         data-toggle="modal"
                         data-target={"#atualizarMEDModal" + med.id}
+                        onClick={() => {
+                          setFormData({
+                            id: med.id,
+                            nome: med.nome,
+                            observacao: med.observacao,
+                            cadastrado_por_id: med.cadastrado_por_id,
+                          });
+                        }}
                       >
                         EDITAR
                       </button>
@@ -172,6 +202,7 @@ async function  delForm (e)  {
                                 class="container-fluid"
                                 method="post"
                                 name="form"
+                                onSubmit={updateForm}
                               >
                                 <div class="row">
                                   <div class=" col-sm-5 form-group">
@@ -199,6 +230,7 @@ async function  delForm (e)  {
                                     name="id"
                                     class="form-control border border-primary"
                                     value={med.id}
+                                    disabled
                                   />
                                 </div>
 
@@ -244,6 +276,14 @@ async function  delForm (e)  {
                                   class="btn btn-outline-warning mx-2"
                                   form="cadastrarMED"
                                   value="LIMPAR"
+                                  onClick={() => {
+                                    setFormData({
+                                      id: "",
+                                      nome: "",
+                                      observacao: "",
+                                      cadastrado_por_id: "",
+                                    });
+                                  }}
                                 />
                                 <input
                                   name="submit"
@@ -251,6 +291,9 @@ async function  delForm (e)  {
                                   class="btn btn-primary mx-2"
                                   form="atualizarMED"
                                   value="ATUALIZAR"
+                                  onClick={() =>
+                                    alert("Atualizado com sucesso")
+                                  }
                                 />
                               </div>
                             </div>
@@ -258,16 +301,13 @@ async function  delForm (e)  {
                         </div>
                       </div>
 
-
-                        <button
-                          type="submit"
-                          class="btn btn-outline-danger  font-weight-bold"
-                          onClick={() => delForm(med.id)}
-                        >
-                         
-                          APAGAR{" "}
-                        </button>
-                      
+                      <button
+                        type="button"
+                        class="btn btn-outline-danger font-weight-bold"
+                        onClick={() => delForm(med.id)}
+                      >
+                        APAGAR{" "}
+                      </button>
                     </div>
                   </td>
                 </tr>
@@ -322,16 +362,11 @@ async function  delForm (e)  {
                       required
                     >
                       {adm.map((adm) => (
-                        <option value={adm.username}>
-                        {adm.username}
-                      </option>
+                        <option value={adm.username}>{adm.username}</option>
                       ))}
-                      
                     </select>
                   </div>
                 </div>
-
-
 
                 <div class="form-group">
                   <label class="col-form-label">ID:</label>
@@ -388,13 +423,21 @@ async function  delForm (e)  {
                   class="btn btn-outline-warning mx-2"
                   form="cadastrarMED"
                   value="LIMPAR"
+                  onClick={() => {
+                    setFormData({
+                      id: "",
+                      nome: "",
+                      observacao: "",
+                      cadastrado_por_id: "",
+                    });
+                  }}
                 />
                 <input
                   type="submit"
                   class="btn btn-primary mx-2"
                   form="cadastrarMED"
                   value="CADASTRAR"
-                  // data-dismiss="modal"
+                  onClick={() => alert("Cadastrado com sucesso")}
                 />
               </div>
             </div>

@@ -24,7 +24,7 @@ export default function Menu() {
 
               <Dropdown.Menu>
                 <Dropdown.Item href="#/action-1">Meu perfil</Dropdown.Item>
-                <Dropdown.Item href="#/action-2">Sair</Dropdown.Item>
+                <Dropdown.Item><Link to="/">Sair</Link></Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
             

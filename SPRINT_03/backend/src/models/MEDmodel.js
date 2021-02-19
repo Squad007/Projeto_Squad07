@@ -7,7 +7,7 @@ class MEDmodel {
     this.nome;
     this.observacao;
     this.page;
-    this.pageSize = 50;
+    this.pageSize = 100;
   }
 
   getMEDdropdown(req, res) {
