@@ -22,7 +22,8 @@ routes.post('/msg', MSGcontr.postMSG); // enviar msg --OK
 
 //SITE ADM ######################
 //SITE ADM ######################
-//SITE ADM ###################### 
+//SITE ADM ######################
+routes.get('/adm/login', ADMcontr.loginADM); // login
 routes.get('/med/DENcount', MEDcontr.getMEDwDENcount); // lista completa medicamentos --OK
 routes.get('/med/totalPages', MEDcontr.getMEDtotalPages); // retorna numero de paginas
 routes.get('/med/page/:page', MEDcontr.getMEDbyPage); // acesso por numero da pagina
@@ -41,5 +42,6 @@ routes.delete('/ubs/:id', UBScontr.deleteUBS); // apaga ubs por id --OK
 routes.delete('/med/:id', MEDcontr.deleteMED); // apaga medicamento por id --OK
 routes.delete('/den/:id', DENcontr.deleteDEN); // apaga notificacao por id --OK
 routes.delete('/msg/:id', MSGcontr.deleteMSG); // apaga mensagem por id --OK
+routes.delete('/adm/:username', ADMcontr.deleteADM); // apaga mensagem por id --OK
 
 module.exports = routes;
