@@ -7,9 +7,12 @@ import "../Assets/css/notification.css";
 import mapMarkerImg from "../Assets/img/pin_sos.svg";
 
 export default function Notification() {
+
+  
+  
   const [pinArray, setPinArray] = useState([]);
-  const [ubs, setUbs] = useState(1);
-  const [notificationList, setNotificationList] = useState([]);
+  const [ubs, setUbs] = useState(1); //O PROBLEMA ESTA AQUI
+  const [notificationButton, setnotificationButton] = useState([]);
 
   // ------------------------------ Api notificações
   useEffect(() => {
@@ -18,16 +21,19 @@ export default function Notification() {
       setPinArray(await response.json());
     }
     fetchMyAPI();
-  }, []);
+  }, [ubs]);
 
   // ------------------------------ Api ubs
-  useEffect(() => {
+  useEffect(() => { //Funciona lado Direito
     async function fetchMyAPI() {
-      const response = await fetch(`http://localhost:3001/den/byUBS/${ubs}`);
-      setNotificationList(await response.json());
+      const response = await fetch(`http://localhost:3001/den/byUBS/${ubs}` ); //Mostra por ID
+      const dados = await response.json();
+      setnotificationButton(dados);
     }
     fetchMyAPI();
   }, [ubs]);
+
+
 
   const mapIcon = Leaflet.icon({
     iconUrl: mapMarkerImg,
@@ -42,25 +48,26 @@ export default function Notification() {
     const d = myDate.getDay();
     const mo = myDate.getMonth() + 1;
     const y = myDate.getFullYear();
-    // const h = myDate.getHours();
-    // const mi = myDate.getMinutes();
+
 
   return `${d}/${mo}/${y}`; {/*- ${h}:${mi}*/};
   };
   return (
     <div className="container">
       <div className="d-flex row" style={{ height: "90vh" }}>
+       
         <div
-          className="card_not col-5 table-responsive p-3 mt-5 text-white"
+          className="card_not col-5 table-responsive p-3 mt-5 text-white anyClass"
           style={{ width: "20vw", height: "", background: "#00b9b3" }}
         >
           <h4 className="border-bottom border-white">NOTIFICAÇÕES RECENTES</h4>
-          {notificationList.length > 0 &&
-            notificationList.map((not) => (
+          {notificationButton.length > 0 && 
+            notificationButton.map((not) => (
               <div className="m-3 row">
                 <div className="col-8">
                   <p>{not.nomeUbs}</p>
                   <p className="lead font-weight-bold ">{not.nome}</p>
+                  
                 </div>
                 <div className="col-4 justify-content-center flex-column py-auto d-flex align-items-center">
                   <p>Data da Falta:</p>
@@ -69,6 +76,7 @@ export default function Notification() {
               </div>
             ))}
         </div>
+        
         <div id="reportMap" className="col-7 mt-5 rounded-3">
           <MapContainer
             center={[-23.49, -46.43]}
@@ -87,9 +95,23 @@ export default function Notification() {
                   maxWidth={240}
                   className="map-popup"
                 >
-                  <button onClick={() => setUbs(pin.id)}>
+                  <button onClick={() =>  setUbs(pin.id)}>
                     Mostrar notificações
                   </button>
+                  {ubs.length > 0 && 
+            ubs.map((not) => (
+              <div className="m-3 row">
+                <div className="col-8">
+                  <p>{not.nomeUbs}</p>
+                  <p className="lead font-weight-bold ">{not.nome}</p>
+                  
+                </div>
+                <div className="col-4 justify-content-center flex-column py-auto d-flex align-items-center">
+                  <p>Data da Falta:</p>
+                  <p>{formatDate(not.data_ocorrencia)}</p>
+                </div>
+              </div>
+            ))}
                   {pin.nomeUbs}
                 </Popup>
               </Marker>

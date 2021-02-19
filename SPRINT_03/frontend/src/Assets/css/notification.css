@@ -36,3 +36,8 @@
 .map-popup .leaflet-popup-tip-container {
     display: none;
 }
+
+.anyClass {
+    height:550px;
+    overflow-y: scroll;
+  }

@@ -52,6 +52,14 @@ export default function Ubs() {
     }
   };
 
+ 
+
+  //---------  Atualizar UBS
+
+  function atualizarUbs(){
+    alert('TESTE')
+  }
+
   // ------------------------------ Delete
   async function delForm(e) {
     let id = e
@@ -107,12 +115,12 @@ export default function Ubs() {
           <table className="table table-striped table-hover table-dark bg-dark text-center ">
             <thead>
               <tr>
-                <th scope="col" onclick="ordenarID()">
+                <th scope="col" onClick="ordenarID()">
                   ID
                 </th>
                 <th scope="col">NOME</th>
                 <th scope="col">DISTRITO / ZONA</th>
-                <th scope="col" onclick="ordenarQtde()">
+                <th scope="col" onClick="ordenarQtde()">
                   N°_NOTIFICAÇÕES
                 </th>
               </tr>
@@ -181,6 +189,7 @@ export default function Ubs() {
                         className="btn btn-outline-info  font-weight-bold"
                         data-toggle="modal"
                         data-target={"#atualizarUBSModal" + ubs.id}
+                        
                       >
                         EDITAR
                       </button>
@@ -201,6 +210,7 @@ export default function Ubs() {
                               <h5
                                 className="modal-title"
                                 id="staticBackdropLabel"
+                               
                               >
                                 ATUALIZAR UBS
                               </h5>
@@ -217,7 +227,7 @@ export default function Ubs() {
                               <form
                                 id={"atualizarUBS" + ubs.id}
                                 className="container-fluid"
-                                method="post"
+                                method="put"
                                 // id//
                               >
                                 <input type="hidden" name="id" />
@@ -243,7 +253,9 @@ export default function Ubs() {
                                     type="text"
                                     name="nome"
                                     className="form-control border border-primary"
-                                    value={ubs.nomeUbs}
+                                    id="input"
+                                    disabled="true"
+                                    
                                   />
                                 </div>
 
@@ -303,6 +315,7 @@ export default function Ubs() {
                                         type="radio"
                                         name="zona"
                                         value="ZL"
+                                        checked
                                       />{" "}
                                       ZL
                                     </label>
@@ -409,6 +422,8 @@ export default function Ubs() {
                                   type="submit"
                                   className="btn btn-primary mx-2"
                                   value="ATUALIZAR"
+                                  
+                                  onClick={atualizarUbs}
                                 />
                               </div>
                             </div>
@@ -562,8 +577,8 @@ export default function Ubs() {
                     <label className="btn btn-outline-primary">
                       <input type="radio" name="zona" value="ZN" /> ZN
                     </label>
-                    <label className="btn btn-outline-primary">
-                      <input type="radio" name="zona" value="ZL" /> ZL
+                    <label className="btn btn-outline-primary active">
+                      <input type="radio" name="zona" value="ZL" checked /> ZL
                     </label>
                     <label className="btn btn-outline-primary">
                       <input type="radio" name="zona" value="ZS" /> ZS
