@@ -27,15 +27,14 @@ const styles = StyleSheet.create({
   },
   btnexclu: {
     backgroundColor: "#FF0000",
-    marginTop: 12,
-    borderRadius: 4,
-    marginLeft: 10,
-    marginRight: '20%',
-    padding: 10,
-    opacity:0.5
+    marginTop: 15,
+    opacity: 0.5,
+    width:30,
+    height:22,
+    borderRadius: 2
   },
   textoexclu: {
-    fontSize: 18,
+    fontSize: 8,
     color: "white",
     textAlign: "center",
     
@@ -67,7 +66,7 @@ function FaleConosco({navigation}) {
       <Text style={styles.titulo}>Mensagens <AntDesign name="mail" size={30} color="#007bff" /></Text>
       
       <Text style={styles.cadas}>Mensagens recentes:</Text>
-      <DataTable style={{ padding: 30 }}>
+      <DataTable style={{ padding: 10 }}>
         <DataTable.Header>
           <DataTable.Title>DATA/HORA</DataTable.Title>
           <DataTable.Title>NOME/MENSAGEM</DataTable.Title>

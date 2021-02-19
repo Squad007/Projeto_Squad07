@@ -10,10 +10,18 @@ import {
   ScrollView
 } from "react-native";
 
+import { AntDesign } from '@expo/vector-icons'
+
 const styles = StyleSheet.create({
   caixa: {
     height: Platform.OS === "web" ? "100vh" : "100%",
   },
+  header: {
+    flexDirection: 'row',
+    alignContent: 'space-between',
+    marginTop:4,
+    padding: 4,
+    },
   titulo: {
     color: "#00b9b3",
     fontSize: 32,
@@ -59,6 +67,13 @@ const styles = StyleSheet.create({
     color: "white",
     textAlign: "center",
   },
+  textoBem: {
+    fontSize: 18,
+    color: "black",
+    textAlign: "center",
+    marginTop: 40,
+    fontWeight:'bold'
+  },
   textArea: {
     height: 150,
     backgroundColor: "white",
@@ -101,11 +116,15 @@ const styles = StyleSheet.create({
   }
 });
 
-const Notificacao = () => {
+const Notificacao = ({navigation}) => {
   return (
     
     <ScrollView style={styles.caixa}>
-            
+             <View style={styles.header} >
+          <Text style={styles.textoBem} onPress={() => navigation.openDrawer()}>
+            <AntDesign name="menu-fold" size={30} color="black"  />  Bem vindo ao sistema SOS!
+          </Text>
+      </View>
         <View style={styles.ims}>
           <Text style={styles.titulo}>ADM'S</Text>
           <Text style={styles.label}>Atuais ADM's do sistema SOS</Text>

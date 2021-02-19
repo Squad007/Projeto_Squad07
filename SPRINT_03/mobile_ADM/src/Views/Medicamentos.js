@@ -5,6 +5,7 @@ import { DataTable } from "react-native-paper";
 import { AntDesign } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
 
+
 const styles = StyleSheet.create({
   titulo: {
     color: "#28a745",
@@ -31,21 +32,20 @@ const styles = StyleSheet.create({
   },
   btnedit:{
     backgroundColor: "#0000FF",
-    marginTop: 12,
-    borderRadius: 4,
-    marginLeft: 40,
-    marginRight: 40,
-    padding: 10,
+    marginTop: 15,
     opacity: 0.5,
+    width:20,
+    height:12,
+    borderRadius: 2
   },
   btnexclu: {
     backgroundColor: "#FF0000",
-    marginTop: 12,
-    borderRadius: 4,
-    marginLeft: 40,
-    marginRight: 40,
-    padding: 10,
+    marginTop: 15,
     opacity: 0.5,
+    width:20,
+    height:12,
+    borderRadius: 2
+
   },
   texto: {
     fontSize: 18,
@@ -61,14 +61,15 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
   textoedit: {
-    fontSize: 18,
+    fontSize: 5,
     color: "white",
     textAlign: "center",
   },
   textoexclu: {
-    fontSize: 18,
+    fontSize: 5,
     color: "white",
     textAlign: "center",
+    
   },
   titulo: {
     color: "#28a745",
@@ -89,14 +90,14 @@ const Medicamentos = ({ navigation }) => {
       </View>
       <Text style={styles.titulo}>Medicamentos <FontAwesome5 name="pills" size={30} color="green" /></Text>
     <TouchableOpacity style={styles.btn}>
-          <Text style={styles.textocad}>CADASTRAR NOVO MEDICAMENTO</Text>
+          <Text style={styles.textocad}>NOVO MEDICAMENTO<AntDesign name="totop" size={24} color="black" /></Text>
         </TouchableOpacity>
-    <DataTable  style={{ padding: 30 }}>
+    <DataTable  style={{ padding: 10 }}>
       <DataTable.Header  >
         <DataTable.Title >ID</DataTable.Title>
         <DataTable.Title>NOME</DataTable.Title>
         <DataTable.Title>Nº_NOTIFICAÇÕES</DataTable.Title>
-        <DataTable.Title>Ações</DataTable.Title>
+       
       </DataTable.Header>
       <DataTable.Row>
         <DataTable.Cell>1106400100500070000</DataTable.Cell>
@@ -110,7 +111,7 @@ const Medicamentos = ({ navigation }) => {
         </TouchableOpacity>
       </DataTable.Row>
       <DataTable.Row>
-      <DataTable.Cell>1106400100600022</DataTable.Cell>
+      <DataTable.Cell >1106400100600022</DataTable.Cell>
         <DataTable.Cell>IMIPRAMINA CLORIDRATO 25 MG COMPRIMIDO</DataTable.Cell>
         <DataTable.Cell>0</DataTable.Cell>
         <TouchableOpacity style={styles.btnedit}>

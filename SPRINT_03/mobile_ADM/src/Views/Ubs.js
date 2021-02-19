@@ -41,18 +41,19 @@ const styles = StyleSheet.create({
   },
   btnedit: {
     backgroundColor: "#0000FF",
-    marginTop: 12,
+    marginTop: 15,
     opacity: 0.5,
     width:20,
-    
-    height:10
+    height:12,
+    borderRadius: 2
   },
   btnexclu: {
     backgroundColor: "#FF0000",
-    marginTop: 12,
+    marginTop: 15,
     opacity: 0.5,
     width:20,
-    height:10
+    height:12,
+    borderRadius: 2
   },
   texto: {
     fontSize: 18,

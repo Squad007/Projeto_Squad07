@@ -21,15 +21,14 @@ const styles = StyleSheet.create({
   },
   btnexclu: {
     backgroundColor: "#FF0000",
-    marginTop: 12,
-    borderRadius: 4,
-    marginLeft: 10,
-    marginRight: '20%',
-    padding: 10,
+    marginTop: 15,
     opacity: 0.5,
+    width:30,
+    height:22,
+    borderRadius: 2
   },
   textoexclu: {
-    fontSize: 18,
+    fontSize: 9,
     color: "white",
     textAlign: "center",
   },
@@ -62,7 +61,7 @@ const Notificacao = ({ navigation }) => {
           <DataTable.Title>ID</DataTable.Title>
           <DataTable.Title>UBS/MEDICAMENTO</DataTable.Title>
           <DataTable.Title>DATA</DataTable.Title>
-          <DataTable.Title>AÇÕES</DataTable.Title>
+          
         </DataTable.Header>
         <DataTable.Row>
           <DataTable.Cell>1</DataTable.Cell>

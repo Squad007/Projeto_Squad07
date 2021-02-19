@@ -8,7 +8,7 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#6f42c1"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -17,9 +17,12 @@
       "**/*"
     ],
     "ios": {
+      "bundleIdentifier": "com.squad7.sosadm",
+      "buildNumber": "1.0.0",
       "supportsTablet": true
     },
     "android": {
+      "package": "com.squad7.sosadm",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
