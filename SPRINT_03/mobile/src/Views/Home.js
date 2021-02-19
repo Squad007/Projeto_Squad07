@@ -13,7 +13,6 @@ import {
 
 import { Entypo } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
-// import { NavigationContainer } from '@react-navigation/native';
 import { Card, Title } from "react-native-paper";
 
 const styles = StyleSheet.create({

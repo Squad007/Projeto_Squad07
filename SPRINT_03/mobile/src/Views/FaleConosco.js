@@ -87,27 +87,17 @@ const styles = StyleSheet.create({
   },
 });
 
-<<<<<<< HEAD
+
 const FaleConosco = ({navigation}) => {
-=======
-const FaleConosco = ({ navigation }) => {
->>>>>>> 43092ee84e032c2fac9e76b4c328827d39bdf5e5
-  function msg() {
-    Alert.alert("Mensagem enviada com Sucesso!!");
+
+  function msg(){
+    Alert.alert("Mensagem Enviada!!");
   }
+
   return (
     <View style={styles.caixa}>
       <View style={styles.tinyBack}>
-<<<<<<< HEAD
-      <TouchableOpacity style={styles.btnMenu} onPress={() => navigation.openDrawer()}>
-            <Text style={styles.texto}><Entypo name="menu" size={24} color="white" /> MENU</Text>
-          </TouchableOpacity>
-        <Image
-          style={styles.tinyLogo}
-          source={require("../../assets/logo.png")}
-        />
-      </View>
-=======
+
           <TouchableOpacity style={styles.btnMenu} onPress={() => navigation.openDrawer()}>
             <Text style={styles.texto}><Entypo name="menu" size={24} color="white" /> MENU</Text>
           </TouchableOpacity>
@@ -116,7 +106,6 @@ const FaleConosco = ({ navigation }) => {
             source={require("../../assets/logo.png")}
           />
         </View>
->>>>>>> 43092ee84e032c2fac9e76b4c328827d39bdf5e5
       <View>
         <Text style={styles.titulo}>Enviar Mensagem</Text>
       </View>

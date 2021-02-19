@@ -88,33 +88,19 @@ const styles = StyleSheet.create({
     marginTop: Platform.OS === "web" ? 30 : "70%",
   },
 });
-<<<<<<< HEAD
-const Notificacao = ({navigation}) => {
-  return (
-    <ScrollView style={styles.caixa}>
-      <View style={styles.tinyBack}>
-      <TouchableOpacity style={styles.btnMenu} onPress={() => navigation.openDrawer()}>
-            <Text style={styles.textoMenu}><Entypo name="menu" size={24} color="white" /> MENU</Text>
-          </TouchableOpacity>
-        <Image
-          style={styles.tinyLogo}
-          source={require("../../assets/logo.png")}
-        />
-      </View>
-=======
+
 const Notificacao = ({ navigation }) => {
   return (
     <ScrollView style={styles.caixa}>
         <View style={styles.tinyBack}>
           <TouchableOpacity style={styles.btnMenu} onPress={() => navigation.openDrawer()}>
-            <Text style={styles.texto}><Entypo name="menu" size={24} color="white" /> MENU</Text>
+            <Text style={styles.textoMenu}><Entypo name="menu" size={24} color="white" /> MENU</Text>
           </TouchableOpacity>
           <Image
             style={styles.tinyLogo}
             source={require("../../assets/logo.png")}
           />
         </View>
->>>>>>> 43092ee84e032c2fac9e76b4c328827d39bdf5e5
       <Text style={styles.titulo}>Verifique no Mapa as Notificações</Text>
       <View style={styles.mapa}>
         <Image style={styles.mapa} source={require("../../assets/mapa.jpeg")} />
