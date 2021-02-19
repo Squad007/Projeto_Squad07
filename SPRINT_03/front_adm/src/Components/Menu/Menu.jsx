@@ -1,9 +1,22 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { changeCredentials } from '../../redux/actions';
 import Dropdown from 'react-bootstrap/Dropdown';
-import "./Menu.css";
+import './Menu.css';
 
 export default function Menu() {
+  const emptyCredentials = {
+    username: null,
+    nome: null,
+    imagem: null,
+    email: null,
+    token: null,
+  };
+
+  const dispatch = useDispatch();
+  const credentials = useSelector((state) => state.credentials);
+
   return (
     <div>
       <header>
@@ -11,23 +24,28 @@ export default function Menu() {
           <div className="container w-100">
             <Dropdown>
               <Dropdown.Toggle variant="dark" id="dropdown-basic">
-              <img
-              src="https://avatars.githubusercontent.com/u/65695476?s=460&u=3d179b94c652bc8e71ef89e160bad45e23d80422&v=4"
-              width="30"
-              height="30"
-              className="d-inline-block align-top rounded-circle"
-              alt="<?php echo $_SESSION['nome'] ?>"
-              loading="lazy"
-            />
-              <span className="ml-2">{/*<?php echo $_SESSION['username'] ?>*/}Usuario</span>
+                <img
+                  src={credentials.imagem}
+                  width="30"
+                  height="30"
+                  className="d-inline-block align-top rounded-circle"
+                  alt={credentials.username}
+                  loading="lazy"
+                />
+                <span className="ml-2">{credentials.username}</span>
               </Dropdown.Toggle>
 
               <Dropdown.Menu>
-                <Dropdown.Item href="#/action-1">Meu perfil</Dropdown.Item>
-                <Dropdown.Item><Link to="/">Sair</Link></Dropdown.Item>
+                <Dropdown.Item>Meu perfil</Dropdown.Item>
+
+                <Dropdown.Item
+                  onClick={() => dispatch(changeCredentials(emptyCredentials))}
+                >
+                  SAIR
+                </Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
-            
+
             <button
               className="navbar-toggler"
               type="button"

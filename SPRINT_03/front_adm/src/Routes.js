@@ -1,21 +1,23 @@
-import React from "react";
-import { Routes, Route } from "react-router-dom";
-import Home from "./Pages/Home/Home";
-import Ubs from "./Pages/Ubs/Ubs";
-import Medicamentos from "./Pages/Medicamentos/Medicamentos";
-import Notificacaos from "./Pages/Notificacaos/Notificacaos";
-import FaleConosco from "./Pages/FaleConosco/FaleConosco";
-import Adms from "./Pages/Adms/Adms";
+import React from 'react';
+import { Switch } from 'react-router-dom';
+import Home from './Pages/Home/Home';
+import Ubs from './Pages/Ubs/Ubs';
+import Medicamentos from './Pages/Medicamentos/Medicamentos';
+import Notificacaos from './Pages/Notificacaos/Notificacaos';
+import FaleConosco from './Pages/FaleConosco/FaleConosco';
+import Adms from './Pages/Adms/Adms';
+import RoutesPrivate from './RoutesPrivate';
+import RoutesPrivate2 from './RoutesPrivate2';
 
 export default function Rotas() {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/ubs" element={<Ubs />} />
-      <Route path="/medicamentos" element={<Medicamentos />} />
-      <Route path="/notificacao" element={<Notificacaos />} />
-      <Route path="/faleConosco" element={<FaleConosco />} />
-      <Route path="/adms" element={<Adms />} />
-    </Routes>
+    <Switch>
+      <RoutesPrivate2 path="/" exact component={Home} />
+      <RoutesPrivate path="/ubs" exact component={Ubs} />
+      <RoutesPrivate path="/medicamentos" exact component={Medicamentos} />
+      <RoutesPrivate path="/notificacao" exact component={Notificacaos} />
+      <RoutesPrivate path="/faleConosco" exact component={FaleConosco} />
+      <RoutesPrivate path="/adms" exact component={Adms} />
+    </Switch>
   );
 }

@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { changeCredentials } from '../../redux/actions';
 
 import './Home.css';
 
 export default function Home() {
-  const [credentials, setCredentials] = useState({});
   const [login, setLogin] = useState({
     username: '',
     senha: '',
   });
+
+  const dispatch = useDispatch();
+  const credentials = useSelector((state) => state.credentials);
 
   const handleChange = ({ target }) =>
     setLogin({ ...login, [target.name]: target.value });
@@ -21,8 +25,10 @@ export default function Home() {
         body: JSON.stringify(login),
         headers: { 'Content-Type': 'application/json' },
       });
-      setCredentials(await res.json());
-      console.log(credentials);
+      // setCredentials(await res.json());
+      dispatch(changeCredentials(await res.json()));
+      // console.log(credentials);
+      // dispatch(changeCredentials(credentials));
     } catch (err) {
       alert('Erro ao comunicar com servidor! Tente mais tarde!');
     }
