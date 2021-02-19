@@ -86,20 +86,7 @@ const styles = StyleSheet.create({
   },
 });
 
-<<<<<<< HEAD
-const Sobre = ({navigation}) => {
-  return (
-    <ScrollView>
-      <View style={styles.tinyBack}>
-      <TouchableOpacity style={styles.btnMenu} onPress={() => navigation.openDrawer()}>
-            <Text style={styles.textoMenu}><Entypo name="menu" size={24} color="white" /> MENU</Text>
-          </TouchableOpacity>
-        <Image
-          style={styles.tinyLogo}
-          source={require("../../assets/logo.png")}
-        />
-      </View>
-=======
+
 const Sobre = ({ navigation }) => {
   return (
     <ScrollView>
@@ -112,7 +99,6 @@ const Sobre = ({ navigation }) => {
             source={require("../../assets/logo.png")}
           />
         </View>
->>>>>>> 43092ee84e032c2fac9e76b4c328827d39bdf5e5
       <View>
         <Text style={styles.titulo}>Nossa História</Text>
 

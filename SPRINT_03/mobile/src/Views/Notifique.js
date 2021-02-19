@@ -12,7 +12,6 @@ import {
 } from "react-native";
 import { Entypo } from '@expo/vector-icons';
 
-import { Entypo } from '@expo/vector-icons';
 
 const styles = StyleSheet.create({
   caixa: {
@@ -88,11 +87,8 @@ const styles = StyleSheet.create({
   },
 });
 
-<<<<<<< HEAD
-const Notifique = ({navigation}) => {
-=======
 const Notifique = ({ navigation }) => {
->>>>>>> 43092ee84e032c2fac9e76b4c328827d39bdf5e5
+
   function notifique() {
     Alert.alert("Notificação enviada com Sucesso!!");
   }
@@ -100,16 +96,6 @@ const Notifique = ({ navigation }) => {
 
   return (
     <View style={styles.caixa}>
-<<<<<<< HEAD
-      <View style={styles.tinyBack}>
-      <TouchableOpacity style={styles.btnMenu} onPress={() => navigation.openDrawer()}>
-            <Text style={styles.texto}><Entypo name="menu" size={24} color="white" /> MENU</Text>
-          </TouchableOpacity>
-        <Image
-          style={styles.tinyLogo}
-          source={require("../../assets/logo.png")}
-        />
-=======
       <StatusBar hidden={false} />
       <View>
         <View style={styles.tinyBack}>
@@ -121,7 +107,7 @@ const Notifique = ({ navigation }) => {
             source={require("../../assets/logo.png")}
           />
         </View>
->>>>>>> 43092ee84e032c2fac9e76b4c328827d39bdf5e5
+
       </View>
       <View style={styles.inputs}>
         <Text style={styles.titulo}>Cadastrar Notificação</Text>
