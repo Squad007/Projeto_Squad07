@@ -11,7 +11,7 @@
       $result = mysqli_query($connect, $query);  
       while($row = mysqli_fetch_assoc($result))  
       {  
-           fputcsv($output, $row);  
+          fputcsv($output, $row);  
       }  
       fclose($output);  
  }  

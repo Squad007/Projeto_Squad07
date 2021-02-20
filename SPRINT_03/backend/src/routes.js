@@ -33,7 +33,7 @@ routes.get('/adm', ADMcontr.getAllADM); // lista completa adm --OK
 
 routes.post('/ubs', UBScontr.postUBS); // cadastra nova ubs --OK
 routes.post('/med', MEDcontr.postMED); // cadastra novo medicamento --OK
-routes.post('/adm', ADMcontr.postADM); // cadastra novo adm --OK (falta "if" para confirmar a senha)
+routes.post('/adm', ADMcontr.postADM); // cadastra novo adm --OK
 
 routes.put('/ubs', UBScontr.putUBS); // atualiza ubs por id --OK
 routes.put('/med', MEDcontr.putMED); // atualiza medicamento por id --OK
@@ -42,6 +42,6 @@ routes.delete('/ubs/:id', UBScontr.deleteUBS); // apaga ubs por id --OK
 routes.delete('/med/:id', MEDcontr.deleteMED); // apaga medicamento por id --OK
 routes.delete('/den/:id', DENcontr.deleteDEN); // apaga notificacao por id --OK
 routes.delete('/msg/:id', MSGcontr.deleteMSG); // apaga mensagem por id --OK
-routes.delete('/adm/:username', ADMcontr.deleteADM); // apaga mensagem por id --OK
+routes.delete('/adm/:username', ADMcontr.deleteADM); // apaga adm por id --OK
 
 module.exports = routes;

@@ -10,12 +10,13 @@ export default function Menu() {
     <div>
       <header>
         <nav className="navbar navbar-expand-lg navbar-dark shadow nav-style">
-          <div class="container w-100">
+          <div className="container w-100">
             <Link to='/'>
               <img
                 className="my-1"
                 src={require('../../Assets/img/logo.svg').default}
                 width="80px"
+                alt=""
               />
             </Link>
 
@@ -48,7 +49,7 @@ export default function Menu() {
                     to='/register'
                   >
                     <FaExclamationCircle />{" "}
-                    Registre 
+                    Notifique 
                   </Link>
                 </li>
 

@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import "../Assets/css/home.css";
-export default function () {
+
+export default function Home() {
   return (
     <div>
       <div className="jumbotron jumbotron-fluid text-sm-center bg-transparent">

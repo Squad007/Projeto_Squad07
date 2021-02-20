@@ -11,7 +11,7 @@ export default function Notification() {
   const [notificationButton, setnotificationButton] = useState([]);
   const [urlDen, setUrlDen] = useState("http://localhost:3001/den/")
 
-  // ------------------------------ Api notificações
+  // ------------------------------ Api ubs retorna nos pins do mapa
   useEffect(() => {
     async function fetchMyAPI() {
       const response = await fetch("http://localhost:3001/ubs/DENcount");
@@ -20,7 +20,7 @@ export default function Notification() {
     fetchMyAPI();
   }, [urlDen]);
 
-  // ------------------------------ Api ubs
+  // ------------------------------ Api notificações
   useEffect(() => { 
     async function fetchMyAPI() {
       const response = await fetch(urlDen);
@@ -57,13 +57,13 @@ export default function Notification() {
       <div className="d-flex row" style={{ height: "85vh" }}>
        
         <div
-          className="card_not col-5 table-responsive p-3 mt-5 text-white anyClass"
+          className="card_not col-5 p-3 mt-5 text-white anyClass"
           style={{ width: "20vw", height: "", background: "#00b9b3" }}
         >
           <h4 className="border-bottom border-white">NOTIFICAÇÕES RECENTES</h4>
           {notificationButton.length > 0 && 
-            notificationButton.map((not) => (
-              <div className="m-3 row border-bottom border-white">
+            notificationButton.map((not, index) => (
+              <div className="m-3 row border-bottom border-white" key={index}>
                 <div className="col-8 ">
                   <b className="nome_ubs">{not.nomeUbs}</b>
                   <p className="lead font-weight-bold ">{not.nome}</p>
@@ -86,11 +86,9 @@ export default function Notification() {
           >
             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
           
-             {pinArray.map((pin) => (
-              <Marker icon={mapIcon} position={[pin.latitude, pin.longitude]}>
-                <Tooltip
-                  style={{background: "blue"}}
-                >{pin.qtde}</Tooltip>
+             {pinArray.map((pin, index) => (
+              <Marker key={index} icon={mapIcon} position={[pin.latitude, pin.longitude]}>
+                <Tooltip>{pin.qtde}</Tooltip>
                 <Popup
                   closeButton={false}
                   minWidth={240}

@@ -11,7 +11,7 @@ export default function Report() {
   const sendForm = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch("http://localhost:3001/msg", {
+      await fetch("http://localhost:3001/msg", {
         method: "POST",
         body: JSON.stringify(formData),
         headers: { "Content-Type": "application/json" },
@@ -23,11 +23,7 @@ export default function Report() {
         });
       });
     } catch (err) {
-      // setMsg({
-      //   formSave: false,
-      //   type: "error",
-      //   message: "Erro: mensagem não cadastrada, tente mais tarde!",
-      // });
+      alert('Error: tente mais tarde!')
     }
   };
 
@@ -44,7 +40,7 @@ export default function Report() {
         <form className="container" method="POST" onSubmit={sendForm}>
           <div className="form-group">
             <h1 className="my-4">Enviar Mensagem</h1>
-            <label for="nome">Nome</label>
+            <label htmlFor="nome">Nome</label>
             <input
               className="form-control mb-2"
               type="text"
@@ -55,7 +51,7 @@ export default function Report() {
               required
             />
 
-            <label for="nome">E-mail(opcional)</label>
+            <label htmlFor="nome">E-mail(opcional)</label>
             <input
               className="form-control mb-2"
               type="email"
@@ -65,7 +61,7 @@ export default function Report() {
               placeholder="Digite seu E-mail"
             />
 
-            <label for="nome">Mensagem</label>
+            <label htmlFor="nome">Mensagem</label>
             <textarea
               className="form-control mb-2"
               name="msg"
@@ -89,7 +85,7 @@ export default function Report() {
               <div
                 className="modal"
                 id="modalconfirma"
-                tabindex="-1"
+                tabIndex="-1"
                 role="dialog"
               >
                 <div

@@ -15,7 +15,7 @@ export default function Register() {
   const sendForm = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch("http://localhost:3001/den", {
+      await fetch("http://localhost:3001/den", {
         method: "POST",
         body: JSON.stringify(formData),
         headers: { "Content-Type": "application/json" },
@@ -54,12 +54,12 @@ export default function Register() {
   }, []);
 
   return (
-    <main style={{minHeight: "calc(100vh - 68px - 56px )"}}>
+    <main style={{minHeight: "calc(100vh - 68px - 56px)"}}>
       <div className=" container p-3 bg-light rounded shadow-lg">
         <form onSubmit={sendForm} name="form" method="post">
           <div className="form-group">
             <h1 className="my-4">Cadastrar Notificação</h1>
-            <label for="ubs_id">Escolha a UBS</label>
+            <label htmlFor="ubs_id">Escolha a UBS</label>
             <select
               name="ubs_id"
               value={formData.ubs_id}
@@ -73,10 +73,10 @@ export default function Register() {
               {/* Seleção da UBS */}
 
               {ubsSelect.map((ubs) => (
-                <option value={ubs.id}>{ubs.nomeUbs}</option>
+                <option key={ubs.id} value={ubs.id}>{ubs.nomeUbs}</option>
               ))}
             </select>
-            <label for="medicamento_id">Medicamentos em falta</label>
+            <label htmlFor="medicamento_id">Medicamentos em falta</label>
             <select
               name="medicamento_id"
               value={formData.medicamento_id}
@@ -90,10 +90,10 @@ export default function Register() {
               {/* Seleção dos Medicamentos */}
 
               {medSelect.map((med) => (
-                <option value={med.id}>{med.nome}</option>
+                <option key={med.id} value={med.id}>{med.nome}</option>
               ))}
             </select>
-            <label for="data_ocorrencia">
+            <label htmlFor="data_ocorrencia">
               Data de quando faltou o remedio:{" "}
             </label>
             <input
@@ -104,7 +104,7 @@ export default function Register() {
               className="form-control data mb-3"
               required
             />
-            <label for="comentario">Observações e comentarios: </label>
+            <label htmlFor="comentario">Observações e comentarios: </label>
             <textarea
               name="comentario"
               value={formData.comentario}
@@ -126,7 +126,7 @@ export default function Register() {
               <div
                 className="modal"
                 id="modalconfirma"
-                tabindex="-1"
+                tabIndex="-1"
                 role="dialog"
               >
                 <div
@@ -145,7 +145,7 @@ export default function Register() {
                       </button>
                     </div>
                     <div className="modal-body">
-                      <p>Confirmar o envio da denúncia?</p>
+                      <p>Confirmar o envio da notificação?</p>
                     </div>
                     <div className="modal-footer">
                       <button
