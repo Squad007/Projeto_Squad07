@@ -25,49 +25,49 @@ INSERT INTO
 VALUES
   (
     'RMENDONCA',
-    'RM@ITAU.COM',
+    'RM@RECODE.COM',
     'd1233c7274abadb3c7b6863bf51fbdfa',
     'RAQUEL MENDONCA',
     'https://media-exp1.licdn.com/dms/image/C4D03AQGz5SFX9ThkqQ/profile-displayphoto-shrink_800_800/0/1574179430233?e=1619049600&v=beta&t=C7XiEq8mqfGHhtalCHe98rhytzPAtGdlPrMBFiOue2U'
   ),
   (
     'WROGER',
-    'WR@ITAU.COM',
+    'WR@RECODE.COM',
     'd1233c7274abadb3c7b6863bf51fbdfa',
     'WILLI ROGER',
     'https://media-exp1.licdn.com/dms/image/C4D03AQGbgiYRMOKP8g/profile-displayphoto-shrink_800_800/0/1594233765393?e=1619049600&v=beta&t=zQJsw0d2300DmYMG92adtKXAXuFwYXmTq5UIZvAOhBo'
   ),
   (
     'ESANTOS',
-    'ES@ITAU.COM',
+    'ES@RECODE.COM',
     'd1233c7274abadb3c7b6863bf51fbdfa',
     'ELIANA SANTOS',
     'https://media-exp1.licdn.com/dms/image/C4D03AQHCb04NssbZnw/profile-displayphoto-shrink_800_800/0/1598543396361?e=1619049600&v=beta&t=O2Xe4fSAt2meS1ZLiBUFSWKx3CM06kfWaMNbvU-sTX4'
   ),
   (
     'MTAKUSHI',
-    'MT@ITAU.COM',
+    'MT@RECODE.COM',
     'd1233c7274abadb3c7b6863bf51fbdfa',
     'MITSU TAKUSHI',
     'https://avatars1.githubusercontent.com/u/60308013?s=460&u=59e974bd02867f9b2cbbb6e77862fb3bafaf495a&v=4'
   ),
   (
     'CSANTANA',
-    'CS@ITAU.COM',
+    'CS@RECODE.COM',
     'd1233c7274abadb3c7b6863bf51fbdfa',
     'CRIS SANTANA',
     'https://avatars3.githubusercontent.com/u/65695476?s=460&u=2cdd26015528cc8ad84527bf59dfa402c334a1d0&v=4'
   ),
   (
     'CDOG',
-    'CD@ITAU.COM',
+    'CD@RECODE.COM',
     'd1233c7274abadb3c7b6863bf51fbdfa',
     'CRAZY DOG',
     'https://pbs.twimg.com/profile_images/1257312140748181506/uitScpep_400x400.jpg'
   ),
   (
     'NLOPES',
-    'NL@ITAU.COM',
+    'NL@RECODE.COM',
     'd1233c7274abadb3c7b6863bf51fbdfa',
     'NAY LOPES',
     'https://avatars0.githubusercontent.com/u/50646395?s=460&u=f946b1260f2cfce4c8837f49f0ebe8b35c769cea&v=4'
@@ -1864,7 +1864,7 @@ VALUES
   (
     'Mitsu Takushi',
     'Vim testar de novo com o meu email dessa vez',
-    'mh@itau.com.br'
+    'mh@RECODE.COM.br'
   ),
   (
     'Nayara Suelen Fernandes Lopes',
