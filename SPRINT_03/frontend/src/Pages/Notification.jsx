@@ -171,7 +171,7 @@ export default function Notification() {
               background: '#00b9b3',
             }}
           >
-            <h4 className="font-weight-bold text-center mb-3">
+            <h4 className="font-weight-bold text-center mb-3 titulo_notificacao">
               NOTIFICAÇÕES RECENTES
             </h4>
 
@@ -180,7 +180,7 @@ export default function Notification() {
                 <tbody>
                   {notificationButton.length > 0 ? (
                     notificationButton.map((not, index) => (
-                      <tr key={index} className="m-3 row">
+                      <tr key={index} className="m-0 mb-3 p-1 row">
                         <td
                           className="col tabela_ubs_med"
                           style={{
@@ -193,7 +193,7 @@ export default function Notification() {
                               {formatDate(not.data_ocorrencia)} -{' '}
                             </b>
                             <b className="nome_ubs">{not.nomeUbs}</b>
-                            <p className="lead font-weight-bold text-white ">
+                            <p className="nome_med lead font-weight-bold text-white">
                               {not.nome}
                             </p>
                           </div>
