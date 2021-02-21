@@ -56,17 +56,17 @@ export default function Notification() {
     <div className="container">
       <div
         className="d-flex justify-content-center row"
-        style={{ minHeight: "calc(100vh - 68px - 56px )" }}
+        style={{ minHeight: 'calc(100vh - 68px - 56px )' }}
       >
         <div className="col-md-5 my-4">
           <div
             className="card_not p-3 text-white anyClass"
-            style={{ background: "#00b9b3" }}
+            style={{ background: '#00b9b3' }}
           >
             <h4 className="border-bottom border-white">
               NOTIFICAÇÕES RECENTES
             </h4>
-            <div className="table-responsive" style={{ height: "90%" }}>
+            <div className="table-responsive" style={{ height: '90%' }}>
               <table className="table table-borderless">
                 <tbody>
                   {notificationButton.length > 0 ? (
@@ -87,10 +87,10 @@ export default function Notification() {
                         <td>
                           <div className="justify-content-center flex-column py-auto d-flex align-items-center">
                             <p className="m-0 text-white">Data da Falta:</p>
-                            <p style={{ fontSize: "26px", color: "#fff" }}>
+                            <p style={{ fontSize: '26px', color: '#fff' }}>
                               {formatDate(not.data_ocorrencia)}
                             </p>
-                            <p style={{ fontSize: "12px" }}>
+                            <p style={{ fontSize: '12px' }}>
                               registro: {formatDate(not.data_denuncia)}
                             </p>
                           </div>
@@ -112,10 +112,10 @@ export default function Notification() {
             style={{ width: '100%', height: '550px' }}
             className="card_map"
           >
-            <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-            {/* <TileLayer
+            {/* <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" /> */}
+            <TileLayer
               url={`https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/256/{z}/{x}/{y}@2x?access_token=${process.env.REACT_APP_MAPBOX_TOKEN}`}
-            /> */}
+            />
 
             {pinArray.map((pin, index) => (
               <Marker
