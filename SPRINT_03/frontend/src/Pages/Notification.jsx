@@ -9,11 +9,7 @@ import mapMarkerImg from '../Assets/img/pin_sos.svg';
 export default function Notification() {
   const [pinArray, setPinArray] = useState([]);
   const [notificationButton, setnotificationButton] = useState([]);
-<<<<<<< HEAD
-  const [urlDen, setUrlDen] = useState("http://localhost:3001/den/");
-=======
   const [urlDen, setUrlDen] = useState('http://localhost:3001/den/');
->>>>>>> 485fb59ac89686a63f71edd7fc86b1b4c91a4c70
 
   // ------------------------------ Api ubs retorna nos pins do mapa
   useEffect(() => {
@@ -58,7 +54,6 @@ export default function Notification() {
   }
   return (
     <div className="container">
-<<<<<<< HEAD
       <div
         className="d-flex justify-content-center row"
         style={{ minHeight: "calc(100vh - 68px - 56px )" }}
@@ -111,46 +106,16 @@ export default function Notification() {
           </div>
         </div>
         <div id="reportMap" className="col-md-7 my-4">
-=======
-      <div className="d-flex row" style={{ height: '85vh' }}>
-        <div
-          className="card_not col-5 p-3 mt-5 text-white anyClass"
-          style={{ width: '20vw', height: '', background: '#00b9b3' }}
-        >
-          <h4 className="border-bottom border-white">NOTIFICAÇÕES RECENTES</h4>
-          {notificationButton.length > 0 &&
-            notificationButton.map((not, index) => (
-              <div className="m-3 row border-bottom border-white" key={index}>
-                <div className="col-8 ">
-                  <b className="nome_ubs">{not.nomeUbs}</b>
-                  <p className="lead font-weight-bold ">{not.nome}</p>
-                </div>
-                <div className="col-4 justify-content-center flex-column py-auto d-flex align-items-center">
-                  <p className="m-0">Data da Falta:</p>
-                  <p style={{ fontSize: '25px' }}>
-                    {formatDate(not.data_ocorrencia)}
-                  </p>
-                </div>
-              </div>
-            ))}
-        </div>
-
-        <div id="reportMap" className="col-7 mt-5 rounded-3">
->>>>>>> 485fb59ac89686a63f71edd7fc86b1b4c91a4c70
           <MapContainer
             center={[-23.49, -46.43]}
             zoom={13}
             style={{ width: '100%', height: '550px' }}
             className="card_map"
           >
-<<<<<<< HEAD
-            <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-=======
             {/* <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" /> */}
             <TileLayer
               url={`https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/256/{z}/{x}/{y}@2x?access_token=${process.env.REACT_APP_MAPBOX_TOKEN}`}
             />
->>>>>>> 485fb59ac89686a63f71edd7fc86b1b4c91a4c70
 
             {pinArray.map((pin, index) => (
               <Marker
