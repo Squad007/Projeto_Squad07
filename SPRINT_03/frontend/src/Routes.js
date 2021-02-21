@@ -5,6 +5,7 @@ import Notification from "./Pages/Notification";
 import Register from "./Pages/Register";
 import Report from "./Pages/Report";
 import Contact from "./Pages/Contact";
+import Erro404 from "./Pages/Erro404";
 
 export default function Eli() {
   return (
@@ -14,6 +15,7 @@ export default function Eli() {
       <Route path="/register" element={<Register />} />
       <Route path="/report" element={<Report />} />
       <Route path="/contact" element={<Contact />} />
+      <Route path="/*" element={<Erro404 />} />
     </Routes>
   );
 }
