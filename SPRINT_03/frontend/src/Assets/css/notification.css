@@ -1,14 +1,14 @@
-.card_not {
-  border-radius: 20px;
-}
+/* .card_not { */
+/* border-radius: 20px; */
+/* } */
 
-.card_map {
-  border-radius: 20px;
-}
+/* .card_map { */
+/* border-radius: 20px; */
+/* } */
 
 .map-popup .leaflet-popup-content-wrapper {
   background: rgba(255, 255, 255, 0.8);
-  border-radius: 20px;
+  /* border-radius: 20px; */
   box-shadow: none;
 }
 
@@ -38,15 +38,31 @@
 }
 
 .anyClass {
-  height: 550px;
+  /* height: 550px; */
+  height: 100% !important;
 }
 
 .nome_ubs {
-    color: #6f42c1 !important;
+  color: #6f42c1 !important;
 }
 
-@media (max-width: 400px) {
+.map-popup {
+  position: relative;
+  top: 40px;
+}
+
+@media (max-width: 991px) {
   .card_map {
-    height: 400px !important;
+    height: 70vh !important;
+  }
+
+  .tabela_data {
+    color: red;
+    display: none;
+  }
+
+  .tabela_ubs_med {
+    color: red;
+    border-radius: 20px 20px 20px 20px !important;
   }
 }
