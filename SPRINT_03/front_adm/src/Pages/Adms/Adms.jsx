@@ -1,5 +1,7 @@
 import React,{useState,useEffect} from "react";
 
+
+
 export default function Adms() {
   const [senhaConfirmada, setSenhaConfirmada] = useState("")
   const [adms, setAdms] = useState([]);
@@ -113,7 +115,7 @@ export default function Adms() {
         
           <div className="col mt-5">
             <div className="jumbotron card card-image text-white bg-transparent">
-              <h1 className="display-4 text-light  font-weight-bold">CADASTRAR</h1>
+              <h1 className="display-5 text-light  font-weight-bold">CADASTRAR</h1>
               <p className="lead font-weight-bold">
                 Insira abaixo dados do novo ADM
               </p>
@@ -172,10 +174,10 @@ export default function Adms() {
                   onChange={(event) => setSenhaConfirmada(event.target.value)}
                 />
                 <div className="d-flex justify-content-between btn-block">
-                  <button className="btn btn-outline-light w-25" type="reset">
+                  <button className="btn btn-outline-light" type="reset">
                     <b>Limpar</b>
                   </button>
-                  <button className="btn btn-light w-25" type="submit">
+                  <button className="btn btn-light botao" type="submit">
                     <b>Cadastrar</b>
                   </button>
                 </div>
