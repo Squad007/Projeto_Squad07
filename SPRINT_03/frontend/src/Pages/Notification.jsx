@@ -35,8 +35,8 @@ export default function Notification() {
   const mapIcon = Leaflet.icon({
     iconUrl: mapMarkerImg,
     iconSize: [38, 48],
-    iconAnchor: [29, 68],
-    popupAnchor: [170, -10],
+    iconAnchor: [20, 48],
+    popupAnchor: [0, -40],
   });
 
   // ------------------------------ Formatação da data de mensagens
@@ -46,7 +46,7 @@ export default function Notification() {
     const mo = myDate.getMonth() + 1;
     const y = myDate.getFullYear();
 
-    return `${pad(d)}/${pad(mo)}/${y}`;
+    return `${pad(d).toString()}/${pad(mo).toString()}/${y.toString()}`;
   };
 
   function pad(num, size = 2) {
@@ -55,7 +55,6 @@ export default function Notification() {
     return num;
   }
   return (
-    // <div className="container">
     <div>
       <div
         className="d-flex flex-row-reverse justify-content-center row overflow-hidden"
@@ -93,7 +92,15 @@ export default function Notification() {
                   icon={mapIcon}
                   position={[pin.latitude, pin.longitude]}
                 >
-                  <Tooltip>{pin.qtde}</Tooltip>
+                  <Tooltip
+                    direction="top"
+                    offset={[0, 0]}
+                    opacity={1}
+                    className="tooltip_sos"
+                    permanent
+                  >
+                    {pin.qtde.toString()}
+                  </Tooltip>
                   <Popup
                     closeButton={false}
                     minWidth={150}
@@ -111,7 +118,7 @@ export default function Notification() {
                         {pin.nomeUbs}
                       </b>
                       <button
-                        className="btn btn-primary m-0"
+                        className="btn btn-primary font-weight-bold m-0"
                         onClick={() =>
                           setUrlDen(`http://localhost:3001/den/byUBS/${pin.id}`)
                         }
@@ -177,7 +184,7 @@ export default function Notification() {
                         <td
                           className="col tabela_ubs_med"
                           style={{
-                            background: 'rgba(0,0,0,0.2)',
+                            background: 'rgba(0,0,0,0.1)',
                             borderRadius: '20px 0px 0px 20px',
                           }}
                         >
@@ -193,9 +200,9 @@ export default function Notification() {
                         </td>
 
                         <td
-                          className="tabela_data"
+                          className="d-none d-lg-block"
                           style={{
-                            background: 'rgba(0,0,0,0.2)',
+                            background: 'rgba(0,0,0,0.1)',
                             borderRadius: '0px 20px 20px 0px',
                           }}
                         >
@@ -211,14 +218,17 @@ export default function Notification() {
                               {formatDate(not.data_ocorrencia)}
                             </p>
                             <p style={{ fontSize: '12px' }}>
-                              registro: {formatDate(not.data_denuncia)}
+                              Registro em: <br />
+                              {formatDate(not.data_denuncia)}
                             </p>
                           </div>
                         </td>
                       </tr>
                     ))
                   ) : (
-                    <b>Sem registros no momento</b>
+                    <b style={{ fontSize: '1.2rem' }}>
+                      Sem registros no momento
+                    </b>
                   )}
                 </tbody>
               </table>

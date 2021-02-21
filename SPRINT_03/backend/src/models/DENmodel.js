@@ -45,7 +45,7 @@ class DENmodel {
 
   getDENbyUBS(req, res) {
     connection.query(
-      `SELECT den.id, den.ubs_id, ubs.nomeUbs, med.nome, den.data_ocorrencia 
+      `SELECT den.id, den.ubs_id, ubs.nomeUbs, med.nome, den.data_ocorrencia, den.data_denuncia 
         FROM denuncia den
         INNER JOIN ubs ON den.ubs_id = ubs.id 
         INNER JOIN medicamento med ON den.medicamento_id = med.id 

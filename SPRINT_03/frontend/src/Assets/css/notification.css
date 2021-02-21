@@ -1,10 +1,15 @@
-/* .card_not { */
-/* border-radius: 20px; */
-/* } */
+.leaflet-marker-icon div span {
+  font-weight: bold !important;
+  font-size: 1.5rem;
+}
 
-/* .card_map { */
-/* border-radius: 20px; */
-/* } */
+/* .card_not {
+border-radius: 20px;
+} */
+
+/* .card_map {
+border-radius: 20px;
+} */
 
 .map-popup .leaflet-popup-content-wrapper {
   background: rgba(255, 255, 255, 0.8);
@@ -33,22 +38,30 @@
   align-items: center;
 }
 
-.map-popup .leaflet-popup-tip-container {
-  display: none;
-}
-
 .anyClass {
-  /* height: 550px; */
   height: 100% !important;
 }
 
-.nome_ubs {
-  color: #6f42c1 !important;
+.tooltip_sos {
+  background: rgba(0, 0, 0, 0);
+  font-size: 1.5rem;
+  font-weight: bold;
+  border: 0px;
+  box-shadow: none;
+  color: white;
+  /* text-align: center; */
 }
 
-.map-popup {
-  position: relative;
-  top: 40px;
+.tooltip_sos::before {
+  display: none;
+}
+
+* .leaflet-popup-tip-container {
+  display: none !important;
+}
+
+.nome_ubs {
+  color: #520ed1 !important;
 }
 
 @media (max-width: 991px) {
@@ -56,13 +69,7 @@
     height: 70vh !important;
   }
 
-  .tabela_data {
-    color: red;
-    display: none;
-  }
-
   .tabela_ubs_med {
-    color: red;
     border-radius: 20px 20px 20px 20px !important;
   }
 }
