@@ -66,7 +66,7 @@ border-radius: 20px;
 
 @media (max-width: 991px) {
   .card_map {
-    height: 70vh !important;
+    height: 60vh !important;
   }
 
   .tabela_ubs_med {
@@ -83,5 +83,9 @@ border-radius: 20px;
 
   .nome_med {
     font-size: 0.9rem !important;
+  }
+
+  .instant_name {
+    font-size: 1rem !important;
   }
 }

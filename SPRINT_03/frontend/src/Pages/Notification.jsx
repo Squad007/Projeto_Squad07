@@ -9,6 +9,7 @@ import '../Assets/css/notification.css';
 import mapMarkerImg from '../Assets/img/pin_sos.svg';
 
 export default function Notification() {
+  const [instantName, setInstantName] = useState('');
   const [pinArray, setPinArray] = useState([]);
   const [notificationButton, setnotificationButton] = useState([]);
   const [urlDen, setUrlDen] = useState('http://localhost:3001/den/');
@@ -72,12 +73,24 @@ export default function Notification() {
             height: '100%',
           }}
         >
+          <div
+            className="font-weight-bold position-absolute w-100 text-center instant_name"
+            style={{
+              zIndex: '10',
+              fontSize: '2rem',
+              background: 'rgba(255,255,255,0.6)',
+            }}
+          >
+            {instantName}
+          </div>
+
           <MapContainer
             center={[-23.49, -46.43]}
             zoom={13}
             style={{
               width: '100%',
               height: 'calc(100vh - 68px - 56px - 41px )',
+              zIndex: '5',
             }}
             className="card_map"
           >
@@ -91,6 +104,15 @@ export default function Notification() {
                   key={index}
                   icon={mapIcon}
                   position={[pin.latitude, pin.longitude]}
+                  eventHandlers={{
+                    mouseover: () => {
+                      setInstantName(pin.nomeUbs);
+                      setUrlDen(`http://localhost:3001/den/byUBS/${pin.id}`);
+                    },
+                    mouseout: () => {
+                      setInstantName('');
+                    },
+                  }}
                 >
                   <Tooltip
                     direction="top"
