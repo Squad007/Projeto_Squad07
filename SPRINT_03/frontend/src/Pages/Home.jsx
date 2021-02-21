@@ -8,8 +8,18 @@ export default function Home() {
       <div className="jumbotron jumbotron-fluid text-sm-center bg-transparent">
         <div className="container">
           <div className="row">
-            <div className="col text-left info">
-              <h1>
+            <div className="col-md-8 text-left info"
+            style={{
+              fontSize: "50px",
+              fontFamily: "Bebas Neue"
+            }}
+            >
+              <h1
+              style={{
+                fontSize: "60px",
+                fontFamily: "Bebas Neue"
+              }}
+              >
                 FALTOU MEDICAMENTO NA SUA UNIDADE BÁSICA DE SAÚDE(UBS)?
               </h1>
               <p>
@@ -17,6 +27,9 @@ export default function Home() {
                   className="btn btn-roxo"
                   to="/register"
                   type="button"
+                  style={{
+                    fontSize: "37px",
+                  }}
                 >
                   NOTIFIQUE A FALTA <i className="fas fa-exclamation-circle"></i>
                 </Link>
@@ -36,7 +49,12 @@ export default function Home() {
               <div className="card mb-4 home_card h-100">
                 <div className="card-body">
                   <h2 className="card-title">ULTIMAS NOTIFICAÇÕES</h2>
-                  <p className="card-text home_card">
+                  <p className="card-text home_card"
+                  style={{
+                    fontFamily: "Bree Serif",
+                    fontSize: "24px"
+                  }}
+                  >
                     Veja as últimas notificações. O acesso à informação é um dos
                     dos direitos fundamentais garantido na nossa Constituição.
                   </p>
@@ -57,7 +75,12 @@ export default function Home() {
               <div className="card mb-4 home_card h-100">
                 <div className="card-body">
                   <h2 className="card-title">REGISTRE SUA NOTIFICAÇÃO</h2>
-                  <p className="card-text home_card">
+                  <p className="card-text home_card"
+                  style={{
+                    fontFamily: "Bree Serif",
+                    fontSize: "24px"
+                  }}
+                  >
                     Notifique da falta de algum dos medicamento que deveria ser
                     fornecido pelo Sistema Único de Saúde.
                   </p>
@@ -78,7 +101,12 @@ export default function Home() {
               <div className="card mb-4 home_card h-100">
                 <div className="card-body">
                   <h2 className="card-title">SOBRE NÓS</h2>
-                  <p className="card-text home_card">
+                  <p className="card-text home_card"
+                  style={{
+                    fontFamily: "Bree Serif",
+                    fontSize: "24px"
+                  }}
+                  >
                     Somos o Squad 07 (SP1) da Recode Pro 2020. Estamos
                     trabalhando para desenvolver ferramentas que ajude a
                     comunidade.

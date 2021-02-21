@@ -9,7 +9,7 @@ import mapMarkerImg from "../Assets/img/pin_sos.svg";
 export default function Notification() {
   const [pinArray, setPinArray] = useState([]);
   const [notificationButton, setnotificationButton] = useState([]);
-  const [urlDen, setUrlDen] = useState("http://localhost:3001/den/")
+  const [urlDen, setUrlDen] = useState("http://localhost:3001/den/");
 
   // ------------------------------ Api ubs retorna nos pins do mapa
   useEffect(() => {
@@ -21,7 +21,7 @@ export default function Notification() {
   }, [urlDen]);
 
   // ------------------------------ Api notificações
-  useEffect(() => { 
+  useEffect(() => {
     async function fetchMyAPI() {
       const response = await fetch(urlDen);
       const dados = await response.json();
@@ -54,30 +54,58 @@ export default function Notification() {
   }
   return (
     <div className="container">
-      <div className="d-flex row" style={{ height: "85vh" }}>
-       
-        <div
-          className="card_not col-5 p-3 mt-5 text-white anyClass"
-          style={{ width: "20vw", height: "", background: "#00b9b3" }}
-        >
-          <h4 className="border-bottom border-white">NOTIFICAÇÕES RECENTES</h4>
-          {notificationButton.length > 0 && 
-            notificationButton.map((not, index) => (
-              <div className="m-3 row border-bottom border-white" key={index}>
-                <div className="col-8 ">
-                  <b className="nome_ubs">{not.nomeUbs}</b>
-                  <p className="lead font-weight-bold ">{not.nome}</p>
-                  
-                </div>
-                <div className="col-4 justify-content-center flex-column py-auto d-flex align-items-center">
-                  <p className="m-0">Data da Falta:</p>
-                  <p style={{fontSize: "25px"}} >{formatDate(not.data_ocorrencia)}</p>
-                </div>
-              </div>
-            ))}
+      <div
+        className="d-flex justify-content-center row"
+        style={{ minHeight: "calc(100vh - 68px - 56px )" }}
+      >
+        <div className="col-md-5 my-4">
+          <div
+            className="card_not p-3 text-white anyClass"
+            style={{ background: "#00b9b3" }}
+          >
+            <h4 className="border-bottom border-white">
+              NOTIFICAÇÕES RECENTES
+            </h4>
+            <div className="table-responsive" style={{ height: "90%" }}>
+              <table className="table table-borderless">
+                <tbody>
+                  {notificationButton.length > 0 ? (
+                    notificationButton.map((not, index) => (
+                      <tr
+                        key={index}
+                        className="m-3 row border-bottom border-white"
+                      >
+                        <td className="col">
+                          <div>
+                            <b className="nome_ubs">{not.nomeUbs}</b>
+                            <p className="lead font-weight-bold text-white ">
+                              {not.nome}
+                            </p>
+                          </div>
+                        </td>
+
+                        <td>
+                          <div className="justify-content-center flex-column py-auto d-flex align-items-center">
+                            <p className="m-0 text-white">Data da Falta:</p>
+                            <p style={{ fontSize: "26px", color: "#fff" }}>
+                              {formatDate(not.data_ocorrencia)}
+                            </p>
+                            <p style={{ fontSize: "12px" }}>
+                              registro: {formatDate(not.data_denuncia)}
+                            </p>
+                          </div>
+                        </td>
+                      </tr>
+                    ))
+                  ) : (
+                    <b>Sem registros no momento</b>
+                  )}
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
-        
-        <div id="reportMap" className="col-7 mt-5 rounded-3">
+        <div id="reportMap" className="col-md-7 my-4">
           <MapContainer
             center={[-23.49, -46.43]}
             zoom={13}
@@ -85,9 +113,13 @@ export default function Notification() {
             className="card_map"
           >
             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-          
-             {pinArray.map((pin, index) => (
-              <Marker key={index} icon={mapIcon} position={[pin.latitude, pin.longitude]}>
+
+            {pinArray.map((pin, index) => (
+              <Marker
+                key={index}
+                icon={mapIcon}
+                position={[pin.latitude, pin.longitude]}
+              >
                 <Tooltip>{pin.qtde}</Tooltip>
                 <Popup
                   closeButton={false}
@@ -95,12 +127,18 @@ export default function Notification() {
                   maxWidth={240}
                   className="map-popup"
                 >
-                  <button className="btn btn-primary" onClick={() => setUrlDen(`http://localhost:3001/den/byUBS/${pin.id}`)}>Notificações</button>
+                  <button
+                    className="btn btn-primary"
+                    onClick={() =>
+                      setUrlDen(`http://localhost:3001/den/byUBS/${pin.id}`)
+                    }
+                  >
+                    Notificações
+                  </button>
                   {pin.nomeUbs}
                 </Popup>
               </Marker>
             ))}
-            
           </MapContainer>
         </div>
       </div>

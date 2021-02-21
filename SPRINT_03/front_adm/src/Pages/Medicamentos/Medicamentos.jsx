@@ -96,13 +96,20 @@ export default function Medicamentos() {
           Bem vindo ao sistema SOS, <b>{credentials.nome}</b>! - (
           {credentials.email})
         </p>
-        <h1 class="display-4 text-success  font-weight-bold">Medicamentos</h1>
+        <h1 class="display-4 text-success  font-weight-bold"
+        style={{
+          fontSize: "clamp(35px, 25px + 3vw, 55px)"
+        }}
+        >Medicamentos</h1>
 
         <button
           type="button"
           class="btn btn-success btn-lg font-weight-bold"
           data-toggle="modal"
           data-target="#cadastroMEDModal"
+          style={{
+            fontSize: "clamp(9px, 5px + 2vw, 20px)"
+          }}
           onClick={() => {
             setFormData({
               id: '',

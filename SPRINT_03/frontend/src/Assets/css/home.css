@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
 
 .btn-roxo {
   background: #6f42c1;
@@ -13,8 +14,8 @@
   background: #00b9b3;
   color: white;
   border-radius: 20px;
-  font-family: Bebas Neue;
-  font-size: 30px;
+  /* font-family: Bree Serif !important; */
+  font-size: 60px;
   line-height: 1.2;
 }
 

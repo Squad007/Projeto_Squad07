@@ -1,8 +1,28 @@
 import React, { useState, useEffect } from "react";
 
 export default function Report() {
+  const [ano, setAno] = useState("2021");
   const [notific, setNotific] = useState([]);
   const [urlDen, setUrlDen] = useState("http://localhost:3001/den/");
+  const todos = [
+    "JANEIRO",
+    "FEVEREIRO",
+    "MARÇO",
+    "ABRIL",
+    "MAIO",
+    "JUNHO",
+    "JULHO",
+    "AGOSTO",
+    "SETEMBRO",
+    "OUTUBRO",
+    "NOVEMBRO",
+    "DEZEMBRO",
+  ];
+
+  function filtroMes(e) {
+    let mes = e.target.value;
+    return setUrlDen(`http://localhost:3001/den/byMonth/${mes}/${ano}`);
+  }
 
   // --------------------------------------- Export report .CSV
   const objectToCsv = function (data) {
@@ -76,165 +96,110 @@ export default function Report() {
 
   return (
     <div
-      className="section-3 row d-flex justify-content-center m-0 h-100"
+      className="container"
       style={{ minHeight: "calc(100vh - 68px - 56px )" }}
     >
-      <div
-        className="meses m-4 p-3"
-        style={{ background: "#00b9b3", width: "380px", borderRadius: "20px" }}
-      >
-        <h4 className="border-bottom border-white text-white">RELATÓRIOS</h4>
+      <div className="section-3 row m-0 h-100 d-flex justify-content-center">
+         
+        <div className="meses col col-md-4 m-1 mx-md-2 my-4 p-3"
+          style={{ background: "#00b9b3", borderRadius: "20px", height: "90%" }}
+        >
+          <h4 className="border-bottom border-white text-white">RELATÓRIOS</h4>
+          <select
+            className="bg-transparent border-0"
+            name="ano"
+            id="ano"
+            onChange={(e) => setAno(e.target.value)}
+          >
+            <option value="">ano</option>
+            <option value="2020">2020</option>
+            <option value="2021">2021</option>
+          </select>
 
-        <div className="text-white text-center flex-column d-flex justify-content-between">
-          <button
-            className="btn"
-            value="1"
-            onClick={() =>
-              setUrlDen(`http://localhost:3001/den/byMonth/1/2021`)
-            }
-          >
-            JANEIRO
-          </button>
-          <button
-            className="btn"
-            value="2"
-            onClick={() =>
-              setUrlDen(`http://localhost:3001/den/byMonth/2/2021`)
-            }
-          >
-            FEVEREIRO
-          </button>
-          <button
-            className="btn"
-            value="3"
-            onClick={() =>
-              setUrlDen(`http://localhost:3001/den/byMonth/3/2021`)
-            }
-          >
-            MARÇO
-          </button>
-          <button
-            className="btn"
-            value="4"
-            onClick={() =>
-              setUrlDen(`http://localhost:3001/den/byMonth/4/2020`)
-            }
-          >
-            ABRIL
-          </button>
-          <button
-            className="btn"
-            value="5"
-            onClick={() =>
-              setUrlDen(`http://localhost:3001/den/byMonth/5/2020`)
-            }
-          >
-            MAIO
-          </button>
-          <button
-            className="btn"
-            value="6"
-            onClick={() =>
-              setUrlDen(`http://localhost:3001/den/byMonth/6/2020`)
-            }
-          >
-            JUNHO
-          </button>
-          <button
-            className="btn"
-            value="7"
-            onClick={() =>
-              setUrlDen(`http://localhost:3001/den/byMonth/7/2020`)
-            }
-          >
-            JULHO
-          </button>
-          <button
-            className="btn"
-            value="8"
-            onClick={() =>
-              setUrlDen(`http://localhost:3001/den/byMonth/8/2020`)
-            }
-          >
-            AGOSTO
-          </button>
-          <button
-            className="btn"
-            value="9"
-            onClick={() =>
-              setUrlDen(`http://localhost:3001/den/byMonth/9/2020`)
-            }
-          >
-            SETEMBRO
-          </button>
-          <button
-            className="btn"
-            value="10"
-            onClick={() =>
-              setUrlDen(`http://localhost:3001/den/byMonth/10/2020`)
-            }
-          >
-            OUTUBRO
-          </button>
-          <button
-            className="btn"
-            value="11"
-            onClick={() =>
-              setUrlDen(`http://localhost:3001/den/byMonth/11/2020`)
-            }
-          >
-            NOVEMBRO
-          </button>
-          <button
-            className="btn"
-            value="12"
-            onClick={() =>
-              setUrlDen(`http://localhost:3001/den/byMonth/12/2020`)
-            }
-          >
-            DEZEMBRO
-          </button>
-        </div>
-      </div>
-      <div
-        className="relatorio col-5 m-4 p-3"
-        style={{ background: "#00b9b3", borderRadius: "20px", height: "580px" }}
-      >
-        <div className="">
-          <h4 className="border-bottom border-white text-white text-center pb-2">
-            RELATÓRIO DO MÊS DE{" "}
-          </h4>
-        </div>
-        <div className="h-75 overflow-auto">
-          {notific.length > 0 &&
-            notific.map((not, index) => (
-              <div key={index} className="m-3 row border-bottom border-white">
-                <div className="col-8 ">
-                  <b className="nome_ubs">{not.nomeUbs}</b>
-                  <p className="lead font-weight-bold ">{not.nome}</p>
-                </div>
-                <div className="col-4 justify-content-center flex-column py-auto d-flex align-items-center">
-                  <p className="m-0">Data da Falta:</p>
-                  <p style={{ fontSize: "25px" }}>
-                    {formatDate(not.data_ocorrencia)}
-                  </p>
-                  <p style={{ fontSize: "" }}>
-                    {formatDate(not.data_denuncia)}
-                  </p>
-                </div>
-              </div>
+          <div className="text-white text-center flex-column d-flex justify-content-between">
+            {todos.map((message, index) => (
+              <button
+                key={message}
+                value={index + 1}
+                className="btn text-white"
+                onClick={filtroMes}
+                style={{
+                  fontWeight: "bold",
+                }}
+              >
+                {message}
+              </button>
             ))}
+          </div>
         </div>
 
-        <button style={{
-          background: "#6f42c1",
-          border: "none",
-          borderRadius: "20px",
-          width: "200px",
-          right: "10px",
-          bottom: "10px",
-          position: "absolute",
-        }} onClick={getReport}>.CSV</button>
+        <div className="relatorio col col-md-7 m-1 mx-md-2 my-4 p-3"
+          style={{
+            background: "#00b9b3",
+            borderRadius: "20px",
+            maxHeight: "550px",
+            height: "550px"
+          }}
+        >
+          <div className="">
+            <h4 className="border-bottom border-white text-white text-center pb-2">
+              RELATÓRIO DO MÊS{" "}
+            </h4>
+          </div>
+          <div className="table-responsive" style={{height: "85%"}}>
+            <table className="table table-borderless">
+              <tbody>
+                {notific.length > 0 ? (
+                  notific.map((not, index) => (
+                    <tr
+                      key={index}
+                      className="m-3 row border-bottom border-white"
+                    >
+                      <td className="col">
+                        <div>
+                          <b className="nome_ubs">{not.nomeUbs}</b>
+                          <p className="lead font-weight-bold text-white ">
+                            {not.nome}
+                          </p>
+                        </div>
+                      </td>
+
+                      <td>
+                        <div className="justify-content-center flex-column py-auto d-flex align-items-center">
+                          <p className="m-0 text-white">Data da Falta:</p>
+                          <p style={{ fontSize: "26px", color: "#fff" }}>
+                            {formatDate(not.data_ocorrencia)}
+                          </p>
+                          <p style={{ fontSize: "12px" }}>
+                            registro: {formatDate(not.data_denuncia)}
+                          </p>
+                        </div>
+                      </td>
+                    </tr>
+                  ))
+                ) : (
+                  <b>Sem registros no momento</b>
+                )}
+              </tbody>
+            </table>
+          </div>
+
+          <button
+            style={{
+              background: "#6f42c1",
+              border: "none",
+              borderRadius: "20px",
+              width: "200px",
+              right: "10px",
+              bottom: "10px",
+              position: "absolute",
+              color: "#fff",
+            }}
+            onClick={getReport}
+          >
+            arquivo .CSV
+          </button>
+        </div>
       </div>
     </div>
   );

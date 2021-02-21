@@ -39,9 +39,14 @@
 
 .anyClass {
   height: 550px;
-  overflow-y: scroll;
 }
 
 .nome_ubs {
     color: #6f42c1 !important;
+}
+
+@media (max-width: 400px) {
+  .card_map {
+    height: 400px !important;
+  }
 }

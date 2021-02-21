@@ -58,7 +58,11 @@ export default function Register() {
       <div className=" container p-3 bg-light rounded shadow-lg">
         <form onSubmit={sendForm} name="form" method="post">
           <div className="form-group">
-            <h1 className="my-4">Cadastrar Notificação</h1>
+            <h1 className="my-4"
+            style={{
+              color: "#006d69"
+            }}
+            >Cadastrar Notificação</h1>
             <label htmlFor="ubs_id">Escolha a UBS</label>
             <select
               name="ubs_id"
@@ -101,7 +105,7 @@ export default function Register() {
               value={formData.data_ocorrencia}
               onChange={onChangeInput}
               type="date"
-              className="form-control data mb-3"
+              className="form-control data mb-3 w-md-25"
               required
             />
             <label htmlFor="comentario">Observações e comentarios: </label>
@@ -114,9 +118,13 @@ export default function Register() {
             ></textarea>
             <button
               type="button"
-              className="btn btn-primary"
+              className="btn btn-block mt-4"
               data-toggle="modal"
               data-target="#modalconfirma"
+              style={{
+                background: "#6f42c1",
+                color: "white"
+              }}
             >
               Enviar
             </button>

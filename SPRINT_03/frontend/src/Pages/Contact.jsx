@@ -39,7 +39,12 @@ export default function Report() {
       >
         <form className="container" method="POST" onSubmit={sendForm}>
           <div className="form-group">
-            <h1 className="my-4">Enviar Mensagem</h1>
+            <h1 className="my-4"
+            style={{
+              color: "#006d69"
+            }}
+            >Deixe seu comentário</h1>
+            
             <label htmlFor="nome">Nome</label>
             <input
               className="form-control mb-2"
@@ -51,7 +56,7 @@ export default function Report() {
               required
             />
 
-            <label htmlFor="nome">E-mail(opcional)</label>
+            <label htmlFor="nome">E-mail (opcional)</label>
             <input
               className="form-control mb-2"
               type="email"
@@ -73,9 +78,13 @@ export default function Report() {
 
             <button
               type="button"
-              className="btn home-btn btn-primary"
+              className="btn home-btn btn-block mt-4"
               data-toggle="modal"
               data-target="#modalconfirma"
+              style={{
+                background: "#6f42c1",
+                color: "white"
+              }}
             >
               Enviar
             </button>
@@ -126,6 +135,12 @@ export default function Report() {
                 </div>
               </div>
             </div>
+            <h2
+            className="text-center my-5"
+            style={{
+              color: "#006d69"
+            }}
+            >Ajude a melhorar a plataforma, deixe sua avaliação e comentários</h2>
           </div>
         </form>
       </div>

@@ -39,7 +39,11 @@ export default function Notificacaos() {
           Bem vindo ao sistema SOS, <b>{credentials.nome}</b>! - (
           {credentials.email})
         </p>
-        <h1 className="display-4 text-danger  font-weight-bold">
+        <h1 className="display-4 text-danger  font-weight-bold"
+        style={{
+          fontSize: "clamp(35px, 25px + 3vw, 55px)"
+        }}
+        >
           Notificações
         </h1>
         <hr className="my-4 bg-white" />
