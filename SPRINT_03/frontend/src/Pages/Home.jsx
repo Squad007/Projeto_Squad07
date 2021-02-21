@@ -14,7 +14,7 @@ export default function Home() {
               fontFamily: "Bebas Neue"
             }}
             >
-              <h1
+              <h1 className="titulo"
               style={{
                 fontSize: "60px",
                 fontFamily: "Bebas Neue"
@@ -36,7 +36,7 @@ export default function Home() {
               </p>
             </div>
             <div className="col animate__animated animate__pulse animate__delay-1s">
-              <img className="float-right" src="./img/pill.svg" alt="medicamento" />
+              <img className="float-right imgRemed" src="./img/pill.svg" alt="medicamento" />
             </div>
           </div>
         </div>

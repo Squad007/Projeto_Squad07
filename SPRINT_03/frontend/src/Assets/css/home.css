@@ -22,3 +22,17 @@
 .home_card {
   font-size: 18px;
 }
+@media (max-width: 991px) {
+  .imgRemed{
+    display: none;
+  }
+  .btn-roxo{
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .titulo{
+    text-align: center;
+  }
+}

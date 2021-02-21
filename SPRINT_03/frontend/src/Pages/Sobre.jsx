@@ -31,7 +31,7 @@ export default function Sobre() {
           Saúde (SUS) e contribuir para a melhoria da disponibilidade de
           medicamentos.
         </p>
-        <h2 className="mt-5 pb-4">Nosso Time - Squad 07 (SP1) Recode Pro 2020</h2>
+        <h2 className="mt-5 pb-4 text-center">Nosso Time - Squad 07 (SP1) Recode Pro 2020</h2>
         <div className="row text-center">
                 <div className="col-md-6 col-lg-4 item">
                     <div className="box"><img className="rounded-circle w-50" src="./img/cris.jpg" />
@@ -39,7 +39,7 @@ export default function Sobre() {
                         <a href="https://github.com/CristianoSantan" class="text-dark"><i class="fab fa-github"></i></a>
                             <a href="https://www.linkedin.com/in/cristiano-souza-santana-b3011a119/" class="text-dark"><i class="fab fa-linkedin"></i></a>
                         <p className="description">
-                        Desenvolvedor Full Stack apoixonado por tecnologia Estudante Full Stack Dev | Eng. Mecânico | Téc. Mecatrônico.
+                        Desenvolvedor Full Stack apaixonado por tecnologia Estudante Full Stack Dev | Eng. Mecânico | Téc. Mecatrônico.
                         </p>
                     </div>
                     
