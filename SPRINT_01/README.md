@@ -1,6 +1,17 @@
 ## :ballot_box_with_check: Entrega 1 - SPRINT 1 - 06/11/2020
 
 
+
+
+## :computer: Tecnologias Utilizadas
+
+* **Banco de Dados:** MySQL
+* **Back-end:** JavaScript e PhP
+* **Front-end:** HTML, CSS e Bootstrap
+* **Ferramentas:** Visual Studio Code, Figma e Whimsical
+
+
+
 ## :calendar: Requisitos 
 
 ## Imprescidível
@@ -33,3 +44,4 @@
 ☑️ Implantação do BootStrap: Concluído :heavy_check_mark:
 
 <br>
+
