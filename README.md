@@ -11,6 +11,25 @@
 
 # SOS medicametos
  * A plataforma tem como objetivo iniciamente potencializar a voz das pessoas, utilizando os dados sobre o poder público e evidenciando a dor das pessoas.
+
+## :camera_flash: Apresentação Final do Projeto
+
+**Clique no link abaixo para visualizar o vídeo final do projeto:**  
+> :movie_camera: [Vídeo Final](https://www.youtube.com/watch?v=cWM9avianpg&feature=youtu.be)
+
+<br>
+
+
+**:link: Clique no link abaixo para visualizar o site hospedado do usuário:**
+>  [http://soseduca.site](https://sos-medicamentos-user.herokuapp.com/)
+
+<br>
+
+
+**:link: Clique no link abaixo para visualizar o site hospedado do Administrador - (Solicitar cadastro para SQUAD):**
+>  [http://soseduca.site](https://sos-medicamentos-adm.herokuapp.com/) 
+
+<br>
  
  ## :hourglass_flowing_sand: Planejamento de Entregas
 
