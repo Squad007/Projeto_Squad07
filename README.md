@@ -9,7 +9,7 @@
 
 <h1 align="center">
   
-  Projeto em desenvolvimento no ano de 2020 pelos alunos e alunas do Squad 07 (SP-01) da Recode Pro 2020.
+  Projeto em desenvolvimento no ano de 2020 -2021 pelos alunos e alunas do Squad 07 (SP-01) da Recode Pro 2020.
  
 <h1 align="center">
 <br>
