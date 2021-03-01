@@ -1,4 +1,4 @@
-## :ballot_box_with_check: Entrega 2 - SPRINT 2
+## :ballot_box_with_check: Entrega 2 - SPRINT 2 - 20/01/2021
 
 
 ## :computer: Tecnologias Utilizadas
