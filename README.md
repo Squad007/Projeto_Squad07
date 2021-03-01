@@ -3,9 +3,14 @@
   Projeto em desenvolvimento no ano de 2020 pelos alunos e alunas do Squad 07 (SP-01) da Recode Pro 2020.
  
 <h1 align="center">
+<br>
 
+<p align="center">
+      <img src="/Imagens_Geral/SQUAD.jpeg" width="200" height="150">
+      <h3 align="center">SOS MEDICAMENTOS </h3>
+<p align="center">
 
-# SOS medicamentos
+<hr>
 
 💻 Um pouco sobre o projeto
 
