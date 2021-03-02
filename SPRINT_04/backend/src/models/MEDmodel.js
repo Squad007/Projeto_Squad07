@@ -65,7 +65,7 @@ class MEDmodel {
     LEFT JOIN denuncia den ON med.id = den.medicamento_id 
     WHERE med.nome LIKE '%${this.searchInput}%'
     GROUP BY med.id 
-    ORDER BY med.data_cadastro DESC 
+    ORDER BY med.nome 
       `,
       (error, result) => {
         error ? res.send(error) : res.json(result);
