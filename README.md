@@ -61,6 +61,6 @@
 
 ☑️ SPRINT 3 ([Link da Pasta](https://github.com/Squad007/Projeto_Squad07/tree/main/SPRINT_03)): Concluído :heavy_check_mark:
 
-☑️ SPRINT 4 ([Link da Pasta](https://github.com/Squad007/Projeto_Squad07/tree/main/SPRINT_04))
+☑️ SPRINT 4 ([Link da Pasta](https://github.com/Squad007/Projeto_Squad07/tree/main/SPRINT_04)): Em andamento...
 
 <br>
