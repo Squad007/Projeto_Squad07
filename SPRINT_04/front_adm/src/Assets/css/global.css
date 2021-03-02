@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&family=Roboto+Mono:wght@300;400;500&family=Roboto+Slab:wght@300;500;700&family=Roboto:wght@300;400;500&display=swap");
+
+*, body {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Roboto", sans-serif;
+  /* font-family: "Roboto Condensed", sans-serif;
+    font-family: "Roboto Mono", monospace;
+    font-family: "Roboto Slab", serif; */
+}
+
+ body{
+  background: linear-gradient(180deg, rgba(18,18,20,1) 0%, rgba(44,35,69,1) 100%);
+ }

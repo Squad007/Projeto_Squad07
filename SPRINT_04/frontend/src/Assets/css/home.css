@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
+
+.btn-roxo {
+  background: #6f42c1;
+  color: white;
+}
+
+.info h1 {
+  color: #00b9b3;
+}
+
+.home_card {
+  background: #00b9b3;
+  color: white;
+  border-radius: 20px;
+  /* font-family: Bree Serif !important; */
+  font-size: 60px;
+  line-height: 1.2;
+}
+
+.home_card {
+  font-size: 18px;
+}

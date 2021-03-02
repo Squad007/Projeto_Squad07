@@ -1,0 +1,18 @@
+.nav-style {
+    background: #00b9b3;
+    text-transform: uppercase; 
+    font-size: 15px; 
+    font-weight: bold;
+}
+
+.nav-style button {
+    background: #6f42c1;
+}
+
+.nav-style li a {
+    color: #ffffff;
+}
+
+.nav-style img {
+   margin-right: 50px;
+}

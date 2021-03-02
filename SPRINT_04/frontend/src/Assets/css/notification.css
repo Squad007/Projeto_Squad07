@@ -1,0 +1,91 @@
+.leaflet-marker-icon div span {
+  font-weight: bold !important;
+  font-size: 1.5rem;
+}
+
+/* .card_not {
+border-radius: 20px;
+} */
+
+/* .card_map {
+border-radius: 20px;
+} */
+
+.map-popup .leaflet-popup-content-wrapper {
+  background: rgba(255, 255, 255, 0.8);
+  /* border-radius: 20px; */
+  box-shadow: none;
+}
+
+.map-popup .leaflet-popup-content {
+  color: #0089a5;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 8px 12px;
+  display: flex;
+  align-items: center;
+}
+
+.map-popup .leaflet-popup-content a {
+  width: 60px;
+  height: 40px;
+  background: #15c3d6;
+  box-shadow: 17.2868px 27.6589px 41.4884px rgba(23, 142, 166, 0.16);
+  border-radius: 12px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.anyClass {
+  height: 100% !important;
+}
+
+.tooltip_sos {
+  background: rgba(0, 0, 0, 0);
+  font-size: 1.5rem;
+  font-weight: bold;
+  border: 0px;
+  box-shadow: none;
+  color: white;
+  /* text-align: center; */
+}
+
+.tooltip_sos::before {
+  display: none;
+}
+
+* .leaflet-popup-tip-container {
+  display: none !important;
+}
+
+.nome_ubs {
+  color: #520ed1 !important;
+}
+
+@media (max-width: 991px) {
+  .card_map {
+    height: 60vh !important;
+  }
+
+  .tabela_ubs_med {
+    border-radius: 20px 20px 20px 20px !important;
+  }
+
+  .titulo_notificacao {
+    font-size: 1.1rem !important;
+  }
+
+  .nome_ubs {
+    font-size: 0.8rem !important;
+  }
+
+  .nome_med {
+    font-size: 0.9rem !important;
+  }
+
+  .instant_name {
+    font-size: 1rem !important;
+  }
+}
