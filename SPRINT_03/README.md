@@ -7,7 +7,7 @@
 
 * **Banco de Dados:** MySQL
 * **Back-end:** JavaScript e Node
-* **Front-end:** ReactJS e React Native
+* **Front-end:** ReactJS, Redux e React Native
 * **Ferramentas:** Visual Studio Code, Figma, Whimsical e Expo Go.
 
 
