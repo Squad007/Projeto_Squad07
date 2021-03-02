@@ -7,6 +7,7 @@ class MEDmodel {
     this.nome;
     this.observacao;
     this.page;
+    this.searchInput;
     this.pageSize = 50;
   }
 
@@ -49,6 +50,22 @@ class MEDmodel {
     ORDER BY med.data_cadastro DESC 
     LIMIT ${this.pageSize} 
     OFFSET ${(this.page - 1) * this.pageSize}
+      `,
+      (error, result) => {
+        error ? res.send(error) : res.json(result);
+      }
+    );
+  }
+
+  getMEDbySearchInput(req, res) {
+    connection.query(
+      `
+    SELECT med.*,  count(den.medicamento_id) qtde 
+    FROM  medicamento med 
+    LEFT JOIN denuncia den ON med.id = den.medicamento_id 
+    WHERE med.nome LIKE '%${this.searchInput}%'
+    GROUP BY med.id 
+    ORDER BY med.data_cadastro DESC 
       `,
       (error, result) => {
         error ? res.send(error) : res.json(result);

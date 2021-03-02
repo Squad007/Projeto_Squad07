@@ -27,6 +27,7 @@ routes.post('/adm/login', ADMcontr.loginADM); // login
 routes.get('/med/DENcount', MEDcontr.getMEDwDENcount); // lista completa medicamentos
 routes.get('/med/totalPages', MEDcontr.getMEDtotalPages); // retorna numero de paginas
 routes.get('/med/page/:page', MEDcontr.getMEDbyPage); // acesso por numero da pagina
+routes.get('/med/search/:searchInput', MEDcontr.getMEDbySearchInput); // acesso por termo de busca
 routes.get('/den/forADM', DENcontr.getDENforADM); // lista completa notificacao
 routes.get('/msg', MSGcontr.getAllMSG); // lista completa msg
 routes.get('/adm', ADMcontr.getAllADM); // lista completa adm

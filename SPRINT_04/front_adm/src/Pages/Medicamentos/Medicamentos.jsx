@@ -9,6 +9,8 @@ export default function Medicamentos() {
   const [totalPages, setTotalPages] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [modifyCount, setModifyCount] = useState(0);
+  const [searchInput, setSearchInput] = useState('');
+  const [searchMode, setSearchMode] = useState(false);
   const [formData, setFormData] = useState({
     id: '',
     nome: '',
@@ -109,6 +111,14 @@ export default function Medicamentos() {
     fetchMyAPI();
   }, [currentPage, modifyCount]);
 
+  const handleSearch = async () => {
+    setSearchMode(true);
+    const response = await fetch(
+      `http://localhost:3001/med/search/${searchInput}`
+    );
+    setMedic(await response.json());
+  };
+
   return (
     <>
       <div class="MED jumbotron card card-image text-white bg-transparent pb-4">
@@ -146,9 +156,39 @@ export default function Medicamentos() {
         </button>
 
         <hr class="my-4 bg-white" />
-        <p class="lead font-weight-bold">
-          Atualmente cadastrados (página {currentPage} de {totalPages.length}):
-        </p>
+
+        <div className="row">
+          <div className="col-lg-8">
+            {!searchMode && (
+              <p class="lead font-weight-bold">
+                Atualmente cadastrados (página {currentPage} de{' '}
+                {totalPages.length}):
+              </p>
+            )}
+
+            {searchMode && (
+              <p class="lead font-weight-bold">
+                Atualmente cadastrados (resultado da busca):
+              </p>
+            )}
+          </div>
+
+          <div className="form-group col-lg-4">
+            <input
+              type="text"
+              value={searchInput}
+              onChange={(e) => setSearchInput(e.target.value)}
+              onKeyUp={(e) =>
+                searchInput.length >= 3
+                  ? e.key === 'Enter' && handleSearch(e)
+                  : e.key === 'Enter' && alert('Insira no mínimo 3 caracteres')
+              }
+              className="form-control border border-primary"
+              placeholder="Buscar por nome"
+            />
+          </div>
+        </div>
+
         <div class="table-responsive">
           <table class="table table-striped table-hover table-dark bg-dark text-center">
             <thead>
@@ -164,6 +204,13 @@ export default function Medicamentos() {
                 </th>
               </tr>
             </thead>
+            {medic.length == 0 && (
+              <div className="p-4">
+                <b style={{ fontSize: '20px' }}>
+                  Nenhum medicamento foi encontrado!
+                </b>
+              </div>
+            )}
             <tbody>
               {medic.map((med) => (
                 <tr>
@@ -322,46 +369,48 @@ export default function Medicamentos() {
           </table>
         </div>
 
-        <div class="btn-group pagination justify-content-center mt-3">
-          {currentPage <= 1 ? (
-            <a class="btn btn-outline-light disabled">ANTERIOR</a>
-          ) : (
-            <a
-              class="btn btn-outline-light"
-              onClick={() => setCurrentPage(currentPage - 1)}
-            >
-              ANTERIOR
-            </a>
-          )}
-
-          {totalPages.length > 0 &&
-            totalPages.map((page, index) =>
-              currentPage == page ? (
-                <a key={index} class="btn btn-outline-light active">
-                  {page}
-                </a>
-              ) : (
-                <a
-                  key={index}
-                  class="btn btn-outline-light"
-                  onClick={() => setCurrentPage(page)}
-                >
-                  {page}
-                </a>
-              )
+        {!searchMode && (
+          <div class="btn-group pagination justify-content-center mt-3">
+            {currentPage <= 1 ? (
+              <a class="btn btn-outline-light disabled">ANTERIOR</a>
+            ) : (
+              <a
+                class="btn btn-outline-light"
+                onClick={() => setCurrentPage(currentPage - 1)}
+              >
+                ANTERIOR
+              </a>
             )}
 
-          {currentPage >= totalPages.length ? (
-            <a class="btn btn-outline-light disabled">PRÓXIMO</a>
-          ) : (
-            <a
-              class="btn btn-outline-light"
-              onClick={() => setCurrentPage(currentPage + 1)}
-            >
-              PRÓXIMO
-            </a>
-          )}
-        </div>
+            {totalPages.length > 0 &&
+              totalPages.map((page, index) =>
+                currentPage == page ? (
+                  <a key={index} class="btn btn-outline-light active">
+                    {page}
+                  </a>
+                ) : (
+                  <a
+                    key={index}
+                    class="btn btn-outline-light"
+                    onClick={() => setCurrentPage(page)}
+                  >
+                    {page}
+                  </a>
+                )
+              )}
+
+            {currentPage >= totalPages.length ? (
+              <a class="btn btn-outline-light disabled">PRÓXIMO</a>
+            ) : (
+              <a
+                class="btn btn-outline-light"
+                onClick={() => setCurrentPage(currentPage + 1)}
+              >
+                PRÓXIMO
+              </a>
+            )}
+          </div>
+        )}
       </div>
       {/* Cadastrar novo medicamento */}
       <div

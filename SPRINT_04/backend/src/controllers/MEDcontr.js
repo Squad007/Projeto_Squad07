@@ -20,6 +20,13 @@ class MEDcontr {
     MEDmodel.getMEDbyPage(req, res);
   }
 
+  getMEDbySearchInput(req, res) {
+    const { searchInput } = req.params;
+
+    MEDmodel.searchInput = searchInput;
+    MEDmodel.getMEDbySearchInput(req, res);
+  }
+
   postMED(req, res) {
     const { cadastrado_por_id, id, nome, observacao } = req.body;
 
