@@ -1,4 +1,4 @@
-const connection = require('../config/connection');
+const connection = require("../config/connection");
 
 class DENmodel {
   constructor() {
@@ -10,11 +10,12 @@ class DENmodel {
     this.monthFilter;
     this.yearFilter;
     this.ubsidFilter;
+    this.searchInput;
   }
 
   getDEN(req, res) {
     connection.query(
-      'SELECT * FROM denuncia INNER JOIN ubs ON denuncia.ubs_id = ubs.id INNER JOIN medicamento ON denuncia.medicamento_id = medicamento.id order BY denuncia.id DESC; ',
+      "SELECT * FROM denuncia INNER JOIN ubs ON denuncia.ubs_id = ubs.id INNER JOIN medicamento ON denuncia.medicamento_id = medicamento.id order BY denuncia.id DESC; ",
       (error, result) => {
         error ? res.send(error) : res.json(result);
       }
@@ -66,11 +67,31 @@ class DENmodel {
     );
   }
 
+  getDENbySearchInput(req, res) {
+    connection.query(
+      `SELECT    den.id id, 
+      ubs.nomeUbs ubs,
+      med.nome med, 
+      den.data_ocorrencia data  
+      FROM denuncia den
+      INNER JOIN ubs ON den.ubs_id = ubs.id 
+      INNER JOIN medicamento med ON den.medicamento_id = med.id 
+      WHERE ubs.nomeUbs LIKE '%${this.searchInput}%'
+      GROUP BY ubs.id 
+      ORDER BY ubs.nomeUbs
+     
+      `,
+      (error, result) => {
+        error ? res.send(error) : res.json(result);
+      }
+    );
+  }
+
   postDEN(req, res) {
     connection.query(
       `INSERT INTO denuncia(ubs_id, medicamento_id, comentario, data_ocorrencia) VALUES ('${this.ubs_id}', '${this.medicamento_id}', '${this.comentario}', '${this.data_ocorrencia}')`,
       (error, result) => {
-        error ? res.send(error) : res.status(201).send('Notificacao enviada');
+        error ? res.send(error) : res.status(201).send("Notificacao enviada");
       }
     );
   }

@@ -9,6 +9,8 @@ class DENcontr {
     DENmodel.getDENforADM(req, res);
   }
 
+  
+
   getDENbyMonth(req, res) {
     const { month, year } = req.params;
 
@@ -22,6 +24,12 @@ class DENcontr {
 
     DENmodel.ubsidFilter = ubsid;
     DENmodel.getDENbyUBS(req, res);
+  }
+  getDENbySearchInput(req, res) {
+    const { searchInput } = req.params;
+
+    DENmodel.searchInput = searchInput;
+    DENmodel.getDENbySearchInput(req, res);
   }
 
   postDEN(req, res) {

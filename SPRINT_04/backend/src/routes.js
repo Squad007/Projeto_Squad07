@@ -34,7 +34,7 @@ routes.get('/med/page/:page', MEDcontr.getMEDbyPage); // acesso por numero da pa
 routes.get('/med/search/:searchInput', MEDcontr.getMEDbySearchInput); // acesso por termo de busca Medicamento
 
 routes.get('/ubs/search/:searchInput', UBScontr.getUBSbySearchInput); // acesso por termo de busca UBS
-//routes.get('/den/search/:searchInput', DENcontr.getDENbySearchInput); // acesso por termo de busca Notificações
+routes.get('/den/search/:searchInput', DENcontr.getDENbySearchInput); // acesso por termo de busca Notificações
 //routes.get('/msg/search/:searchInput', MSGcontr.getMSGbySearchInput); // acesso por termo de busca Fale Conosco
 
 
