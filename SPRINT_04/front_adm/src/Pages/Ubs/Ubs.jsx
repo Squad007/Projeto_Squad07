@@ -5,8 +5,6 @@ import './ubs.css';
 
 export default function Ubs() {
   const [ubs, setUbs] = useState([]);
-  const [totalPages, setTotalPages] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1);
   const [searchMode, setSearchMode] = useState(false);
   const [searchInput, setSearchInput] = useState('');
   const [formData, setFormData] = useState({
@@ -104,30 +102,6 @@ export default function Ubs() {
     fetchMyAPI();
   }, []);
 
-  useEffect(() => {
-    async function fetchMyAPI() {
-      const response = await fetch('http://localhost:3001/ubs/totalPages');
-      const total = (await response.json())[0];
-      const array = [];
-
-      for (let i = 1; i <= total; i++) {
-        array.push(i);
-        setTotalPages(array);
-      }
-    }
-    fetchMyAPI();
-  }, []);
-
-  async function fetchMyAPI() {
-    const response = await fetch(
-      `http://localhost:3001/ubs/page/${currentPage}`
-    );
-    setUbs(await response.json());
-  }
-
-  useEffect(() => {
-    fetchMyAPI();
-  }, [currentPage]);
 
   const handleSearch = async () => {
     setSearchMode(true)
@@ -179,18 +153,8 @@ export default function Ubs() {
         <div className="form-group">
         <div className="row">
         <div className="col-lg-8">
-            {!searchMode && (
-              <p class="lead font-weight-bold">
-                Atualmente cadastrados (página {currentPage} de{' '}
-                {totalPages.length}):
-              </p>
-            )}
-
-            {searchMode && (
-              <p class="lead font-weight-bold">
-                Atualmente cadastrados (resultado da busca):
-              </p>
-            )}
+          <p>Atualmente cadastrados (resultado da busca):</p>
+          
           </div>
 
           <div className="form-group col-lg-4">
@@ -537,48 +501,7 @@ export default function Ubs() {
           </table>
 
         </div>
-        {!searchMode && (
-          <div class="btn-group pagination justify-content-center mt-3">
-            {currentPage <= 1 ? (
-              <a class="btn btn-outline-light disabled">ANTERIOR</a>
-            ) : (
-              <a
-                class="btn btn-outline-light"
-                onClick={() => setCurrentPage(currentPage - 1)}
-              >
-                ANTERIOR
-              </a>
-            )}
-
-            {totalPages.length > 0 &&
-              totalPages.map((page, index) =>
-                currentPage == page ? (
-                  <a key={index} class="btn btn-outline-light active">
-                    {page}
-                  </a>
-                ) : (
-                  <a
-                    key={index}
-                    class="btn btn-outline-light"
-                    onClick={() => setCurrentPage(page)}
-                  >
-                    {page}
-                  </a>
-                )
-              )}
-
-            {currentPage >= totalPages.length ? (
-              <a class="btn btn-outline-light disabled">PRÓXIMO</a>
-            ) : (
-              <a
-                class="btn btn-outline-light"
-                onClick={() => setCurrentPage(currentPage + 1)}
-              >
-                PRÓXIMO
-              </a>
-            )}
-          </div>
-        )}
+   
       </div>
       
       {/* <!-- Modal para cadastro de UBS --> */}
