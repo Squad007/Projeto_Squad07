@@ -1,15 +1,7 @@
 const UBSmodel = require('../models/UBSmodel');
 
 class UBScontr {
-  getUBStotalPages(req, res) {
-    UBSmodel.getUBStotalPages(req, res);
-  }
-  getUBSbyPage(req, res) {
-    const { page } = req.params;
 
-    UBSmodel.page = page;
-    UBSmodel.getUBSbyPage(req, res);
-  }
   getUBSdropdown(req, res) {
     UBSmodel.getUBSdropdown(req, res);
   }

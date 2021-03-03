@@ -30,9 +30,6 @@ routes.get('/med/DENcount', MEDcontr.getMEDwDENcount); // lista completa medicam
 routes.get('/med/totalPages', MEDcontr.getMEDtotalPages); // retorna numero de paginas MED
 routes.get('/med/page/:page', MEDcontr.getMEDbyPage); // acesso por numero da pagina MED
 
-routes.get('/ubs/totalPages', UBScontr.getUBStotalPages); // retorna numero de paginas UBS
-routes.get('/ubs/page/:page', UBScontr.getUBSbyPage); // acesso por numero da pagina UBS
-
 
 routes.get('/med/search/:searchInput', MEDcontr.getMEDbySearchInput); // acesso por termo de busca Medicamento
 

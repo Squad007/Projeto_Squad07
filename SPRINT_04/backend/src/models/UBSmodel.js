@@ -41,31 +41,7 @@ class UBSmodel {
     );
   }
 I
-getUBStotalPages(req, res) {
-  connection.query(
-    `select ceil(COUNT(id)/${this.pageSize}) as qty from ubs`,
-    (error, result) => {
-      error ? res.send(error) : res.json(result);
-    }
-  );
-}
-getUBSbyPage(req, res) {
-  connection.query(
-    `
-    SELECT ubs.*,  count(den.ubs_id) qtde
-    FROM  ubs
-    LEFT JOIN denuncia den 
-    ON ubs.id = den.ubs_id 
-    GROUP BY ubs.id 
-    ORDER BY ubs.nomeUbs   
-  LIMIT ${this.pageSize} 
-  OFFSET ${(this.page - 1) * this.pageSize}
-    `,
-    (error, result) => {
-      error ? res.send(error) : res.json(result);
-    }
-  );
-}
+
   getUBSbySearchInput(req, res) {
     connection.query(
       `
