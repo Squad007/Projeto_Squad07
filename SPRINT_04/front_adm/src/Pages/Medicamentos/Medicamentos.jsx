@@ -370,12 +370,12 @@ export default function Medicamentos() {
         </div>
 
         {!searchMode && (
-          <div class="btn-group pagination justify-content-center mt-3">
+          <div class="btn-group pagination justify-content-center mt-3 pg">
             {currentPage <= 1 ? (
-              <a class="btn btn-outline-light disabled">ANTERIOR</a>
+              <a class="btn btn-outline-light disabled pga">ANTERIOR</a>
             ) : (
               <a
-                class="btn btn-outline-light"
+                class="btn btn-outline-light pga" 
                 onClick={() => setCurrentPage(currentPage - 1)}
               >
                 ANTERIOR
@@ -385,13 +385,13 @@ export default function Medicamentos() {
             {totalPages.length > 0 &&
               totalPages.map((page, index) =>
                 currentPage == page ? (
-                  <a key={index} class="btn btn-outline-light active">
+                  <a key={index} class="btn btn-outline-light active pga">
                     {page}
                   </a>
                 ) : (
                   <a
                     key={index}
-                    class="btn btn-outline-light"
+                    class="btn btn-outline-light pga"
                     onClick={() => setCurrentPage(page)}
                   >
                     {page}
@@ -400,10 +400,10 @@ export default function Medicamentos() {
               )}
 
             {currentPage >= totalPages.length ? (
-              <a class="btn btn-outline-light disabled">PRÓXIMO</a>
+              <a class="btn btn-outline-light disabled pga">PRÓXIMO</a>
             ) : (
               <a
-                class="btn btn-outline-light"
+                class="btn btn-outline-light pga"
                 onClick={() => setCurrentPage(currentPage + 1)}
               >
                 PRÓXIMO
