@@ -6,7 +6,7 @@ import formatDate from '../../Assets/functions/formatDate';
 
 export default function Notificacaos() {
   const [notific, setNotific] = useState([]);
-
+  const [searchInput, setSearchInput] = useState('');
   const credentials = useSelector((state) => state.credentials);
 
   // ------------------------------ Delete
@@ -30,7 +30,15 @@ export default function Notificacaos() {
       setNotific(await response.json());
     }
     fetchMyAPI();
-  }, [notific]);
+  }, []);
+
+  const handleSearch = async () => {
+   
+    const response = await fetch(
+      `http://localhost:3001/den/search/${searchInput}`
+    );
+    setNotific(await response.json());
+  };
 
   return (
     <div>
@@ -48,9 +56,34 @@ export default function Notificacaos() {
           Notificações
         </h1>
         <hr className="my-4 bg-white" />
-        <p className="lead font-weight-bold">
-          Notificações presentes no sistema:
-        </p>
+        <div className="form-group">
+        <div className="row">
+        <div className="col-lg-8">
+          <p>Atualmente cadastrados :</p>
+          
+          </div>
+
+          <div className="form-group col-lg-4">
+            <input
+              type="text"
+              value={searchInput}
+              onChange={(e) => setSearchInput(e.target.value)}
+              
+              onKeyUp={(e) =>
+                
+                searchInput.length >= 3
+                  ? e.key === 'Enter' && handleSearch(e)
+                  : e.key === 'Enter' && alert('Insira no mínimo 3 caracteres')
+                  
+              }
+              
+              className="form-control border border-primary"
+              placeholder="Buscar por nome"
+            />
+            
+          </div>
+          </div>
+          </div>
         <div className="table-responsive">
           <table className="table table-striped table-hover table-dark bg-dark text-center">
             <thead>
@@ -66,6 +99,13 @@ export default function Notificacaos() {
                 </th>
               </tr>
             </thead>
+            {notific.length == 0 && (
+              <div className="p-4">
+                <b style={{ fontSize: '20px' }}>
+                  Nenhum medicamento foi encontrado!
+                </b>
+              </div>
+            )}
             <tbody>
               {notific.map((not) => (
                 <tr>
