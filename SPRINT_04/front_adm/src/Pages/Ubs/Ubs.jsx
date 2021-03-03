@@ -5,6 +5,10 @@ import './ubs.css';
 
 export default function Ubs() {
   const [ubs, setUbs] = useState([]);
+  const [totalPages, setTotalPages] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [searchMode, setSearchMode] = useState(false);
+  const [searchInput, setSearchInput] = useState('');
   const [formData, setFormData] = useState({
     id: '',
     cadastrado_por_id: '',
@@ -98,7 +102,40 @@ export default function Ubs() {
       setUbs(await response.json());
     }
     fetchMyAPI();
-  }, [ubs]);
+  }, []);
+
+  useEffect(() => {
+    async function fetchMyAPI() {
+      const response = await fetch('http://localhost:3001/ubs/totalPages');
+      const total = (await response.json())[0];
+      const array = [];
+
+      for (let i = 1; i <= total; i++) {
+        array.push(i);
+        setTotalPages(array);
+      }
+    }
+    fetchMyAPI();
+  }, []);
+
+  async function fetchMyAPI() {
+    const response = await fetch(
+      `http://localhost:3001/ubs/page/${currentPage}`
+    );
+    setUbs(await response.json());
+  }
+
+  useEffect(() => {
+    fetchMyAPI();
+  }, [currentPage]);
+
+  const handleSearch = async () => {
+    setSearchMode(true)
+    const response = await fetch(
+      `http://localhost:3001/ubs/search/${searchInput}`
+    );
+    setUbs(await response.json());
+  };
 
   return (
     <>
@@ -135,8 +172,48 @@ export default function Ubs() {
         >
           CADASTRAR NOVA UBS
         </button>
+        
         <hr className="my-4 bg-white" />
-        <p className="lead font-weight-bold">Atualmente cadastradas:</p>
+        
+
+        <div className="form-group">
+        <div className="row">
+        <div className="col-lg-8">
+            {!searchMode && (
+              <p class="lead font-weight-bold">
+                Atualmente cadastrados (página {currentPage} de{' '}
+                {totalPages.length}):
+              </p>
+            )}
+
+            {searchMode && (
+              <p class="lead font-weight-bold">
+                Atualmente cadastrados (resultado da busca):
+              </p>
+            )}
+          </div>
+
+          <div className="form-group col-lg-4">
+            <input
+              type="text"
+              value={searchInput}
+              onChange={(e) => setSearchInput(e.target.value)}
+              
+              onKeyUp={(e) =>
+                
+                searchInput.length >= 3
+                  ? e.key === 'Enter' && handleSearch(e)
+                  : e.key === 'Enter' && alert('Insira no mínimo 3 caracteres')
+                  
+              }
+              
+              className="form-control border border-primary"
+              placeholder="Buscar por nome"
+            />
+            
+          </div>
+          </div>
+          </div>
         <div className="table-responsive">
           <table className="table table-striped table-hover table-dark bg-dark text-center ">
             <thead>
@@ -151,6 +228,13 @@ export default function Ubs() {
                 </th>
               </tr>
             </thead>
+            {ubs.length == 0 && (
+              <div className="p-4">
+                <b style={{ fontSize: '20px' }}>
+                  Nenhum medicamento foi encontrado!
+                </b>
+              </div>
+            )}
             <tbody>
               {ubs.map((ubs) => (
                 <tr>
@@ -449,9 +533,54 @@ export default function Ubs() {
                 </tr>
               ))}
             </tbody>
+            
           </table>
+
         </div>
+        {!searchMode && (
+          <div class="btn-group pagination justify-content-center mt-3">
+            {currentPage <= 1 ? (
+              <a class="btn btn-outline-light disabled">ANTERIOR</a>
+            ) : (
+              <a
+                class="btn btn-outline-light"
+                onClick={() => setCurrentPage(currentPage - 1)}
+              >
+                ANTERIOR
+              </a>
+            )}
+
+            {totalPages.length > 0 &&
+              totalPages.map((page, index) =>
+                currentPage == page ? (
+                  <a key={index} class="btn btn-outline-light active">
+                    {page}
+                  </a>
+                ) : (
+                  <a
+                    key={index}
+                    class="btn btn-outline-light"
+                    onClick={() => setCurrentPage(page)}
+                  >
+                    {page}
+                  </a>
+                )
+              )}
+
+            {currentPage >= totalPages.length ? (
+              <a class="btn btn-outline-light disabled">PRÓXIMO</a>
+            ) : (
+              <a
+                class="btn btn-outline-light"
+                onClick={() => setCurrentPage(currentPage + 1)}
+              >
+                PRÓXIMO
+              </a>
+            )}
+          </div>
+        )}
       </div>
+      
       {/* <!-- Modal para cadastro de UBS --> */}
       <div
         className="modal fade text-dark"
@@ -476,6 +605,7 @@ export default function Ubs() {
               >
                 <span aria-hidden="true">&times;</span>
               </button>
+
             </div>
 
             <div className="modal-body">
