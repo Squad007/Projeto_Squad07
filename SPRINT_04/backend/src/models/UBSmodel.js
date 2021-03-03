@@ -1,4 +1,4 @@
-const connection = require('../config/connection');
+const connection = require("../config/connection");
 
 class UBSmodel {
   constructor() {
@@ -16,10 +16,11 @@ class UBSmodel {
     this.telefone;
     this.latitude;
     this.longitude;
+    this.searchInput;
   }
 
   getUBSdropdown(req, res) {
-    connection.query('SELECT id,nomeUbs FROM ubs', (error, result) => {
+    connection.query("SELECT id,nomeUbs FROM ubs", (error, result) => {
       error ? res.send(error) : res.json(result);
     });
   }
@@ -39,12 +40,53 @@ class UBSmodel {
       }
     );
   }
-
+I
+getUBStotalPages(req, res) {
+  connection.query(
+    `select ceil(COUNT(id)/${this.pageSize}) as qty from ubs`,
+    (error, result) => {
+      error ? res.send(error) : res.json(result);
+    }
+  );
+}
+getUBSbyPage(req, res) {
+  connection.query(
+    `
+    SELECT ubs.*,  count(den.ubs_id) qtde
+    FROM  ubs
+    LEFT JOIN denuncia den 
+    ON ubs.id = den.ubs_id 
+    GROUP BY ubs.id 
+    ORDER BY ubs.nomeUbs   
+  LIMIT ${this.pageSize} 
+  OFFSET ${(this.page - 1) * this.pageSize}
+    `,
+    (error, result) => {
+      error ? res.send(error) : res.json(result);
+    }
+  );
+}
+  getUBSbySearchInput(req, res) {
+    connection.query(
+      `
+      SELECT ubs.*,  count(den.ubs_id) qtde
+      FROM  ubs
+      LEFT JOIN denuncia den 
+      ON ubs.id = den.ubs_id 
+      WHERE ubs.nomeUbs LIKE '%${this.searchInput}%'
+      GROUP BY ubs.id 
+      ORDER BY ubs.nomeUbs     
+      `,
+      (error, result) => {
+        error ? res.send(error) : res.json(result);
+      }
+    );
+  }
   postUBS(req, res) {
     connection.query(
       `INSERT INTO ubs (cadastrado_por_id, nomeUbs, descricao, endereco, bairro, distrito, zona, cidade, uf, cep, telefone, latitude, longitude) VALUES ('${this.cadastrado_por_id}', '${this.nomeUbs}', '${this.descricao}', '${this.endereco}', '${this.bairro}', '${this.distrito}', '${this.zona}', '${this.cidade}', '${this.uf}', '${this.cep}', '${this.telefone}', '${this.latitude}', '${this.longitude}')`,
       (error, result) => {
-        error ? res.send(error) : res.status(201).send('UBS cadastrada');
+        error ? res.send(error) : res.status(201).send("UBS cadastrada");
       }
     );
   }
@@ -53,7 +95,7 @@ class UBSmodel {
     connection.query(
       `UPDATE ubs SET cadastrado_por_id='${this.cadastrado_por_id}', nomeUbs='${this.nomeUbs}', descricao='${this.descricao}', endereco='${this.endereco}', bairro='${this.bairro}', distrito='${this.distrito}', zona='${this.zona}', cidade='${this.cidade}', uf='${this.uf}', cep='${this.cep}', telefone='${this.telefone}', latitude='${this.latitude}', longitude='${this.longitude}' WHERE id=${this.id}`,
       (error, result) => {
-        error ? res.send(error) : res.status(201).send('UBS atualizada');
+        error ? res.send(error) : res.status(201).send("UBS atualizada");
       }
     );
   }

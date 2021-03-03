@@ -25,9 +25,26 @@ routes.post('/msg', MSGcontr.postMSG); // enviar msg
 //SITE ADM ######################
 routes.post('/adm/login', ADMcontr.loginADM); // login
 routes.get('/med/DENcount', MEDcontr.getMEDwDENcount); // lista completa medicamentos
-routes.get('/med/totalPages', MEDcontr.getMEDtotalPages); // retorna numero de paginas
-routes.get('/med/page/:page', MEDcontr.getMEDbyPage); // acesso por numero da pagina
-routes.get('/med/search/:searchInput', MEDcontr.getMEDbySearchInput); // acesso por termo de busca
+
+
+routes.get('/med/totalPages', MEDcontr.getMEDtotalPages); // retorna numero de paginas MED
+routes.get('/med/page/:page', MEDcontr.getMEDbyPage); // acesso por numero da pagina MED
+
+routes.get('/ubs/totalPages', UBScontr.getUBStotalPages); // retorna numero de paginas UBS
+routes.get('/ubs/page/:page', UBScontr.getUBSbyPage); // acesso por numero da pagina UBS
+
+
+routes.get('/med/search/:searchInput', MEDcontr.getMEDbySearchInput); // acesso por termo de busca Medicamento
+
+routes.get('/ubs/search/:searchInput', UBScontr.getUBSbySearchInput); // acesso por termo de busca UBS
+//routes.get('/den/search/:searchInput', DENcontr.getDENbySearchInput); // acesso por termo de busca Notificações
+//routes.get('/msg/search/:searchInput', MSGcontr.getMSGbySearchInput); // acesso por termo de busca Fale Conosco
+
+
+
+
+
+
 routes.get('/den/forADM', DENcontr.getDENforADM); // lista completa notificacao
 routes.get('/msg', MSGcontr.getAllMSG); // lista completa msg
 routes.get('/adm', ADMcontr.getAllADM); // lista completa adm
