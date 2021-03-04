@@ -35,8 +35,8 @@ routes.get('/med/search/:searchInput', MEDcontr.getMEDbySearchInput); // acesso 
 
 routes.get('/ubs/search/:searchInput', UBScontr.getUBSbySearchInput); // acesso por termo de busca UBS
 routes.get('/den/search/:searchInput', DENcontr.getDENbySearchInput); // acesso por termo de busca Notificações
-//routes.get('/msg/search/:searchInput', MSGcontr.getMSGbySearchInput); // acesso por termo de busca Fale Conosco
-
+routes.get('/msg/search/:searchInput', MSGcontr.getMSGbySearchInput); // acesso por termo de busca Fale Conosco
+routes.get('/adm/search/:searchInput', ADMcontr.getADMbySearchInput); // acesso por termo de busca ADM
 
 
 

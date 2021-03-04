@@ -17,6 +17,21 @@ class MSGmodel {
     );
   }
 
+  getMSGbySearchInput(req, res) {
+    connection.query(
+      `SELECT * from fale_conosco
+      
+      WHERE nome LIKE '%${this.searchInput}%'
+      GROUP BY fale_conosco.id 
+      ORDER BY fale_conosco.nome
+     
+      `,
+      (error, result) => {
+        error ? res.send(error) : res.json(result);
+      }
+    );
+  }
+
   postMSG(req, res) {
     connection.query(
       `insert into fale_conosco (nome, msg, email) values ('${this.nome}','${this.msg}','${this.email}')`,

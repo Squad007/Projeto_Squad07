@@ -5,6 +5,13 @@ class MSGcontr {
     MSGmodel.getAllMSG(req, res);
   }
 
+  getMSGbySearchInput(req, res) {
+    const { searchInput } = req.params;
+
+    MSGmodel.searchInput = searchInput;
+    MSGmodel.getMSGbySearchInput(req, res);
+  }
+
   postMSG(req, res) {
     const { nome, msg, email } = req.body;
 

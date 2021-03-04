@@ -13,6 +13,12 @@ class ADMcontr {
   getAllADM(req, res) {
     ADMmodel.getAllADM(req, res);
   }
+  getADMbySearchInput(req, res) {
+    const { searchInput } = req.params;
+
+    ADMmodel.searchInput = searchInput;
+    ADMmodel.getADMbySearchInput(req, res);
+  }
 
   postADM(req, res) {
     const { username, nome, imagem, email, senha } = req.body;

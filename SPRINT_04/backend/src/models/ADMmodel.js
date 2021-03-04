@@ -31,6 +31,19 @@ class ADMmodel {
       error ? res.send(error) : res.json(result);
     });
   }
+  getADMbySearchInput(req, res) {
+    connection.query(
+      `SELECT * from administrador
+      
+      WHERE nome LIKE '%${this.searchInput}%'
+      
+     
+      `,
+      (error, result) => {
+        error ? res.send(error) : res.json(result);
+      }
+    );
+  }
 
   postADM(req, res) {
     connection.query(
