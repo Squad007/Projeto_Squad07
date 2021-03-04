@@ -78,7 +78,7 @@ export default function Notificacaos() {
               }
               
               className="form-control border border-primary"
-              placeholder="Buscar por nome"
+              placeholder="Buscar por nome de UBS"
             />
             
           </div>
@@ -102,7 +102,7 @@ export default function Notificacaos() {
             {notific.length == 0 && (
               <div className="p-4">
                 <b style={{ fontSize: '20px' }}>
-                  Nenhum medicamento foi encontrado!
+                  Nenhuma notificação encontrada!
                 </b>
               </div>
             )}
@@ -116,11 +116,14 @@ export default function Notificacaos() {
                     <details>
                       <summary>
                         <b>
-                          {not.ubs}:
-                          <span className="text-danger">FALTANDO</span>
+                          {not.ubs}
+                      
                           <br />
+                          <span className="text-danger"> ID: </span>
                           {not.id_med}
                         </b>
+                        
+                        <span className="text-danger"> FALTANDO: </span>
                         {not.med}
                       </summary>
 

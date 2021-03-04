@@ -153,7 +153,7 @@ export default function Ubs() {
         <div className="form-group">
         <div className="row">
         <div className="col-lg-8">
-          <p>Atualmente cadastrados (resultado da busca):</p>
+          <p>Atualmente cadastrados:</p>
           
           </div>
 
@@ -172,7 +172,7 @@ export default function Ubs() {
               }
               
               className="form-control border border-primary"
-              placeholder="Buscar por nome"
+              placeholder="Buscar por nome de UBS"
             />
             
           </div>
@@ -195,7 +195,7 @@ export default function Ubs() {
             {ubs.length == 0 && (
               <div className="p-4">
                 <b style={{ fontSize: '20px' }}>
-                  Nenhum medicamento foi encontrado!
+                  Nenhuma ubs encontrada!
                 </b>
               </div>
             )}

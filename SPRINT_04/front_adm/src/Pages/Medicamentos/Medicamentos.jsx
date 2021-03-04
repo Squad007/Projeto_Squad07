@@ -184,7 +184,7 @@ export default function Medicamentos() {
                   : e.key === 'Enter' && alert('Insira no mínimo 3 caracteres')
               }
               className="form-control border border-primary"
-              placeholder="Buscar por nome"
+              placeholder="Buscar por nome do medicamento"
             />
           </div>
         </div>

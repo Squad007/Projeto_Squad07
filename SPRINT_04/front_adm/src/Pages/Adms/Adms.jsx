@@ -1,14 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 export default function Adms() {
-  const [senhaConfirmada, setSenhaConfirmada] = useState('');
+  const [senhaConfirmada, setSenhaConfirmada] = useState("");
+  const [searchInput, setSearchInput] = useState('');
   const [adms, setAdms] = useState([]);
   const [formData, setFormData] = useState({
-    username: '',
-    email: '',
-    senha: '',
-    nome: '',
-    imagem: '',
+    username: "",
+    email: "",
+    senha: "",
+    nome: "",
+    imagem: "",
   });
 
   // ------------------------------ Cadastro form novos Adms
@@ -16,25 +17,25 @@ export default function Adms() {
     e.preventDefault();
     if (senhaConfirmada === formData.senha) {
       try {
-        const res = await fetch('http://localhost:3001/adm', {
-          method: 'POST',
+        const res = await fetch("http://localhost:3001/adm", {
+          method: "POST",
           body: JSON.stringify(formData),
-          headers: { 'Content-Type': 'application/json' },
+          headers: { "Content-Type": "application/json" },
         }).then((dados) => {
           setFormData({
-            username: '',
-            email: '',
-            senha: '',
-            nome: '',
-            imagem: '',
+            username: "",
+            email: "",
+            senha: "",
+            nome: "",
+            imagem: "",
           });
-          setSenhaConfirmada('');
+          setSenhaConfirmada("");
         });
       } catch (err) {
-        alert('Erro: mensagem não cadastrada, tente mais tarde!');
+        alert("Erro: mensagem não cadastrada, tente mais tarde!");
       }
     } else {
-      alert('Senhas não iguais');
+      alert("Senhas não iguais");
     }
   };
 
@@ -44,27 +45,66 @@ export default function Adms() {
   //-------------------------------- Api adms
   useEffect(() => {
     async function fetchMyAPI() {
-      const response = await fetch('http://localhost:3001/adm');
+      const response = await fetch("http://localhost:3001/adm");
       setAdms(await response.json());
     }
     fetchMyAPI();
-  }, [adms]);
+  }, []);
 
+  const handleSearch = async () => {
+    
+    const response = await fetch(
+      `http://localhost:3001/adm/search/${searchInput}`
+    );
+    setAdms(await response.json());
+  };
   return (
     <div
       className="bg-transparent"
-      style={{ minHeight: 'calc(100vh - 115px) ' }}
+      style={{ minHeight: "calc(100vh - 115px) " }}
     >
       <main className="container">
         <section className="row">
           <div className="col mt-5">
             <div className="jumbotron card card-image text-white bg-transparent">
               <h1 className="display-4 text-light  font-weight-bold">ADM's</h1>
-              <p className="lead font-weight-bold">
-                Atuais ADM's do sistema SOS
-              </p>
 
+              <div className="form-group">
+                <div className="row">
+                  <div className="col-lg-6">
+                    <p className="lead font-weight-bold text-center">
+                     Pesquisar ADM'S
+                    </p>
+                  </div>
+
+                  <div className="form-group col-lg-6" >
+                    <input
+                      type="text"
+                      value={searchInput}
+                      onChange={(e) => setSearchInput(e.target.value)}
+
+                      onKeyUp={(e) =>
+
+                        searchInput.length >= 3
+                          ? e.key === 'Enter' && handleSearch(e)
+                          : e.key === 'Enter' && alert('Insira no mínimo 3 caracteres')
+
+                      }
+
+                      className="form-control border border-primary"
+                      placeholder="Buscar por nome "
+                    />
+                  </div>
+                </div>
+              </div>
               <table className="table table-striped table-hover table-dark bg-dark text-center">
+              {adms.length == 0 && (
+              <div className="p-4">
+                <b style={{ fontSize: '20px' }}>
+                  Nenhum adm encontrado!
+                </b>
+              </div>
+            )}
                 <tbody>
                   {adms.map((adms) => (
                     <tr>

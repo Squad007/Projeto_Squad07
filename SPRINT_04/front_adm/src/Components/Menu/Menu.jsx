@@ -36,7 +36,7 @@ export default function Menu() {
               </Dropdown.Toggle>
 
               <Dropdown.Menu>
-                <Dropdown.Item>Meu perfil</Dropdown.Item>
+                {/* <Dropdown.Item>Meu perfil</Dropdown.Item> */}
 
                 <Dropdown.Item
                   onClick={() => dispatch(changeCredentials(emptyCredentials))}

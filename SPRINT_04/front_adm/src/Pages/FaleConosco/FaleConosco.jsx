@@ -5,7 +5,7 @@ import './msg.css';
 
 export default function FaleConosco() {
   const [faleConosco, setFaleConosco] = useState([]);
-
+  const [searchInput, setSearchInput] = useState('');
   const credentials = useSelector((state) => state.credentials);
 
   // ------------------------------ Delete
@@ -29,7 +29,15 @@ export default function FaleConosco() {
       setFaleConosco(await response.json());
     }
     fetchMyAPI();
-  }, [faleConosco]);
+  }, []);
+
+  const handleSearch = async () => {
+   
+    const response = await fetch(
+      `http://localhost:3001/msg/search/${searchInput}`
+    );
+    setFaleConosco(await response.json());
+  };
 
   // ------------------------------ Formatação da data
   const formatDate = (rawDate) => {
@@ -58,7 +66,35 @@ export default function FaleConosco() {
         </p>
         <h1 class="display-4 text-primary  font-weight-bold">Mensagens</h1>
         <hr class="my-4 bg-white" />
-        <p class="lead font-weight-bold">Mensagens recentes:</p>
+        <div className="form-group">
+        <div className="row">
+        <div className="col-lg-8">
+          <p>Mensagens recentes :</p>
+          
+          </div>
+
+          <div className="form-group col-lg-4">
+            <input
+              type="text"
+              value={searchInput}
+              onChange={(e) => setSearchInput(e.target.value)}
+              
+              onKeyUp={(e) =>
+                
+                searchInput.length >= 3
+                  ? e.key === 'Enter' && handleSearch(e)
+                  : e.key === 'Enter' && alert('Insira no mínimo 3 caracteres')
+                  
+              }
+              
+              className="form-control border border-primary"
+              placeholder="Buscar por nome"
+            />
+            
+          </div>
+          </div>
+          </div>
+         
         <div class="table-responsive">
           <table class="table table-striped table-hover table-dark bg-dark text-center">
             <thead>
@@ -69,8 +105,18 @@ export default function FaleConosco() {
                 <th scope="col" class=" text-left">
                   NOME/MENSAGEM
                 </th>
+                <th scope="col" class=" text-left">
+                  E-MAIL(OPCIONAL)
+                </th>
               </tr>
             </thead>
+            {faleConosco.length == 0 && (
+              <div className="p-4">
+                <b style={{ fontSize: '20px' }}>
+                  Mensagem não encontrada!
+                </b>
+              </div>
+            )}
             <tbody>
               {faleConosco.map((falecon) => (
                 <tr>
@@ -84,6 +130,12 @@ export default function FaleConosco() {
                     <b class="text-primary">{falecon.nome}</b>
                     <br />
                     {falecon.msg}
+                  </td>
+                  <td
+                    class="align-middle text-center text-primary"
+                    scope="row "
+                  >
+                    {falecon.email}
                   </td>
                   <td class="align-middle text-right">
                     <div class="btn-group">
