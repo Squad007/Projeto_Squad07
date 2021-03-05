@@ -1,3 +1,13 @@
 footer{
     background:#00b9b3;
+    height: 8.25vh !important;
 }
+
+@media (max-width: 991px) {
+    footer{
+        
+        height: 20vh !important;
+
+  }
+}
+  

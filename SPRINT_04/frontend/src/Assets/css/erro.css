@@ -1,0 +1,10 @@
+@media (max-width: 991px) {
+    .res {
+      height: 65vh !important;
+    }
+    .erroImg {
+        width: 50vw !important;
+        height: 65vh !important;
+    }
+
+  }

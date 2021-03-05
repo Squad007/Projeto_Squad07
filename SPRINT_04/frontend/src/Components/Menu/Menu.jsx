@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import './Menu.css';
-import { FaEnvelopeOpenText, FaMapMarkedAlt, FaExclamationCircle } from "react-icons/fa";
+import { FaEnvelopeOpenText, FaMapMarkedAlt, FaExclamationCircle,FaUsersCog } from "react-icons/fa";
 import { HiDocumentSearch } from "react-icons/hi";
 
 export default function Menu() {
@@ -33,6 +33,15 @@ export default function Menu() {
               <ul
                 className="nav w-100 d-flex justify-content-between flex-column flex-sm-row"
               >
+                <li className="nav-item">
+                  <Link
+                    className="nav-link"
+                    to='/sobre'
+                  >
+                    <FaUsersCog />{" "}
+                    Sobre
+                  </Link>
+                </li>
                 <li className="nav-item">
                   <Link
                     className="nav-link"
