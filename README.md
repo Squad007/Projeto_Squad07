@@ -29,13 +29,13 @@
 
 
 **:link: Clique no link abaixo para visualizar o site hospedado do usuário:**
->  [http://soseduca.site](https://sos-medicamentos-user.herokuapp.com/)
+>  [http://sos-medicamentos-user](https://sos-medicamentos-user.herokuapp.com/)
 
 <br>
 
 
 **:link: Clique no link abaixo para visualizar o site hospedado do Administrador - (Solicitar cadastro para SQUAD):**
->  [http://soseduca.site](https://sos-medicamentos-adm.herokuapp.com/) 
+>  [http://sos-medicamentos-adm](https://sos-medicamentos-adm.herokuapp.com/) 
 
 <br>
  
