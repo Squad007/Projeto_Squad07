@@ -4,7 +4,7 @@ import "../Assets/css/home.css";
 
 export default function Home() {
   return (
-    <div>
+    <div style={{ minHeight: 'calc(100vh - 68px - 56px )' }}>
       <div className="jumbotron jumbotron-fluid text-sm-center bg-transparent">
         <div className="container">
           <div className="row">
