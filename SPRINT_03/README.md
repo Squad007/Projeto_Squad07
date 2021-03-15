@@ -20,7 +20,7 @@
 
 ☑️ CRUD – Completo(Web): Concluído :heavy_check_mark:
 
-☑️ Os formulários de validação (Garantir que os dados sejam preenchidos corretamente pelo usuário): Concluído :heavy_check_mark:
+☑️ Os formulários de validação: Concluído :heavy_check_mark:
 
 ☑️ Realizar a codificação separada por branch: Concluído :heavy_check_mark:
 
@@ -30,14 +30,15 @@
 
 ## Importante
 
-☑️ Contato com Prodam: Concluído :heavy_check_mark:
+☑️ Contato com Prodam(Empresa de Tec. da Info e Comunicação do Município de São Paulo): Concluído :heavy_check_mark:
 
-☑️ Relatorios com todas as UBS de São Miguel Paulista(.CSV): Concluído :heavy_check_mark:
+☑️ Paginação em tabelas (com infor-grandes) :heavy_check_mark:
 
 
 ## Seria bom ter
 
-☑️ Relatorio por data selecionada pelo User
-☑️ Paginação em Todas as Telas(com infor-grandes)
+☑️ Relatório por data selecionada pelo User ❌
+☑️ Relatórios com todas as UBS de São Miguel Paulista(.CSV) ❌
+
 
 <br>
