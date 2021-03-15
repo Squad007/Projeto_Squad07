@@ -32,12 +32,12 @@
 
 ☑️ Contato com Prodam(Empresa de Tec. da Info e Comunicação do Município de São Paulo): Concluído :heavy_check_mark:
 
-☑️ Paginação em tabelas (com infor-grandes) :heavy_check_mark:
+☑️ Paginação em tabelas (com infor-grandes): Concluído :heavy_check_mark:
 
 
 ## Seria bom ter
 
-☑️ Relatório por data selecionada pelo User ❌
+☑️ Relatório por data selecionada pelo User ❌ <br>
 ☑️ Relatórios com todas as UBS de São Miguel Paulista(.CSV) ❌
 
 
