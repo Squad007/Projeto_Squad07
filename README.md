@@ -86,6 +86,18 @@ _Nota 1:  Devido a hospedagem ser viabilizada de forma gratuita, o tempo de requ
 
 <br>
 
+## :computer: Tecnologias Utilizadas
+
+<h1 align="center"> <img src = "/Imagens Geral/tecnologia.png"/></h1>
+
+* **Banco de Dados:** MySQL
+* **Back-end:** JavaScript e PhP e Node
+* **Front-end:** HTML, CSS e Bootstrap, ReactJS
+* **Mobile:** React Native
+* **Ferramentas:** Visual Studio Code e whimsical
+
+<br>
+
 ## :bar_chart: Backlog do Projeto
 
 <br>
