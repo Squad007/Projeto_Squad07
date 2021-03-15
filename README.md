@@ -2,22 +2,31 @@
 
 <p align="center">
       <img src="/Imagens_Geral/SQUAD.jpeg" width="200" height="150">
-      <h3 align="center">SOS MEDICAMENTOS </h3>
+      <h3 align="center">FALTOU MEDICAMENTO NA SUA UNIDADE BÁSICA DE SAÚDE(UBS)? </h3>
 <p align="center">
 
 <hr>
 
+<p align="center">
+  <a href ="#rocket-o-projeto"> Projeto </a>  • 
+  <a href ="#dart-proposta"> Proposta </a>  • 
+  <a href ="#hourglass_flowing_sand-planejamento-de-entregas"> Planejamento </a>  • 
+  <a href ="#calendar-as-sprints"> Sprints </a>  • 
+  <a href ="#computer-tecnologias-utilizadas"> Tecnologias </a>  • 
+  <a href ="#bulb-metodologia-utilizada"> Metodologia </a>  • 
+  <a href ="#bar_chart-backlog-do-produto"> Backlog </a>  •
+  <a href ="#mortar_board-equipe"> Equipe </a> 
+</p>
+
 <h1 align="center">
-  
   Projeto em desenvolvimento no ano de 2020 -2021 pelos alunos e alunas do Squad 07 (SP-01) da Recode Pro 2020.
- 
 <h1 align="center">
 <br>
 
 
 💻 Um pouco sobre o projeto
 
-# SOS medicametos
+## :rocket: O Projeto
  * A plataforma tem como objetivo iniciamente potencializar a voz das pessoas, utilizando os dados sobre o poder público e evidenciando a dor das pessoas.
 
 ## :camera_flash: Apresentação Final do Projeto
@@ -61,6 +70,5 @@
 
 ☑️ SPRINT 3 ([Link da Pasta](https://github.com/Squad007/Projeto_Squad07/tree/main/SPRINT_03)): Concluído :heavy_check_mark:
 
-☑️ SPRINT 4 ([Link da Pasta](https://github.com/Squad007/Projeto_Squad07/tree/main/SPRINT_04)): Em andamento...
-
+☑️ SPRINT 4 ([Link da Pasta](https://github.com/Squad007/Projeto_Squad07/tree/main/SPRINT_04)): Concluído :heavy_check_mark:
 <br>
