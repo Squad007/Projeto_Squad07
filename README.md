@@ -19,7 +19,7 @@
 </p>
 
 <h1 align="center">
-  Projeto em desenvolvimento no ano de 2020 -2021 pelos alunos e alunas do Squad 07 (SP-01) da Recode Pro 2020.
+  Projeto desenvolvido no ano de 2020 - 2021 pelos alunos e alunas do Squad 07 (SP-01) da Recode Pro 2020.
 <h1 align="center">
 <br>
 
@@ -27,7 +27,10 @@
 💻 Um pouco sobre o projeto
 
 ## :rocket: O Projeto
- * A plataforma tem como objetivo iniciamente potencializar a voz das pessoas, utilizando os dados sobre o poder público e evidenciando a dor das pessoas.
+ * A ideia para a plataforma surgiu a partir de um problema: a falta de medicamentos no SUS. Uma das formas de intervir, e dar voz às pessoas, e ajudar na construção de meios que auxiliem a participação da comunidade no controle social.
+
+## :dart: Proposta
+ **Desenvolver uma plataforma de publicização e monitoramento do desabastecimento.**
 
 ## :camera_flash: Apresentação Final do Projeto
 
@@ -42,11 +45,14 @@
 
 <br>
 
+**:link: Clique no link abaixo para visualizar o site hospedado do Administrador - (Solicitar cadastro para SQUAD):
 
-**:link: Clique no link abaixo para visualizar o site hospedado do Administrador - (Solicitar cadastro para SQUAD):**
->  [http://sos-medicamentos-adm](https://sos-medicamentos-adm.herokuapp.com/) 
+http://sos-medicamentos-adm
 
-<br>
+_Nota 1:  Devido a hospedagem ser viabilizada de forma gratuita, o tempo de requisição de algumas funcionalidades podem ter maior tempo de resposta, todavia as principais funcionalidades, estão disponíveis para verificação.
+
+
+
  
  ## :hourglass_flowing_sand: Planejamento de Entregas
 
@@ -71,4 +77,13 @@
 ☑️ SPRINT 3 ([Link da Pasta](https://github.com/Squad007/Projeto_Squad07/tree/main/SPRINT_03)): Concluído :heavy_check_mark:
 
 ☑️ SPRINT 4 ([Link da Pasta](https://github.com/Squad007/Projeto_Squad07/tree/main/SPRINT_04)): Concluído :heavy_check_mark:
+
 <br>
+
+## :bulb: Metodologia Utilizada
+
+* **Metodologia Ágil:** Framework [Scrum](https://www.desenvolvimentoagil.com.br/scrum/)
+
+<br>
+
+## :bar_chart: Backlog do Projeto
