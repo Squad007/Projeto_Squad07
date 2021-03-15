@@ -87,3 +87,9 @@ _Nota 1:  Devido a hospedagem ser viabilizada de forma gratuita, o tempo de requ
 <br>
 
 ## :bar_chart: Backlog do Projeto
+
+<br>
+
+<p align="center">
+      <img src="/Imagens_Geral/Backlog.jpeg" width="200" height="150">
+<p align="center">
