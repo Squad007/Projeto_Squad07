@@ -14,7 +14,7 @@
   <a href ="#calendar-as-sprints"> Sprints </a>  • 
   <a href ="#computer-tecnologias-utilizadas"> Tecnologias </a>  • 
   <a href ="#bulb-metodologia-utilizada"> Metodologia </a>  • 
-  <a href ="#bar_chart-backlog-do-produto"> Backlog </a>  •
+  <a href ="#bar_chart-backlog-do-projeto"> Backlog </a>  •
   <a href ="#mortar_board-equipe"> Equipe </a> 
 </p>
 
@@ -22,9 +22,6 @@
   Projeto desenvolvido no ano de 2020 - 2021 pelos alunos e alunas do Squad 07 (SP-01) da Recode Pro 2020.
 <h1 align="center">
 <br>
-
-
-💻 Um pouco sobre o projeto
 
 ## :rocket: O Projeto
  * A ideia para a plataforma surgiu a partir de um problema: a falta de medicamentos no SUS. Uma das formas de intervir, e dar voz às pessoas, e ajudar na construção de meios que auxiliem a participação da comunidade no controle social.
@@ -89,15 +86,15 @@ _Nota 1:  Devido a hospedagem ser viabilizada de forma gratuita, o tempo de requ
 ## :computer: Tecnologias Utilizadas
 
 <p align="center">
-      <img src="/Imagens_Geral/Tech.jpeg">
+      <img src="/Imagens_Geral/tech.jpeg" >
       
 <p align="center">
 
 * **Banco de Dados:** MySQL
-* **Back-end:** JavaScript e PhP e Node
-* **Front-end:** HTML, CSS e Bootstrap, ReactJS
+* **Back-end:** JavaScript, PhP e Node
+* **Front-end:** HTML, CSS, Bootstrap e ReactJS
 * **Mobile:** React Native
-* **Ferramentas:** Visual Studio Code e whimsical
+* **Ferramentas:** Visual Studio Code
 
 <br>
 
@@ -125,3 +122,5 @@ _Nota 1:  Devido a hospedagem ser viabilizada de forma gratuita, o tempo de requ
    
 
 <br>
+
+ <h1 align="center"> <img src = "/Imagens_Geral/recode.png" height="90" /></h1>
