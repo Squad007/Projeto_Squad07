@@ -88,7 +88,10 @@ _Nota 1:  Devido a hospedagem ser viabilizada de forma gratuita, o tempo de requ
 
 ## :computer: Tecnologias Utilizadas
 
-<h1 align="center"> <img src = "/Imagens Geral/tecnologia.png"/></h1>
+<p align="center">
+      <img src="/Imagens_Geral/Tech.jpeg">
+      
+<p align="center">
 
 * **Banco de Dados:** MySQL
 * **Back-end:** JavaScript e PhP e Node
@@ -105,3 +108,20 @@ _Nota 1:  Devido a hospedagem ser viabilizada de forma gratuita, o tempo de requ
 <p align="center">
       <img src="/Imagens_Geral/Backlog.jpeg" >
 <p align="center">
+</p>
+<br>
+
+## :mortar_board: Equipe 
+
+|Nome|Função|Linkedin|GitHub|Avatar|
+| -------- |-------- |-------- |-------- |-------- |
+|**Eliana Souza**|Scrum Master Desenvolvedora|[@LinkedIn](https://www.linkedin.com/in/eliana-souzarr/)|[@GitHub](https://github.com/Elianars)|<img src = "/SPRINT_02/img/eliana.jpg" width="50" height="50"/>|
+|**Nayara Lopes**|Desenvolvedora| [@LinkedIn](https://www.linkedin.com/in/nayara-suelen-382420137/)|[@GitHub](https://github.com/NayDev)|<img src = "/SPRINT_02/img/nay.jpg" width="50" height="50"/>|
+|**Mitsuhiko Takushi**|Desenvolvedor| [@LinkedIn](https://www.linkedin.com/in/mitsuhiko/)|[@GitHub](https://github.com/matsuboshi)|<img src = "/SPRINT_02/img/mit.jpg" width="50" height="50"/>|
+|**Cristiano Santana**|Desenvolvedor| [@LinkedIn](https://www.linkedin.com/in/cristiano-souza-santana-b3011a119/)|[@GitHub](https://github.com/CristianoSantan)|<img src = "/SPRINT_02/img/cris.jpg" width="50" height="50"/>|
+|**Willi Roger**|Desenvolvedor| [@LinkedIn](https://www.linkedin.com/in/williroger/)|[@GitHub](https://github.com/williroger)|<img src = "/SPRINT_02/img/roger.jpg" width="50" height="50"/>|
+|**Raquel Mendonça**|Desenvolvedora| [@LinkedIn](https://www.linkedin.com/in/raquel-mendon%C3%A7a-944254108/)|[@GitHub](https://github.com/raquelmendoncah)|<img src = "/SPRINT_02/img/raquel.jpg" width="50" height="50"/>|
+
+   
+
+<br>
