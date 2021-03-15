@@ -91,5 +91,5 @@ _Nota 1:  Devido a hospedagem ser viabilizada de forma gratuita, o tempo de requ
 <br>
 
 <p align="center">
-      <img src="/Imagens_Geral/Backlog.jpeg" width="200" height="150">
+      <img src="/Imagens_Geral/Backlog.jpeg" >
 <p align="center">
