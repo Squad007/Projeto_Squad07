@@ -1,8 +1,7 @@
 <br>
 
 <p align="center">
-      <img src="/Imagens_Geral/SQUAD.jpeg" width="200" height="150">
-      <h3 align="center">FALTOU MEDICAMENTO NA SUA UNIDADE BÁSICA DE SAÚDE(UBS)? </h3>
+      <img src="/Imagens_Geral/logo_squad.png" width="200" height="200">
 <p align="center">
 
 <hr>
