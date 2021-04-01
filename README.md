@@ -42,8 +42,7 @@
 <br>
 
 **:link: Clique no link abaixo para visualizar o site hospedado do Administrador - (Solicitar cadastro para SQUAD):
-
-http://sos-medicamentos-adm
+>  [http://sos-medicamentos-adm](https://sos-medicamentos-adm.herokuapp.com/)
 
 _Nota 1:  Devido a hospedagem ser viabilizada de forma gratuita, o tempo de requisição de algumas funcionalidades podem ter maior tempo de resposta, todavia as principais funcionalidades, estão disponíveis para verificação.
 
